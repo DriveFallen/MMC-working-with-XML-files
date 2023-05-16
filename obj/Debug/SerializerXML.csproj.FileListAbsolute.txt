@@ -1,0 +1,11 @@
+C:\Users\Vlad\Desktop\SerializeXML\SerializerXML\bin\Debug\SerializerXML.exe.config
+C:\Users\Vlad\Desktop\SerializeXML\SerializerXML\bin\Debug\SerializerXML.exe
+C:\Users\Vlad\Desktop\SerializeXML\SerializerXML\bin\Debug\SerializerXML.pdb
+C:\Users\Vlad\Desktop\SerializeXML\SerializerXML\obj\Debug\SerializerXML.csproj.AssemblyReference.cache
+C:\Users\Vlad\Desktop\SerializeXML\SerializerXML\obj\Debug\SerializerXML.csproj.SuggestedBindingRedirects.cache
+C:\Users\Vlad\Desktop\SerializeXML\SerializerXML\obj\Debug\SerializerXML.Properties.Resources.resources
+C:\Users\Vlad\Desktop\SerializeXML\SerializerXML\obj\Debug\SerializerXML.csproj.GenerateResource.cache
+C:\Users\Vlad\Desktop\SerializeXML\SerializerXML\obj\Debug\SerializerXML.csproj.CoreCompileInputs.cache
+C:\Users\Vlad\Desktop\SerializeXML\SerializerXML\obj\Debug\SerializerXML.exe
+C:\Users\Vlad\Desktop\SerializeXML\SerializerXML\obj\Debug\SerializerXML.pdb
+C:\Users\Vlad\Desktop\SerializeXML\SerializerXML\obj\Debug\SerializerXML.FormMain.resources
