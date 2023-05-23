@@ -47,7 +47,7 @@ namespace SerializerXML
         {
             switch (tabControl1.SelectedIndex)
             {
-                case 0:
+                case 0: // Контрагенты
                     {
                         Clean_контрагенты();
                         listView_контрагенты.Items.Clear();
@@ -60,8 +60,8 @@ namespace SerializerXML
                             listView_контрагенты.Items.Add(LVI);
                         }
                     }
-                    break; // ready
-                case 1:
+                    break;
+                case 1: // Договора
                     {
                         Clean_договора();
                         listView_договора.Items.Clear();
@@ -74,13 +74,22 @@ namespace SerializerXML
                             listView_договора.Items.Add(LVI);
                         }
                     }
-                    break; // ready
-                case 2:
+                    break;
+                case 2: // Должности
                     {
-                        
+                        Clean_должности();
+                        listView_должности.Items.Clear();
+
+                        Должности должности = MySerializer.DeserializerXML_должности();
+                        for (int i = 0; i < должности.должности.Count; i++)
+                        {
+                            ListViewItem LVI = new ListViewItem(должности.должности[i].Идентификатор);
+                            LVI.Tag = должности.должности[i];
+                            listView_должности.Items.Add(LVI);
+                        }
                     }
-                    break; // ready
-                case 3:
+                    break;
+                case 3: // ПериодическиеМедОсмотры
                     {
                         Clean_ПМО();
                         listView_ПМО.Items.Clear();
@@ -95,13 +104,22 @@ namespace SerializerXML
                             listView_ПМО.Items.Add(LVI);
                         }
                     }
-                    break; // ready
-                case 4:
+                    break;
+                case 4: // Здравпункты
                     {
-                        
+                        Clean_здравпункты();
+                        listView_здравпункты.Items.Clear();
+
+                        Здравпункты здравпункты = MySerializer.DeserializerXML_здравпункты();
+                        for (int i = 0; i < здравпункты.здравпункты.Count; i++)
+                        {
+                            ListViewItem LVI = new ListViewItem(здравпункты.здравпункты[i].Идентификатор);
+                            LVI.Tag = здравпункты.здравпункты[i];
+                            listView_здравпункты.Items.Add(LVI);
+                        }
                     }
                     break;
-                case 5:
+                case 5: // Сотрудники
                     {
                         Clean_сотрудники();
                         listView_сотрудники.Items.Clear();
@@ -115,7 +133,7 @@ namespace SerializerXML
                         }
                     }
                     break;
-                case 6:
+                case 6: // ПредварительныеМедОсмотры
                     {
                         Clean_Трудоустройства();
                         listView_трудоустройства.Items.Clear();
