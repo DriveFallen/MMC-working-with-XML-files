@@ -1126,7 +1126,7 @@ namespace SerializerXML
         {
             textBox_должности_идентификатор.Text = string.Empty;
             textBox_должности_наименование.Text = string.Empty;
-            listView_должности.Items.Clear();
+            listView_должности.SelectedItems.Clear();
             richTextBox_должности.Text = string.Empty;
         }
 
@@ -1192,7 +1192,7 @@ namespace SerializerXML
         {
             textBox_здравпункты_идентификатор.Text = string.Empty;
             textBox_здравпункты_наименование.Text = string.Empty;
-            listView_здравпункты.Items.Clear();
+            listView_здравпункты.SelectedItems.Clear();
             richTextBox_здравпункты.Text = string.Empty;
         }
     }

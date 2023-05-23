@@ -230,7 +230,6 @@
             this.button_трудоустройства_add = new System.Windows.Forms.Button();
             this.button_трудоустройства_serialize = new System.Windows.Forms.Button();
             this.richTextBox_трудоустройства = new System.Windows.Forms.RichTextBox();
-            this.button_контрагенты_загрузить = new System.Windows.Forms.Button();
             this.tabPage_Должности = new System.Windows.Forms.TabPage();
             this.tabPage_Здравпункты = new System.Windows.Forms.TabPage();
             this.button_randGUID_должности = new System.Windows.Forms.Button();
@@ -251,6 +250,7 @@
             this.button_здравпункты_add = new System.Windows.Forms.Button();
             this.button_здравпункты_serialize = new System.Windows.Forms.Button();
             this.richTextBox_здравпункты = new System.Windows.Forms.RichTextBox();
+            this.button_контрагенты_загрузить = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage_Контрагенты.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_контрагенты)).BeginInit();
@@ -2545,18 +2545,6 @@
             this.richTextBox_трудоустройства.TabIndex = 126;
             this.richTextBox_трудоустройства.Text = "";
             // 
-            // button_контрагенты_загрузить
-            // 
-            this.button_контрагенты_загрузить.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.button_контрагенты_загрузить.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_контрагенты_загрузить.Location = new System.Drawing.Point(735, 326);
-            this.button_контрагенты_загрузить.Name = "button_контрагенты_загрузить";
-            this.button_контрагенты_загрузить.Size = new System.Drawing.Size(154, 57);
-            this.button_контрагенты_загрузить.TabIndex = 114;
-            this.button_контрагенты_загрузить.Text = "Загрузить список в базу";
-            this.button_контрагенты_загрузить.UseVisualStyleBackColor = false;
-            this.button_контрагенты_загрузить.Click += new System.EventHandler(this.button_контрагенты_загрузить_Click);
-            // 
             // tabPage_Должности
             // 
             this.tabPage_Должности.BackColor = System.Drawing.Color.CadetBlue;
@@ -2786,6 +2774,18 @@
             this.richTextBox_здравпункты.Size = new System.Drawing.Size(684, 788);
             this.richTextBox_здравпункты.TabIndex = 144;
             this.richTextBox_здравпункты.Text = "";
+            // 
+            // button_контрагенты_загрузить
+            // 
+            this.button_контрагенты_загрузить.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.button_контрагенты_загрузить.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_контрагенты_загрузить.Location = new System.Drawing.Point(735, 326);
+            this.button_контрагенты_загрузить.Name = "button_контрагенты_загрузить";
+            this.button_контрагенты_загрузить.Size = new System.Drawing.Size(154, 57);
+            this.button_контрагенты_загрузить.TabIndex = 114;
+            this.button_контрагенты_загрузить.Text = "Загрузить список в базу";
+            this.button_контрагенты_загрузить.UseVisualStyleBackColor = false;
+            this.button_контрагенты_загрузить.Click += new System.EventHandler(this.button_контрагенты_загрузить_Click);
             // 
             // FormMain
             // 
@@ -3027,7 +3027,6 @@
         private System.Windows.Forms.Button button_randGUID_ПМО;
         private System.Windows.Forms.Button button_randGUID_трудоустройства;
         private System.Windows.Forms.Button button_randGUID_контрагенты;
-        private System.Windows.Forms.Button button_контрагенты_загрузить;
         private System.Windows.Forms.TabPage tabPage_Должности;
         private System.Windows.Forms.TabPage tabPage_Здравпункты;
         private System.Windows.Forms.Button button_randGUID_должности;
@@ -3048,6 +3047,7 @@
         private System.Windows.Forms.Button button_здравпункты_add;
         private System.Windows.Forms.Button button_здравпункты_serialize;
         private System.Windows.Forms.RichTextBox richTextBox_здравпункты;
+        private System.Windows.Forms.Button button_контрагенты_загрузить;
     }
 }
 
