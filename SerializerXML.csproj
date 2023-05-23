@@ -57,6 +57,8 @@
     <Compile Include="MySerializer.cs" />
     <Compile Include="XMLClasses\Выгрузка.cs" />
     <Compile Include="XMLClasses\Договора.cs" />
+    <Compile Include="XMLClasses\Должности.cs" />
+    <Compile Include="XMLClasses\Здравпункты.cs" />
     <Compile Include="XMLClasses\Контрагенты.cs" />
     <Compile Include="XMLClasses\ПМО.cs" />
     <Compile Include="XMLClasses\Сотрудники.cs" />

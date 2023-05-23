@@ -86,6 +86,38 @@ public class MySerializer
             return stream.ToString();
         }
     }
+    public static string SerializerXML(Должности должности)
+    {
+        var emptyNamespaces = new XmlSerializerNamespaces(new[] { XmlQualifiedName.Empty });
+        var serializer = new XmlSerializer(должности.GetType());
+        var settings = new XmlWriterSettings();
+        settings.Indent = true;
+        settings.OmitXmlDeclaration = true;
+        settings.NewLineHandling = NewLineHandling.Entitize;
+
+        using (var stream = new StringWriter())
+        using (var writer = XmlWriter.Create(stream, settings))
+        {
+            serializer.Serialize(writer, должности, emptyNamespaces);
+            return stream.ToString();
+        }
+    }
+    public static string SerializerXML(Здравпункты здравпункты)
+    {
+        var emptyNamespaces = new XmlSerializerNamespaces(new[] { XmlQualifiedName.Empty });
+        var serializer = new XmlSerializer(здравпункты.GetType());
+        var settings = new XmlWriterSettings();
+        settings.Indent = true;
+        settings.OmitXmlDeclaration = true;
+        settings.NewLineHandling = NewLineHandling.Entitize;
+
+        using (var stream = new StringWriter())
+        using (var writer = XmlWriter.Create(stream, settings))
+        {
+            serializer.Serialize(writer, здравпункты, emptyNamespaces);
+            return stream.ToString();
+        }
+    }
 
     public static Контрагенты DeserializerXML_контрагенты()
     {
@@ -181,5 +213,43 @@ public class MySerializer
         }
 
         return ПредМО;
+    }
+    public static Должности DeserializerXML_должности()
+    {
+        Должности должности = new Должности();
+
+        try
+        {
+            XmlSerializer serializer = new XmlSerializer(typeof(Должности));
+            using (FileStream stream = new FileStream("Должности.xml", FileMode.OpenOrCreate))
+            {
+                должности = (Должности)serializer.Deserialize(stream);
+            }
+        }
+        catch (System.Exception ex)
+        {
+            MessageBox.Show(ex.Message, "Структура XML файла нарушена!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        return должности;
+    }
+    public static Здравпункты DeserializerXML_здравпункты()
+    {
+        Здравпункты здравпункты = new Здравпункты();
+
+        try
+        {
+            XmlSerializer serializer = new XmlSerializer(typeof(Здравпункты));
+            using (FileStream stream = new FileStream("Здравпункты.xml", FileMode.OpenOrCreate))
+            {
+                здравпункты = (Здравпункты)serializer.Deserialize(stream);
+            }
+        }
+        catch (System.Exception ex)
+        {
+            MessageBox.Show(ex.Message, "Структура XML файла нарушена!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        return здравпункты;
     }
 }

@@ -63,20 +63,6 @@ namespace SerializerXML
                     break; // ready
                 case 1:
                     {
-                        Clean_сотрудники();
-                        listView_сотрудники.Items.Clear();
-
-                        Сотрудники сотрудники = MySerializer.DeserializerXML_сотрудники();
-                        for (int i = 0; i < сотрудники.сотрудники.Count; i++)
-                        {
-                            ListViewItem LVI = new ListViewItem(сотрудники.сотрудники[i].Идентификатор);
-                            LVI.Tag = сотрудники.сотрудники[i];
-                            listView_сотрудники.Items.Add(LVI);
-                        }
-                    }
-                    break; // ready
-                case 2:
-                    {
                         Clean_договора();
                         listView_договора.Items.Clear();
 
@@ -87,6 +73,11 @@ namespace SerializerXML
                             LVI.Tag = договора.договора[i];
                             listView_договора.Items.Add(LVI);
                         }
+                    }
+                    break; // ready
+                case 2:
+                    {
+                        
                     }
                     break; // ready
                 case 3:
@@ -106,6 +97,25 @@ namespace SerializerXML
                     }
                     break; // ready
                 case 4:
+                    {
+                        
+                    }
+                    break;
+                case 5:
+                    {
+                        Clean_сотрудники();
+                        listView_сотрудники.Items.Clear();
+
+                        Сотрудники сотрудники = MySerializer.DeserializerXML_сотрудники();
+                        for (int i = 0; i < сотрудники.сотрудники.Count; i++)
+                        {
+                            ListViewItem LVI = new ListViewItem(сотрудники.сотрудники[i].Идентификатор);
+                            LVI.Tag = сотрудники.сотрудники[i];
+                            listView_сотрудники.Items.Add(LVI);
+                        }
+                    }
+                    break;
+                case 6:
                     {
                         Clean_Трудоустройства();
                         listView_трудоустройства.Items.Clear();
@@ -292,6 +302,10 @@ namespace SerializerXML
             }
 
             richTextBox_контрагенты.Text = MySerializer.SerializerXML(контрагенты);
+        }
+        private void button_контрагенты_загрузить_Click(object sender, EventArgs e)
+        {
+
         }
         private void button_контрагенты_подразделения_randGUID_Click(object sender, EventArgs e) // Рандомайзер GUID для динамических элементов
         {
@@ -1030,6 +1044,138 @@ namespace SerializerXML
             numericUpDown_трудоустройства_факторы.Value = 0;
             richTextBox_трудоустройства.Text = string.Empty;
             listView_трудоустройства.SelectedItems.Clear();
+        }
+
+        //Блок Должности
+        //
+        private void listView_должности_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listView_должности.SelectedItems.Count == 1)
+            {
+                Должность должность = (Должность)listView_должности.SelectedItems[0].Tag;
+                textBox_должности_идентификатор.Text = должность.Идентификатор;
+                textBox_должности_наименование.Text = должность.Наименование;
+
+            }
+            else if (listView_должности.SelectedItems.Count == 0)
+            {
+                Clean_должности();
+            }
+        }
+        private void button_randGUID_должности_Click(object sender, EventArgs e)
+        {
+            textBox_должности_идентификатор.Text = Guid.NewGuid().ToString();
+        }
+        private void button_должности_add_Click(object sender, EventArgs e)
+        {
+            Должность должность = new Должность(textBox_должности_идентификатор.Text, textBox_должности_наименование.Text);
+
+            if (listView_должности.SelectedItems.Count == 1 && textBox_должности_идентификатор.Text == listView_должности.SelectedItems[0].Text)
+            {
+                listView_должности.SelectedItems[0].BackColor = Color.Khaki;
+                listView_должности.SelectedItems[0].Tag = должность;
+            }
+            else
+            {
+                ListViewItem LVI = new ListViewItem(должность.Идентификатор);
+                LVI.Tag = должность;
+                listView_должности.Items.Add(LVI);
+            }
+
+            Clean_должности();
+        }
+        private void button_должности_serialize_Click(object sender, EventArgs e)
+        {
+            Должности должности = new Должности();
+
+            foreach (ListViewItem item in listView_должности.Items)
+            {
+                if (item.Tag != null)
+                {
+                    должности.должности.Add((Должность)item.Tag);
+                }
+            }
+
+            using (StreamWriter sw = new StreamWriter(new FileStream("Должности.xml", FileMode.Create)))
+            {
+                sw.Write(MySerializer.SerializerXML(должности));
+                sw.Close();
+            }
+
+            richTextBox_должности.Text = MySerializer.SerializerXML(должности);
+        }
+        private void Clean_должности()
+        {
+            textBox_должности_идентификатор.Text = string.Empty;
+            textBox_должности_наименование.Text = string.Empty;
+            listView_должности.Items.Clear();
+            richTextBox_должности.Text = string.Empty;
+        }
+
+        //Блок Здравпункты
+        //
+        private void listView_здравпункты_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listView_здравпункты.SelectedItems.Count == 1)
+            {
+                Здравпункт здравпункт = (Здравпункт)listView_здравпункты.SelectedItems[0].Tag;
+                textBox_здравпункты_идентификатор.Text = здравпункт.Идентификатор;
+                textBox_здравпункты_наименование.Text = здравпункт.Наименование;
+
+            }
+            else if (listView_здравпункты.SelectedItems.Count == 0)
+            {
+                Clean_здравпункты();
+            }
+        }
+        private void button_randGUID_здравпункты_Click(object sender, EventArgs e)
+        {
+            textBox_здравпункты_идентификатор.Text = Guid.NewGuid().ToString();
+        }
+        private void button_здравпункты_add_Click(object sender, EventArgs e)
+        {
+            Здравпункт здравпункт = new Здравпункт(textBox_здравпункты_идентификатор.Text, textBox_здравпункты_наименование.Text);
+
+            if (listView_здравпункты.SelectedItems.Count == 1 && textBox_здравпункты_идентификатор.Text == listView_здравпункты.SelectedItems[0].Text)
+            {
+                listView_здравпункты.SelectedItems[0].BackColor = Color.Khaki;
+                listView_здравпункты.SelectedItems[0].Tag = здравпункт;
+            }
+            else
+            {
+                ListViewItem LVI = new ListViewItem(здравпункт.Идентификатор);
+                LVI.Tag = здравпункт;
+                listView_здравпункты.Items.Add(LVI);
+            }
+
+            Clean_здравпункты();
+        }
+        private void button_здравпункты_serialize_Click(object sender, EventArgs e)
+        {
+            Здравпункты здравпункты = new Здравпункты();
+
+            foreach (ListViewItem item in listView_здравпункты.Items)
+            {
+                if (item.Tag != null)
+                {
+                    здравпункты.здравпункты.Add((Здравпункт)item.Tag);
+                }
+            }
+
+            using (StreamWriter sw = new StreamWriter(new FileStream("Здравпункты.xml", FileMode.Create)))
+            {
+                sw.Write(MySerializer.SerializerXML(здравпункты));
+                sw.Close();
+            }
+
+            richTextBox_здравпункты.Text = MySerializer.SerializerXML(здравпункты);
+        }
+        private void Clean_здравпункты()
+        {
+            textBox_здравпункты_идентификатор.Text = string.Empty;
+            textBox_здравпункты_наименование.Text = string.Empty;
+            listView_здравпункты.Items.Clear();
+            richTextBox_здравпункты.Text = string.Empty;
         }
     }
 }

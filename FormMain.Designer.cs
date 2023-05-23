@@ -230,6 +230,27 @@
             this.button_трудоустройства_add = new System.Windows.Forms.Button();
             this.button_трудоустройства_serialize = new System.Windows.Forms.Button();
             this.richTextBox_трудоустройства = new System.Windows.Forms.RichTextBox();
+            this.button_контрагенты_загрузить = new System.Windows.Forms.Button();
+            this.tabPage_Должности = new System.Windows.Forms.TabPage();
+            this.tabPage_Здравпункты = new System.Windows.Forms.TabPage();
+            this.button_randGUID_должности = new System.Windows.Forms.Button();
+            this.listView_должности = new System.Windows.Forms.ListView();
+            this.label85 = new System.Windows.Forms.Label();
+            this.textBox_должности_идентификатор = new System.Windows.Forms.TextBox();
+            this.textBox_должности_наименование = new System.Windows.Forms.TextBox();
+            this.label95 = new System.Windows.Forms.Label();
+            this.button_должности_add = new System.Windows.Forms.Button();
+            this.button_должности_serialize = new System.Windows.Forms.Button();
+            this.richTextBox_должности = new System.Windows.Forms.RichTextBox();
+            this.button_randGUID_здравпункты = new System.Windows.Forms.Button();
+            this.listView_здравпункты = new System.Windows.Forms.ListView();
+            this.label86 = new System.Windows.Forms.Label();
+            this.textBox_здравпункты_идентификатор = new System.Windows.Forms.TextBox();
+            this.textBox_здравпункты_наименование = new System.Windows.Forms.TextBox();
+            this.label87 = new System.Windows.Forms.Label();
+            this.button_здравпункты_add = new System.Windows.Forms.Button();
+            this.button_здравпункты_serialize = new System.Windows.Forms.Button();
+            this.richTextBox_здравпункты = new System.Windows.Forms.RichTextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage_Контрагенты.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_контрагенты)).BeginInit();
@@ -242,6 +263,8 @@
             this.tabPage_Трудоустройства.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_трудоустройства_факторы)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_трудоустройства_условия)).BeginInit();
+            this.tabPage_Должности.SuspendLayout();
+            this.tabPage_Здравпункты.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -656,9 +679,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage_Контрагенты);
-            this.tabControl1.Controls.Add(this.tabPage_Сотрудники);
             this.tabControl1.Controls.Add(this.tabPage_Договора);
+            this.tabControl1.Controls.Add(this.tabPage_Должности);
             this.tabControl1.Controls.Add(this.tabPage_ПМО);
+            this.tabControl1.Controls.Add(this.tabPage_Здравпункты);
+            this.tabControl1.Controls.Add(this.tabPage_Сотрудники);
             this.tabControl1.Controls.Add(this.tabPage_Трудоустройства);
             this.tabControl1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
@@ -671,6 +696,7 @@
             // tabPage_Контрагенты
             // 
             this.tabPage_Контрагенты.BackColor = System.Drawing.Color.CadetBlue;
+            this.tabPage_Контрагенты.Controls.Add(this.button_контрагенты_загрузить);
             this.tabPage_Контрагенты.Controls.Add(this.button_randGUID_контрагенты);
             this.tabPage_Контрагенты.Controls.Add(this.numericUpDown_контрагенты);
             this.tabPage_Контрагенты.Controls.Add(this.flowLayoutPanel_контрагенты);
@@ -2519,6 +2545,248 @@
             this.richTextBox_трудоустройства.TabIndex = 126;
             this.richTextBox_трудоустройства.Text = "";
             // 
+            // button_контрагенты_загрузить
+            // 
+            this.button_контрагенты_загрузить.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.button_контрагенты_загрузить.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_контрагенты_загрузить.Location = new System.Drawing.Point(735, 326);
+            this.button_контрагенты_загрузить.Name = "button_контрагенты_загрузить";
+            this.button_контрагенты_загрузить.Size = new System.Drawing.Size(154, 57);
+            this.button_контрагенты_загрузить.TabIndex = 114;
+            this.button_контрагенты_загрузить.Text = "Загрузить список в базу";
+            this.button_контрагенты_загрузить.UseVisualStyleBackColor = false;
+            this.button_контрагенты_загрузить.Click += new System.EventHandler(this.button_контрагенты_загрузить_Click);
+            // 
+            // tabPage_Должности
+            // 
+            this.tabPage_Должности.BackColor = System.Drawing.Color.CadetBlue;
+            this.tabPage_Должности.Controls.Add(this.button_randGUID_должности);
+            this.tabPage_Должности.Controls.Add(this.listView_должности);
+            this.tabPage_Должности.Controls.Add(this.label85);
+            this.tabPage_Должности.Controls.Add(this.textBox_должности_идентификатор);
+            this.tabPage_Должности.Controls.Add(this.textBox_должности_наименование);
+            this.tabPage_Должности.Controls.Add(this.label95);
+            this.tabPage_Должности.Controls.Add(this.button_должности_add);
+            this.tabPage_Должности.Controls.Add(this.button_должности_serialize);
+            this.tabPage_Должности.Controls.Add(this.richTextBox_должности);
+            this.tabPage_Должности.Location = new System.Drawing.Point(4, 30);
+            this.tabPage_Должности.Name = "tabPage_Должности";
+            this.tabPage_Должности.Size = new System.Drawing.Size(1551, 811);
+            this.tabPage_Должности.TabIndex = 5;
+            this.tabPage_Должности.Text = "Должности";
+            // 
+            // tabPage_Здравпункты
+            // 
+            this.tabPage_Здравпункты.BackColor = System.Drawing.Color.CadetBlue;
+            this.tabPage_Здравпункты.Controls.Add(this.button_randGUID_здравпункты);
+            this.tabPage_Здравпункты.Controls.Add(this.listView_здравпункты);
+            this.tabPage_Здравпункты.Controls.Add(this.label86);
+            this.tabPage_Здравпункты.Controls.Add(this.textBox_здравпункты_идентификатор);
+            this.tabPage_Здравпункты.Controls.Add(this.textBox_здравпункты_наименование);
+            this.tabPage_Здравпункты.Controls.Add(this.label87);
+            this.tabPage_Здравпункты.Controls.Add(this.button_здравпункты_add);
+            this.tabPage_Здравпункты.Controls.Add(this.button_здравпункты_serialize);
+            this.tabPage_Здравпункты.Controls.Add(this.richTextBox_здравпункты);
+            this.tabPage_Здравпункты.Location = new System.Drawing.Point(4, 30);
+            this.tabPage_Здравпункты.Name = "tabPage_Здравпункты";
+            this.tabPage_Здравпункты.Size = new System.Drawing.Size(1551, 811);
+            this.tabPage_Здравпункты.TabIndex = 6;
+            this.tabPage_Здравпункты.Text = "Здравпункты";
+            // 
+            // button_randGUID_должности
+            // 
+            this.button_randGUID_должности.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_randGUID_должности.Location = new System.Drawing.Point(527, 18);
+            this.button_randGUID_должности.Name = "button_randGUID_должности";
+            this.button_randGUID_должности.Size = new System.Drawing.Size(75, 23);
+            this.button_randGUID_должности.TabIndex = 139;
+            this.button_randGUID_должности.Text = "Генерация";
+            this.button_randGUID_должности.UseVisualStyleBackColor = true;
+            this.button_randGUID_должности.Click += new System.EventHandler(this.button_randGUID_должности_Click);
+            // 
+            // listView_должности
+            // 
+            this.listView_должности.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.listView_должности.HideSelection = false;
+            this.listView_должности.Location = new System.Drawing.Point(735, 13);
+            this.listView_должности.Name = "listView_должности";
+            this.listView_должности.Size = new System.Drawing.Size(154, 209);
+            this.listView_должности.TabIndex = 138;
+            this.listView_должности.UseCompatibleStateImageBehavior = false;
+            this.listView_должности.View = System.Windows.Forms.View.List;
+            this.listView_должности.SelectedIndexChanged += new System.EventHandler(this.listView_должности_SelectedIndexChanged);
+            // 
+            // label85
+            // 
+            this.label85.AutoSize = true;
+            this.label85.Location = new System.Drawing.Point(103, 44);
+            this.label85.Name = "label85";
+            this.label85.Size = new System.Drawing.Size(126, 21);
+            this.label85.TabIndex = 124;
+            this.label85.Text = "Наименование";
+            // 
+            // textBox_должности_идентификатор
+            // 
+            this.textBox_должности_идентификатор.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.textBox_должности_идентификатор.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_должности_идентификатор.Location = new System.Drawing.Point(239, 13);
+            this.textBox_должности_идентификатор.Name = "textBox_должности_идентификатор";
+            this.textBox_должности_идентификатор.Size = new System.Drawing.Size(282, 26);
+            this.textBox_должности_идентификатор.TabIndex = 113;
+            this.textBox_должности_идентификатор.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox_должности_наименование
+            // 
+            this.textBox_должности_наименование.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.textBox_должности_наименование.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_должности_наименование.Location = new System.Drawing.Point(239, 39);
+            this.textBox_должности_наименование.Name = "textBox_должности_наименование";
+            this.textBox_должности_наименование.Size = new System.Drawing.Size(282, 26);
+            this.textBox_должности_наименование.TabIndex = 114;
+            this.textBox_должности_наименование.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label95
+            // 
+            this.label95.AutoSize = true;
+            this.label95.Location = new System.Drawing.Point(93, 18);
+            this.label95.Name = "label95";
+            this.label95.Size = new System.Drawing.Size(136, 21);
+            this.label95.TabIndex = 128;
+            this.label95.Text = "Идентификатор";
+            // 
+            // button_должности_add
+            // 
+            this.button_должности_add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.button_должности_add.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_должности_add.Location = new System.Drawing.Point(735, 229);
+            this.button_должности_add.Name = "button_должности_add";
+            this.button_должности_add.Size = new System.Drawing.Size(154, 32);
+            this.button_должности_add.TabIndex = 125;
+            this.button_должности_add.Text = "Добавить в список";
+            this.button_должности_add.UseVisualStyleBackColor = false;
+            this.button_должности_add.Click += new System.EventHandler(this.button_должности_add_Click);
+            // 
+            // button_должности_serialize
+            // 
+            this.button_должности_serialize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.button_должности_serialize.Location = new System.Drawing.Point(735, 267);
+            this.button_должности_serialize.Name = "button_должности_serialize";
+            this.button_должности_serialize.Size = new System.Drawing.Size(154, 57);
+            this.button_должности_serialize.TabIndex = 127;
+            this.button_должности_serialize.Text = "Сериализовать список";
+            this.button_должности_serialize.UseVisualStyleBackColor = false;
+            this.button_должности_serialize.Click += new System.EventHandler(this.button_должности_serialize_Click);
+            // 
+            // richTextBox_должности
+            // 
+            this.richTextBox_должности.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.richTextBox_должности.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.richTextBox_должности.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.richTextBox_должности.Location = new System.Drawing.Point(895, 11);
+            this.richTextBox_должности.Name = "richTextBox_должности";
+            this.richTextBox_должности.Size = new System.Drawing.Size(650, 788);
+            this.richTextBox_должности.TabIndex = 126;
+            this.richTextBox_должности.Text = "";
+            // 
+            // button_randGUID_здравпункты
+            // 
+            this.button_randGUID_здравпункты.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_randGUID_здравпункты.Location = new System.Drawing.Point(483, 18);
+            this.button_randGUID_здравпункты.Name = "button_randGUID_здравпункты";
+            this.button_randGUID_здравпункты.Size = new System.Drawing.Size(75, 23);
+            this.button_randGUID_здравпункты.TabIndex = 148;
+            this.button_randGUID_здравпункты.Text = "Генерация";
+            this.button_randGUID_здравпункты.UseVisualStyleBackColor = true;
+            this.button_randGUID_здравпункты.Click += new System.EventHandler(this.button_randGUID_здравпункты_Click);
+            // 
+            // listView_здравпункты
+            // 
+            this.listView_здравпункты.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.listView_здравпункты.HideSelection = false;
+            this.listView_здравпункты.Location = new System.Drawing.Point(691, 13);
+            this.listView_здравпункты.Name = "listView_здравпункты";
+            this.listView_здравпункты.Size = new System.Drawing.Size(154, 209);
+            this.listView_здравпункты.TabIndex = 147;
+            this.listView_здравпункты.UseCompatibleStateImageBehavior = false;
+            this.listView_здравпункты.View = System.Windows.Forms.View.List;
+            this.listView_здравпункты.SelectedIndexChanged += new System.EventHandler(this.listView_здравпункты_SelectedIndexChanged);
+            // 
+            // label86
+            // 
+            this.label86.AutoSize = true;
+            this.label86.Location = new System.Drawing.Point(59, 44);
+            this.label86.Name = "label86";
+            this.label86.Size = new System.Drawing.Size(126, 21);
+            this.label86.TabIndex = 142;
+            this.label86.Text = "Наименование";
+            // 
+            // textBox_здравпункты_идентификатор
+            // 
+            this.textBox_здравпункты_идентификатор.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.textBox_здравпункты_идентификатор.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_здравпункты_идентификатор.Location = new System.Drawing.Point(195, 13);
+            this.textBox_здравпункты_идентификатор.Name = "textBox_здравпункты_идентификатор";
+            this.textBox_здравпункты_идентификатор.Size = new System.Drawing.Size(282, 26);
+            this.textBox_здравпункты_идентификатор.TabIndex = 140;
+            this.textBox_здравпункты_идентификатор.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox_здравпункты_наименование
+            // 
+            this.textBox_здравпункты_наименование.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.textBox_здравпункты_наименование.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_здравпункты_наименование.Location = new System.Drawing.Point(195, 39);
+            this.textBox_здравпункты_наименование.Name = "textBox_здравпункты_наименование";
+            this.textBox_здравпункты_наименование.Size = new System.Drawing.Size(282, 26);
+            this.textBox_здравпункты_наименование.TabIndex = 141;
+            this.textBox_здравпункты_наименование.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label87
+            // 
+            this.label87.AutoSize = true;
+            this.label87.Location = new System.Drawing.Point(49, 18);
+            this.label87.Name = "label87";
+            this.label87.Size = new System.Drawing.Size(136, 21);
+            this.label87.TabIndex = 146;
+            this.label87.Text = "Идентификатор";
+            // 
+            // button_здравпункты_add
+            // 
+            this.button_здравпункты_add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.button_здравпункты_add.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_здравпункты_add.Location = new System.Drawing.Point(691, 229);
+            this.button_здравпункты_add.Name = "button_здравпункты_add";
+            this.button_здравпункты_add.Size = new System.Drawing.Size(154, 32);
+            this.button_здравпункты_add.TabIndex = 143;
+            this.button_здравпункты_add.Text = "Добавить в список";
+            this.button_здравпункты_add.UseVisualStyleBackColor = false;
+            this.button_здравпункты_add.Click += new System.EventHandler(this.button_здравпункты_add_Click);
+            // 
+            // button_здравпункты_serialize
+            // 
+            this.button_здравпункты_serialize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.button_здравпункты_serialize.Location = new System.Drawing.Point(691, 267);
+            this.button_здравпункты_serialize.Name = "button_здравпункты_serialize";
+            this.button_здравпункты_serialize.Size = new System.Drawing.Size(154, 57);
+            this.button_здравпункты_serialize.TabIndex = 145;
+            this.button_здравпункты_serialize.Text = "Сериализовать список";
+            this.button_здравпункты_serialize.UseVisualStyleBackColor = false;
+            this.button_здравпункты_serialize.Click += new System.EventHandler(this.button_здравпункты_serialize_Click);
+            // 
+            // richTextBox_здравпункты
+            // 
+            this.richTextBox_здравпункты.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.richTextBox_здравпункты.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.richTextBox_здравпункты.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.richTextBox_здравпункты.Location = new System.Drawing.Point(851, 11);
+            this.richTextBox_здравпункты.Name = "richTextBox_здравпункты";
+            this.richTextBox_здравпункты.Size = new System.Drawing.Size(684, 788);
+            this.richTextBox_здравпункты.TabIndex = 144;
+            this.richTextBox_здравпункты.Text = "";
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2547,6 +2815,10 @@
             this.tabPage_Трудоустройства.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_трудоустройства_факторы)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_трудоустройства_условия)).EndInit();
+            this.tabPage_Должности.ResumeLayout(false);
+            this.tabPage_Должности.PerformLayout();
+            this.tabPage_Здравпункты.ResumeLayout(false);
+            this.tabPage_Здравпункты.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2755,6 +3027,27 @@
         private System.Windows.Forms.Button button_randGUID_ПМО;
         private System.Windows.Forms.Button button_randGUID_трудоустройства;
         private System.Windows.Forms.Button button_randGUID_контрагенты;
+        private System.Windows.Forms.Button button_контрагенты_загрузить;
+        private System.Windows.Forms.TabPage tabPage_Должности;
+        private System.Windows.Forms.TabPage tabPage_Здравпункты;
+        private System.Windows.Forms.Button button_randGUID_должности;
+        private System.Windows.Forms.ListView listView_должности;
+        private System.Windows.Forms.Label label85;
+        private System.Windows.Forms.TextBox textBox_должности_идентификатор;
+        private System.Windows.Forms.TextBox textBox_должности_наименование;
+        private System.Windows.Forms.Label label95;
+        private System.Windows.Forms.Button button_должности_add;
+        private System.Windows.Forms.Button button_должности_serialize;
+        private System.Windows.Forms.RichTextBox richTextBox_должности;
+        private System.Windows.Forms.Button button_randGUID_здравпункты;
+        private System.Windows.Forms.ListView listView_здравпункты;
+        private System.Windows.Forms.Label label86;
+        private System.Windows.Forms.TextBox textBox_здравпункты_идентификатор;
+        private System.Windows.Forms.TextBox textBox_здравпункты_наименование;
+        private System.Windows.Forms.Label label87;
+        private System.Windows.Forms.Button button_здравпункты_add;
+        private System.Windows.Forms.Button button_здравпункты_serialize;
+        private System.Windows.Forms.RichTextBox richTextBox_здравпункты;
     }
 }
 
