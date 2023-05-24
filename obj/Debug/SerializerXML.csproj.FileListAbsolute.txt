@@ -20,3 +20,4 @@ C:\Users\Vlad\Desktop\MMC project\obj\Debug\SerializerXML.csproj.GenerateResourc
 C:\Users\Vlad\Desktop\MMC project\obj\Debug\SerializerXML.csproj.CoreCompileInputs.cache
 C:\Users\Vlad\Desktop\MMC project\obj\Debug\SerializerXML.exe
 C:\Users\Vlad\Desktop\MMC project\obj\Debug\SerializerXML.pdb
+C:\Users\Vlad\Desktop\MMC project\obj\Debug\SerializerXML.csproj.ResolveComReference.cache

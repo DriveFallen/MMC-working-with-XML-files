@@ -70,6 +70,7 @@
             this.listView_договора = new System.Windows.Forms.ListView();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage_Контрагенты = new System.Windows.Forms.TabPage();
+            this.button_контрагенты_загрузить = new System.Windows.Forms.Button();
             this.button_randGUID_контрагенты = new System.Windows.Forms.Button();
             this.numericUpDown_контрагенты = new System.Windows.Forms.NumericUpDown();
             this.flowLayoutPanel_контрагенты = new System.Windows.Forms.FlowLayoutPanel();
@@ -96,38 +97,20 @@
             this.button_контрагенты_add = new System.Windows.Forms.Button();
             this.button_контрагенты_serialize = new System.Windows.Forms.Button();
             this.richTextBox_контрагенты = new System.Windows.Forms.RichTextBox();
-            this.tabPage_Сотрудники = new System.Windows.Forms.TabPage();
-            this.button_randGUID_сотрудники = new System.Windows.Forms.Button();
-            this.listView_сотрудники = new System.Windows.Forms.ListView();
-            this.label20 = new System.Windows.Forms.Label();
-            this.textBox_сотрудники_идентификатор = new System.Windows.Forms.TextBox();
-            this.textBox_сотрудники_Уид = new System.Windows.Forms.TextBox();
-            this.textBox_сотрудники_снилс = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.textBox_сотрудники_пол = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.textBox_сотрудники_отчество = new System.Windows.Forms.TextBox();
-            this.textBox_сотрудники_имя = new System.Windows.Forms.TextBox();
-            this.textBox_сотрудники_фамилия = new System.Windows.Forms.TextBox();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label39 = new System.Windows.Forms.Label();
-            this.textBox_сотрудники_ИдентификаторДолжности = new System.Windows.Forms.TextBox();
-            this.label40 = new System.Windows.Forms.Label();
-            this.textBox_сотрудники_КодПодразделения = new System.Windows.Forms.TextBox();
-            this.label41 = new System.Windows.Forms.Label();
-            this.label42 = new System.Windows.Forms.Label();
-            this.label43 = new System.Windows.Forms.Label();
-            this.textBox_сотрудники_ДатаНачалаРаботы = new System.Windows.Forms.TextBox();
-            this.label44 = new System.Windows.Forms.Label();
-            this.textBox_сотрудники_ДатаРождения = new System.Windows.Forms.TextBox();
-            this.label45 = new System.Windows.Forms.Label();
-            this.button_сотрудники_add = new System.Windows.Forms.Button();
-            this.button_сотрудники_serialize = new System.Windows.Forms.Button();
-            this.richTextBox_сотрудники = new System.Windows.Forms.RichTextBox();
             this.tabPage_Договора = new System.Windows.Forms.TabPage();
             this.button_randGUID_договора = new System.Windows.Forms.Button();
             this.flowLayoutPanel_договора = new System.Windows.Forms.FlowLayoutPanel();
             this.numericUpDown_договора = new System.Windows.Forms.NumericUpDown();
+            this.tabPage_Должности = new System.Windows.Forms.TabPage();
+            this.button_randGUID_должности = new System.Windows.Forms.Button();
+            this.listView_должности = new System.Windows.Forms.ListView();
+            this.label85 = new System.Windows.Forms.Label();
+            this.textBox_должности_идентификатор = new System.Windows.Forms.TextBox();
+            this.textBox_должности_наименование = new System.Windows.Forms.TextBox();
+            this.label95 = new System.Windows.Forms.Label();
+            this.button_должности_add = new System.Windows.Forms.Button();
+            this.button_должности_serialize = new System.Windows.Forms.Button();
+            this.richTextBox_должности = new System.Windows.Forms.RichTextBox();
             this.tabPage_ПМО = new System.Windows.Forms.TabPage();
             this.button_randGUID_ПМО = new System.Windows.Forms.Button();
             this.numericUpDown_ПМО_факторы = new System.Windows.Forms.NumericUpDown();
@@ -179,6 +162,44 @@
             this.button_ПМО_add = new System.Windows.Forms.Button();
             this.button_ПМО_serialise = new System.Windows.Forms.Button();
             this.richTextBox_ПМО = new System.Windows.Forms.RichTextBox();
+            this.tabPage_Здравпункты = new System.Windows.Forms.TabPage();
+            this.button_randGUID_здравпункты = new System.Windows.Forms.Button();
+            this.listView_здравпункты = new System.Windows.Forms.ListView();
+            this.label86 = new System.Windows.Forms.Label();
+            this.textBox_здравпункты_идентификатор = new System.Windows.Forms.TextBox();
+            this.textBox_здравпункты_наименование = new System.Windows.Forms.TextBox();
+            this.label87 = new System.Windows.Forms.Label();
+            this.button_здравпункты_add = new System.Windows.Forms.Button();
+            this.button_здравпункты_serialize = new System.Windows.Forms.Button();
+            this.richTextBox_здравпункты = new System.Windows.Forms.RichTextBox();
+            this.tabPage_Сотрудники = new System.Windows.Forms.TabPage();
+            this.button_randGUID_сотрудники = new System.Windows.Forms.Button();
+            this.listView_сотрудники = new System.Windows.Forms.ListView();
+            this.label20 = new System.Windows.Forms.Label();
+            this.textBox_сотрудники_идентификатор = new System.Windows.Forms.TextBox();
+            this.textBox_сотрудники_Уид = new System.Windows.Forms.TextBox();
+            this.textBox_сотрудники_снилс = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.textBox_сотрудники_пол = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.textBox_сотрудники_отчество = new System.Windows.Forms.TextBox();
+            this.textBox_сотрудники_имя = new System.Windows.Forms.TextBox();
+            this.textBox_сотрудники_фамилия = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.textBox_сотрудники_ИдентификаторДолжности = new System.Windows.Forms.TextBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.textBox_сотрудники_КодПодразделения = new System.Windows.Forms.TextBox();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.textBox_сотрудники_ДатаНачалаРаботы = new System.Windows.Forms.TextBox();
+            this.label44 = new System.Windows.Forms.Label();
+            this.textBox_сотрудники_ДатаРождения = new System.Windows.Forms.TextBox();
+            this.label45 = new System.Windows.Forms.Label();
+            this.button_сотрудники_add = new System.Windows.Forms.Button();
+            this.button_сотрудники_serialize = new System.Windows.Forms.Button();
+            this.richTextBox_сотрудники = new System.Windows.Forms.RichTextBox();
             this.tabPage_Трудоустройства = new System.Windows.Forms.TabPage();
             this.button_randGUID_трудоустройства = new System.Windows.Forms.Button();
             this.numericUpDown_трудоустройства_факторы = new System.Windows.Forms.NumericUpDown();
@@ -230,41 +251,31 @@
             this.button_трудоустройства_add = new System.Windows.Forms.Button();
             this.button_трудоустройства_serialize = new System.Windows.Forms.Button();
             this.richTextBox_трудоустройства = new System.Windows.Forms.RichTextBox();
-            this.tabPage_Должности = new System.Windows.Forms.TabPage();
-            this.tabPage_Здравпункты = new System.Windows.Forms.TabPage();
-            this.button_randGUID_должности = new System.Windows.Forms.Button();
-            this.listView_должности = new System.Windows.Forms.ListView();
-            this.label85 = new System.Windows.Forms.Label();
-            this.textBox_должности_идентификатор = new System.Windows.Forms.TextBox();
-            this.textBox_должности_наименование = new System.Windows.Forms.TextBox();
-            this.label95 = new System.Windows.Forms.Label();
-            this.button_должности_add = new System.Windows.Forms.Button();
-            this.button_должности_serialize = new System.Windows.Forms.Button();
-            this.richTextBox_должности = new System.Windows.Forms.RichTextBox();
-            this.button_randGUID_здравпункты = new System.Windows.Forms.Button();
-            this.listView_здравпункты = new System.Windows.Forms.ListView();
-            this.label86 = new System.Windows.Forms.Label();
-            this.textBox_здравпункты_идентификатор = new System.Windows.Forms.TextBox();
-            this.textBox_здравпункты_наименование = new System.Windows.Forms.TextBox();
-            this.label87 = new System.Windows.Forms.Label();
-            this.button_здравпункты_add = new System.Windows.Forms.Button();
-            this.button_здравпункты_serialize = new System.Windows.Forms.Button();
-            this.richTextBox_здравпункты = new System.Windows.Forms.RichTextBox();
-            this.button_контрагенты_загрузить = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.загрузитьЛистExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.контрагентыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.договораToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.должностиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.предварительныеМОToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.здравпунктыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.сотрудникиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.трудоустройстваToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
             this.tabPage_Контрагенты.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_контрагенты)).BeginInit();
-            this.tabPage_Сотрудники.SuspendLayout();
             this.tabPage_Договора.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_договора)).BeginInit();
+            this.tabPage_Должности.SuspendLayout();
             this.tabPage_ПМО.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_ПМО_факторы)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_ПМО_условия)).BeginInit();
+            this.tabPage_Здравпункты.SuspendLayout();
+            this.tabPage_Сотрудники.SuspendLayout();
             this.tabPage_Трудоустройства.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_трудоустройства_факторы)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_трудоустройства_условия)).BeginInit();
-            this.tabPage_Должности.SuspendLayout();
-            this.tabPage_Здравпункты.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -471,7 +482,7 @@
             this.richTextBox_договора.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.richTextBox_договора.Location = new System.Drawing.Point(893, 21);
             this.richTextBox_договора.Name = "richTextBox_договора";
-            this.richTextBox_договора.Size = new System.Drawing.Size(650, 784);
+            this.richTextBox_договора.Size = new System.Drawing.Size(573, 736);
             this.richTextBox_договора.TabIndex = 19;
             this.richTextBox_договора.Text = "";
             // 
@@ -686,10 +697,10 @@
             this.tabControl1.Controls.Add(this.tabPage_Сотрудники);
             this.tabControl1.Controls.Add(this.tabPage_Трудоустройства);
             this.tabControl1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tabControl1.Location = new System.Drawing.Point(12, 12);
+            this.tabControl1.Location = new System.Drawing.Point(12, 60);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1559, 845);
+            this.tabControl1.Size = new System.Drawing.Size(1480, 797);
             this.tabControl1.TabIndex = 41;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
@@ -726,9 +737,21 @@
             this.tabPage_Контрагенты.Location = new System.Drawing.Point(4, 30);
             this.tabPage_Контрагенты.Name = "tabPage_Контрагенты";
             this.tabPage_Контрагенты.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_Контрагенты.Size = new System.Drawing.Size(1551, 811);
+            this.tabPage_Контрагенты.Size = new System.Drawing.Size(1472, 763);
             this.tabPage_Контрагенты.TabIndex = 1;
             this.tabPage_Контрагенты.Text = "Контрагенты";
+            // 
+            // button_контрагенты_загрузить
+            // 
+            this.button_контрагенты_загрузить.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.button_контрагенты_загрузить.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_контрагенты_загрузить.Location = new System.Drawing.Point(735, 326);
+            this.button_контрагенты_загрузить.Name = "button_контрагенты_загрузить";
+            this.button_контрагенты_загрузить.Size = new System.Drawing.Size(154, 57);
+            this.button_контрагенты_загрузить.TabIndex = 114;
+            this.button_контрагенты_загрузить.Text = "Загрузить список в базу";
+            this.button_контрагенты_загрузить.UseVisualStyleBackColor = false;
+            this.button_контрагенты_загрузить.Click += new System.EventHandler(this.button_контрагенты_загрузить_Click);
             // 
             // button_randGUID_контрагенты
             // 
@@ -764,7 +787,7 @@
             this.flowLayoutPanel_контрагенты.AutoScroll = true;
             this.flowLayoutPanel_контрагенты.Location = new System.Drawing.Point(15, 305);
             this.flowLayoutPanel_контрагенты.Name = "flowLayoutPanel_контрагенты";
-            this.flowLayoutPanel_контрагенты.Size = new System.Drawing.Size(714, 499);
+            this.flowLayoutPanel_контрагенты.Size = new System.Drawing.Size(714, 451);
             this.flowLayoutPanel_контрагенты.TabIndex = 83;
             // 
             // listView_контрагенты
@@ -1001,313 +1024,9 @@
             this.richTextBox_контрагенты.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.richTextBox_контрагенты.Location = new System.Drawing.Point(895, 20);
             this.richTextBox_контрагенты.Name = "richTextBox_контрагенты";
-            this.richTextBox_контрагенты.Size = new System.Drawing.Size(650, 784);
+            this.richTextBox_контрагенты.Size = new System.Drawing.Size(571, 736);
             this.richTextBox_контрагенты.TabIndex = 61;
             this.richTextBox_контрагенты.Text = "";
-            // 
-            // tabPage_Сотрудники
-            // 
-            this.tabPage_Сотрудники.BackColor = System.Drawing.Color.CadetBlue;
-            this.tabPage_Сотрудники.Controls.Add(this.button_randGUID_сотрудники);
-            this.tabPage_Сотрудники.Controls.Add(this.listView_сотрудники);
-            this.tabPage_Сотрудники.Controls.Add(this.label20);
-            this.tabPage_Сотрудники.Controls.Add(this.textBox_сотрудники_идентификатор);
-            this.tabPage_Сотрудники.Controls.Add(this.textBox_сотрудники_Уид);
-            this.tabPage_Сотрудники.Controls.Add(this.textBox_сотрудники_снилс);
-            this.tabPage_Сотрудники.Controls.Add(this.label23);
-            this.tabPage_Сотрудники.Controls.Add(this.textBox_сотрудники_пол);
-            this.tabPage_Сотрудники.Controls.Add(this.label24);
-            this.tabPage_Сотрудники.Controls.Add(this.textBox_сотрудники_отчество);
-            this.tabPage_Сотрудники.Controls.Add(this.textBox_сотрудники_имя);
-            this.tabPage_Сотрудники.Controls.Add(this.textBox_сотрудники_фамилия);
-            this.tabPage_Сотрудники.Controls.Add(this.label30);
-            this.tabPage_Сотрудники.Controls.Add(this.label39);
-            this.tabPage_Сотрудники.Controls.Add(this.textBox_сотрудники_ИдентификаторДолжности);
-            this.tabPage_Сотрудники.Controls.Add(this.label40);
-            this.tabPage_Сотрудники.Controls.Add(this.textBox_сотрудники_КодПодразделения);
-            this.tabPage_Сотрудники.Controls.Add(this.label41);
-            this.tabPage_Сотрудники.Controls.Add(this.label42);
-            this.tabPage_Сотрудники.Controls.Add(this.label43);
-            this.tabPage_Сотрудники.Controls.Add(this.textBox_сотрудники_ДатаНачалаРаботы);
-            this.tabPage_Сотрудники.Controls.Add(this.label44);
-            this.tabPage_Сотрудники.Controls.Add(this.textBox_сотрудники_ДатаРождения);
-            this.tabPage_Сотрудники.Controls.Add(this.label45);
-            this.tabPage_Сотрудники.Controls.Add(this.button_сотрудники_add);
-            this.tabPage_Сотрудники.Controls.Add(this.button_сотрудники_serialize);
-            this.tabPage_Сотрудники.Controls.Add(this.richTextBox_сотрудники);
-            this.tabPage_Сотрудники.Location = new System.Drawing.Point(4, 30);
-            this.tabPage_Сотрудники.Name = "tabPage_Сотрудники";
-            this.tabPage_Сотрудники.Size = new System.Drawing.Size(1551, 811);
-            this.tabPage_Сотрудники.TabIndex = 2;
-            this.tabPage_Сотрудники.Text = "Сотрудники";
-            // 
-            // button_randGUID_сотрудники
-            // 
-            this.button_randGUID_сотрудники.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_randGUID_сотрудники.Location = new System.Drawing.Point(530, 27);
-            this.button_randGUID_сотрудники.Name = "button_randGUID_сотрудники";
-            this.button_randGUID_сотрудники.Size = new System.Drawing.Size(75, 23);
-            this.button_randGUID_сотрудники.TabIndex = 112;
-            this.button_randGUID_сотрудники.Text = "Генерация";
-            this.button_randGUID_сотрудники.UseVisualStyleBackColor = true;
-            this.button_randGUID_сотрудники.Click += new System.EventHandler(this.button_randGUID_сотрудники_Click);
-            // 
-            // listView_сотрудники
-            // 
-            this.listView_сотрудники.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.listView_сотрудники.HideSelection = false;
-            this.listView_сотрудники.Location = new System.Drawing.Point(738, 22);
-            this.listView_сотрудники.Name = "listView_сотрудники";
-            this.listView_сотрудники.Size = new System.Drawing.Size(154, 209);
-            this.listView_сотрудники.TabIndex = 111;
-            this.listView_сотрудники.UseCompatibleStateImageBehavior = false;
-            this.listView_сотрудники.View = System.Windows.Forms.View.List;
-            this.listView_сотрудники.SelectedIndexChanged += new System.EventHandler(this.listView_сотрудники_SelectedIndexChanged);
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(91, 53);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(141, 21);
-            this.label20.TabIndex = 83;
-            this.label20.Text = "УидКонтрагента";
-            // 
-            // textBox_сотрудники_идентификатор
-            // 
-            this.textBox_сотрудники_идентификатор.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBox_сотрудники_идентификатор.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_сотрудники_идентификатор.Location = new System.Drawing.Point(242, 22);
-            this.textBox_сотрудники_идентификатор.Name = "textBox_сотрудники_идентификатор";
-            this.textBox_сотрудники_идентификатор.Size = new System.Drawing.Size(282, 26);
-            this.textBox_сотрудники_идентификатор.TabIndex = 1;
-            this.textBox_сотрудники_идентификатор.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox_сотрудники_Уид
-            // 
-            this.textBox_сотрудники_Уид.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBox_сотрудники_Уид.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_сотрудники_Уид.Location = new System.Drawing.Point(242, 48);
-            this.textBox_сотрудники_Уид.Name = "textBox_сотрудники_Уид";
-            this.textBox_сотрудники_Уид.Size = new System.Drawing.Size(282, 26);
-            this.textBox_сотрудники_Уид.TabIndex = 2;
-            this.textBox_сотрудники_Уид.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox_сотрудники_снилс
-            // 
-            this.textBox_сотрудники_снилс.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBox_сотрудники_снилс.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_сотрудники_снилс.Location = new System.Drawing.Point(242, 74);
-            this.textBox_сотрудники_снилс.Name = "textBox_сотрудники_снилс";
-            this.textBox_сотрудники_снилс.Size = new System.Drawing.Size(282, 26);
-            this.textBox_сотрудники_снилс.TabIndex = 3;
-            this.textBox_сотрудники_снилс.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(9, 287);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(228, 21);
-            this.label23.TabIndex = 109;
-            this.label23.Text = "ИдентификаторДолжности";
-            // 
-            // textBox_сотрудники_пол
-            // 
-            this.textBox_сотрудники_пол.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBox_сотрудники_пол.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_сотрудники_пол.Location = new System.Drawing.Point(242, 178);
-            this.textBox_сотрудники_пол.Name = "textBox_сотрудники_пол";
-            this.textBox_сотрудники_пол.Size = new System.Drawing.Size(282, 26);
-            this.textBox_сотрудники_пол.TabIndex = 7;
-            this.textBox_сотрудники_пол.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(74, 261);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(163, 21);
-            this.label24.TabIndex = 108;
-            this.label24.Text = "КодПодразделения";
-            // 
-            // textBox_сотрудники_отчество
-            // 
-            this.textBox_сотрудники_отчество.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBox_сотрудники_отчество.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_сотрудники_отчество.Location = new System.Drawing.Point(242, 152);
-            this.textBox_сотрудники_отчество.Name = "textBox_сотрудники_отчество";
-            this.textBox_сотрудники_отчество.Size = new System.Drawing.Size(282, 26);
-            this.textBox_сотрудники_отчество.TabIndex = 6;
-            this.textBox_сотрудники_отчество.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox_сотрудники_имя
-            // 
-            this.textBox_сотрудники_имя.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBox_сотрудники_имя.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_сотрудники_имя.Location = new System.Drawing.Point(242, 126);
-            this.textBox_сотрудники_имя.Name = "textBox_сотрудники_имя";
-            this.textBox_сотрудники_имя.Size = new System.Drawing.Size(282, 26);
-            this.textBox_сотрудники_имя.TabIndex = 5;
-            this.textBox_сотрудники_имя.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox_сотрудники_фамилия
-            // 
-            this.textBox_сотрудники_фамилия.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBox_сотрудники_фамилия.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_сотрудники_фамилия.Location = new System.Drawing.Point(242, 100);
-            this.textBox_сотрудники_фамилия.Name = "textBox_сотрудники_фамилия";
-            this.textBox_сотрудники_фамилия.Size = new System.Drawing.Size(282, 26);
-            this.textBox_сотрудники_фамилия.TabIndex = 4;
-            this.textBox_сотрудники_фамилия.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(70, 235);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(162, 21);
-            this.label30.TabIndex = 106;
-            this.label30.Text = "ДатаНачалаРаботы";
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(104, 210);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(128, 21);
-            this.label39.TabIndex = 105;
-            this.label39.Text = "ДатаРождения";
-            // 
-            // textBox_сотрудники_ИдентификаторДолжности
-            // 
-            this.textBox_сотрудники_ИдентификаторДолжности.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBox_сотрудники_ИдентификаторДолжности.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_сотрудники_ИдентификаторДолжности.Location = new System.Drawing.Point(242, 282);
-            this.textBox_сотрудники_ИдентификаторДолжности.Name = "textBox_сотрудники_ИдентификаторДолжности";
-            this.textBox_сотрудники_ИдентификаторДолжности.Size = new System.Drawing.Size(282, 26);
-            this.textBox_сотрудники_ИдентификаторДолжности.TabIndex = 11;
-            this.textBox_сотрудники_ИдентификаторДолжности.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(190, 183);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(42, 21);
-            this.label40.TabIndex = 104;
-            this.label40.Text = "Пол";
-            // 
-            // textBox_сотрудники_КодПодразделения
-            // 
-            this.textBox_сотрудники_КодПодразделения.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBox_сотрудники_КодПодразделения.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_сотрудники_КодПодразделения.Location = new System.Drawing.Point(242, 256);
-            this.textBox_сотрудники_КодПодразделения.Name = "textBox_сотрудники_КодПодразделения";
-            this.textBox_сотрудники_КодПодразделения.Size = new System.Drawing.Size(282, 26);
-            this.textBox_сотрудники_КодПодразделения.TabIndex = 10;
-            this.textBox_сотрудники_КодПодразделения.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(146, 157);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(86, 21);
-            this.label41.TabIndex = 103;
-            this.label41.Text = "Отчество";
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(188, 131);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(44, 21);
-            this.label42.TabIndex = 102;
-            this.label42.Text = "Имя";
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(150, 105);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(82, 21);
-            this.label43.TabIndex = 101;
-            this.label43.Text = "Фамилия";
-            // 
-            // textBox_сотрудники_ДатаНачалаРаботы
-            // 
-            this.textBox_сотрудники_ДатаНачалаРаботы.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBox_сотрудники_ДатаНачалаРаботы.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_сотрудники_ДатаНачалаРаботы.Location = new System.Drawing.Point(242, 230);
-            this.textBox_сотрудники_ДатаНачалаРаботы.Name = "textBox_сотрудники_ДатаНачалаРаботы";
-            this.textBox_сотрудники_ДатаНачалаРаботы.Size = new System.Drawing.Size(282, 26);
-            this.textBox_сотрудники_ДатаНачалаРаботы.TabIndex = 9;
-            this.textBox_сотрудники_ДатаНачалаРаботы.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(157, 79);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(75, 21);
-            this.label44.TabIndex = 100;
-            this.label44.Text = "СНИЛС";
-            // 
-            // textBox_сотрудники_ДатаРождения
-            // 
-            this.textBox_сотрудники_ДатаРождения.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBox_сотрудники_ДатаРождения.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_сотрудники_ДатаРождения.Location = new System.Drawing.Point(242, 204);
-            this.textBox_сотрудники_ДатаРождения.Name = "textBox_сотрудники_ДатаРождения";
-            this.textBox_сотрудники_ДатаРождения.Size = new System.Drawing.Size(282, 26);
-            this.textBox_сотрудники_ДатаРождения.TabIndex = 8;
-            this.textBox_сотрудники_ДатаРождения.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label45
-            // 
-            this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(96, 27);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(136, 21);
-            this.label45.TabIndex = 99;
-            this.label45.Text = "Идентификатор";
-            // 
-            // button_сотрудники_add
-            // 
-            this.button_сотрудники_add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.button_сотрудники_add.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_сотрудники_add.Location = new System.Drawing.Point(738, 238);
-            this.button_сотрудники_add.Name = "button_сотрудники_add";
-            this.button_сотрудники_add.Size = new System.Drawing.Size(154, 32);
-            this.button_сотрудники_add.TabIndex = 96;
-            this.button_сотрудники_add.Text = "Добавить в список";
-            this.button_сотрудники_add.UseVisualStyleBackColor = false;
-            this.button_сотрудники_add.Click += new System.EventHandler(this.button_сотрудники_add_Click);
-            // 
-            // button_сотрудники_serialize
-            // 
-            this.button_сотрудники_serialize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.button_сотрудники_serialize.Location = new System.Drawing.Point(738, 276);
-            this.button_сотрудники_serialize.Name = "button_сотрудники_serialize";
-            this.button_сотрудники_serialize.Size = new System.Drawing.Size(154, 57);
-            this.button_сотрудники_serialize.TabIndex = 98;
-            this.button_сотрудники_serialize.Text = "Сериализовать список";
-            this.button_сотрудники_serialize.UseVisualStyleBackColor = false;
-            this.button_сотрудники_serialize.Click += new System.EventHandler(this.button_сотрудники_serialize_Click);
-            // 
-            // richTextBox_сотрудники
-            // 
-            this.richTextBox_сотрудники.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBox_сотрудники.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.richTextBox_сотрудники.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.richTextBox_сотрудники.Location = new System.Drawing.Point(898, 20);
-            this.richTextBox_сотрудники.Name = "richTextBox_сотрудники";
-            this.richTextBox_сотрудники.Size = new System.Drawing.Size(650, 788);
-            this.richTextBox_сотрудники.TabIndex = 97;
-            this.richTextBox_сотрудники.Text = "";
             // 
             // tabPage_Договора
             // 
@@ -1358,7 +1077,7 @@
             this.tabPage_Договора.Location = new System.Drawing.Point(4, 30);
             this.tabPage_Договора.Name = "tabPage_Договора";
             this.tabPage_Договора.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_Договора.Size = new System.Drawing.Size(1551, 811);
+            this.tabPage_Договора.Size = new System.Drawing.Size(1472, 763);
             this.tabPage_Договора.TabIndex = 0;
             this.tabPage_Договора.Text = "Договора";
             // 
@@ -1375,11 +1094,12 @@
             // 
             // flowLayoutPanel_договора
             // 
-            this.flowLayoutPanel_договора.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.flowLayoutPanel_договора.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.flowLayoutPanel_договора.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel_договора.Location = new System.Drawing.Point(264, 549);
+            this.flowLayoutPanel_договора.Location = new System.Drawing.Point(162, 549);
             this.flowLayoutPanel_договора.Name = "flowLayoutPanel_договора";
-            this.flowLayoutPanel_договора.Size = new System.Drawing.Size(398, 256);
+            this.flowLayoutPanel_договора.Size = new System.Drawing.Size(398, 208);
             this.flowLayoutPanel_договора.TabIndex = 44;
             // 
             // numericUpDown_договора
@@ -1396,6 +1116,121 @@
             this.numericUpDown_договора.Size = new System.Drawing.Size(49, 29);
             this.numericUpDown_договора.TabIndex = 43;
             this.numericUpDown_договора.ValueChanged += new System.EventHandler(this.numericUpDown_договора_ValueChanged);
+            // 
+            // tabPage_Должности
+            // 
+            this.tabPage_Должности.BackColor = System.Drawing.Color.CadetBlue;
+            this.tabPage_Должности.Controls.Add(this.button_randGUID_должности);
+            this.tabPage_Должности.Controls.Add(this.listView_должности);
+            this.tabPage_Должности.Controls.Add(this.label85);
+            this.tabPage_Должности.Controls.Add(this.textBox_должности_идентификатор);
+            this.tabPage_Должности.Controls.Add(this.textBox_должности_наименование);
+            this.tabPage_Должности.Controls.Add(this.label95);
+            this.tabPage_Должности.Controls.Add(this.button_должности_add);
+            this.tabPage_Должности.Controls.Add(this.button_должности_serialize);
+            this.tabPage_Должности.Controls.Add(this.richTextBox_должности);
+            this.tabPage_Должности.Location = new System.Drawing.Point(4, 30);
+            this.tabPage_Должности.Name = "tabPage_Должности";
+            this.tabPage_Должности.Size = new System.Drawing.Size(1472, 763);
+            this.tabPage_Должности.TabIndex = 5;
+            this.tabPage_Должности.Text = "Должности";
+            // 
+            // button_randGUID_должности
+            // 
+            this.button_randGUID_должности.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_randGUID_должности.Location = new System.Drawing.Point(527, 18);
+            this.button_randGUID_должности.Name = "button_randGUID_должности";
+            this.button_randGUID_должности.Size = new System.Drawing.Size(75, 23);
+            this.button_randGUID_должности.TabIndex = 139;
+            this.button_randGUID_должности.Text = "Генерация";
+            this.button_randGUID_должности.UseVisualStyleBackColor = true;
+            this.button_randGUID_должности.Click += new System.EventHandler(this.button_randGUID_должности_Click);
+            // 
+            // listView_должности
+            // 
+            this.listView_должности.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.listView_должности.HideSelection = false;
+            this.listView_должности.Location = new System.Drawing.Point(735, 13);
+            this.listView_должности.Name = "listView_должности";
+            this.listView_должности.Size = new System.Drawing.Size(154, 209);
+            this.listView_должности.TabIndex = 138;
+            this.listView_должности.UseCompatibleStateImageBehavior = false;
+            this.listView_должности.View = System.Windows.Forms.View.List;
+            this.listView_должности.SelectedIndexChanged += new System.EventHandler(this.listView_должности_SelectedIndexChanged);
+            // 
+            // label85
+            // 
+            this.label85.AutoSize = true;
+            this.label85.Location = new System.Drawing.Point(103, 44);
+            this.label85.Name = "label85";
+            this.label85.Size = new System.Drawing.Size(126, 21);
+            this.label85.TabIndex = 124;
+            this.label85.Text = "Наименование";
+            // 
+            // textBox_должности_идентификатор
+            // 
+            this.textBox_должности_идентификатор.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.textBox_должности_идентификатор.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_должности_идентификатор.Location = new System.Drawing.Point(239, 13);
+            this.textBox_должности_идентификатор.Name = "textBox_должности_идентификатор";
+            this.textBox_должности_идентификатор.Size = new System.Drawing.Size(282, 26);
+            this.textBox_должности_идентификатор.TabIndex = 113;
+            this.textBox_должности_идентификатор.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox_должности_наименование
+            // 
+            this.textBox_должности_наименование.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.textBox_должности_наименование.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_должности_наименование.Location = new System.Drawing.Point(239, 39);
+            this.textBox_должности_наименование.Name = "textBox_должности_наименование";
+            this.textBox_должности_наименование.Size = new System.Drawing.Size(282, 26);
+            this.textBox_должности_наименование.TabIndex = 114;
+            this.textBox_должности_наименование.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label95
+            // 
+            this.label95.AutoSize = true;
+            this.label95.Location = new System.Drawing.Point(93, 18);
+            this.label95.Name = "label95";
+            this.label95.Size = new System.Drawing.Size(136, 21);
+            this.label95.TabIndex = 128;
+            this.label95.Text = "Идентификатор";
+            // 
+            // button_должности_add
+            // 
+            this.button_должности_add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.button_должности_add.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_должности_add.Location = new System.Drawing.Point(735, 229);
+            this.button_должности_add.Name = "button_должности_add";
+            this.button_должности_add.Size = new System.Drawing.Size(154, 32);
+            this.button_должности_add.TabIndex = 125;
+            this.button_должности_add.Text = "Добавить в список";
+            this.button_должности_add.UseVisualStyleBackColor = false;
+            this.button_должности_add.Click += new System.EventHandler(this.button_должности_add_Click);
+            // 
+            // button_должности_serialize
+            // 
+            this.button_должности_serialize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.button_должности_serialize.Location = new System.Drawing.Point(735, 267);
+            this.button_должности_serialize.Name = "button_должности_serialize";
+            this.button_должности_serialize.Size = new System.Drawing.Size(154, 57);
+            this.button_должности_serialize.TabIndex = 127;
+            this.button_должности_serialize.Text = "Сериализовать список";
+            this.button_должности_serialize.UseVisualStyleBackColor = false;
+            this.button_должности_serialize.Click += new System.EventHandler(this.button_должности_serialize_Click);
+            // 
+            // richTextBox_должности
+            // 
+            this.richTextBox_должности.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.richTextBox_должности.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.richTextBox_должности.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.richTextBox_должности.Location = new System.Drawing.Point(895, 11);
+            this.richTextBox_должности.Name = "richTextBox_должности";
+            this.richTextBox_должности.Size = new System.Drawing.Size(571, 740);
+            this.richTextBox_должности.TabIndex = 126;
+            this.richTextBox_должности.Text = "";
             // 
             // tabPage_ПМО
             // 
@@ -1452,7 +1287,7 @@
             this.tabPage_ПМО.Controls.Add(this.richTextBox_ПМО);
             this.tabPage_ПМО.Location = new System.Drawing.Point(4, 30);
             this.tabPage_ПМО.Name = "tabPage_ПМО";
-            this.tabPage_ПМО.Size = new System.Drawing.Size(1551, 811);
+            this.tabPage_ПМО.Size = new System.Drawing.Size(1472, 763);
             this.tabPage_ПМО.TabIndex = 3;
             this.tabPage_ПМО.Text = "ПМО";
             // 
@@ -1975,9 +1810,428 @@
             this.richTextBox_ПМО.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.richTextBox_ПМО.Location = new System.Drawing.Point(898, 20);
             this.richTextBox_ПМО.Name = "richTextBox_ПМО";
-            this.richTextBox_ПМО.Size = new System.Drawing.Size(650, 788);
+            this.richTextBox_ПМО.Size = new System.Drawing.Size(571, 788);
             this.richTextBox_ПМО.TabIndex = 61;
             this.richTextBox_ПМО.Text = "";
+            // 
+            // tabPage_Здравпункты
+            // 
+            this.tabPage_Здравпункты.BackColor = System.Drawing.Color.CadetBlue;
+            this.tabPage_Здравпункты.Controls.Add(this.button_randGUID_здравпункты);
+            this.tabPage_Здравпункты.Controls.Add(this.listView_здравпункты);
+            this.tabPage_Здравпункты.Controls.Add(this.label86);
+            this.tabPage_Здравпункты.Controls.Add(this.textBox_здравпункты_идентификатор);
+            this.tabPage_Здравпункты.Controls.Add(this.textBox_здравпункты_наименование);
+            this.tabPage_Здравпункты.Controls.Add(this.label87);
+            this.tabPage_Здравпункты.Controls.Add(this.button_здравпункты_add);
+            this.tabPage_Здравпункты.Controls.Add(this.button_здравпункты_serialize);
+            this.tabPage_Здравпункты.Controls.Add(this.richTextBox_здравпункты);
+            this.tabPage_Здравпункты.Location = new System.Drawing.Point(4, 30);
+            this.tabPage_Здравпункты.Name = "tabPage_Здравпункты";
+            this.tabPage_Здравпункты.Size = new System.Drawing.Size(1472, 763);
+            this.tabPage_Здравпункты.TabIndex = 6;
+            this.tabPage_Здравпункты.Text = "Здравпункты";
+            // 
+            // button_randGUID_здравпункты
+            // 
+            this.button_randGUID_здравпункты.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_randGUID_здравпункты.Location = new System.Drawing.Point(483, 18);
+            this.button_randGUID_здравпункты.Name = "button_randGUID_здравпункты";
+            this.button_randGUID_здравпункты.Size = new System.Drawing.Size(75, 23);
+            this.button_randGUID_здравпункты.TabIndex = 148;
+            this.button_randGUID_здравпункты.Text = "Генерация";
+            this.button_randGUID_здравпункты.UseVisualStyleBackColor = true;
+            this.button_randGUID_здравпункты.Click += new System.EventHandler(this.button_randGUID_здравпункты_Click);
+            // 
+            // listView_здравпункты
+            // 
+            this.listView_здравпункты.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.listView_здравпункты.HideSelection = false;
+            this.listView_здравпункты.Location = new System.Drawing.Point(691, 13);
+            this.listView_здравпункты.Name = "listView_здравпункты";
+            this.listView_здравпункты.Size = new System.Drawing.Size(154, 209);
+            this.listView_здравпункты.TabIndex = 147;
+            this.listView_здравпункты.UseCompatibleStateImageBehavior = false;
+            this.listView_здравпункты.View = System.Windows.Forms.View.List;
+            this.listView_здравпункты.SelectedIndexChanged += new System.EventHandler(this.listView_здравпункты_SelectedIndexChanged);
+            // 
+            // label86
+            // 
+            this.label86.AutoSize = true;
+            this.label86.Location = new System.Drawing.Point(59, 44);
+            this.label86.Name = "label86";
+            this.label86.Size = new System.Drawing.Size(126, 21);
+            this.label86.TabIndex = 142;
+            this.label86.Text = "Наименование";
+            // 
+            // textBox_здравпункты_идентификатор
+            // 
+            this.textBox_здравпункты_идентификатор.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.textBox_здравпункты_идентификатор.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_здравпункты_идентификатор.Location = new System.Drawing.Point(195, 13);
+            this.textBox_здравпункты_идентификатор.Name = "textBox_здравпункты_идентификатор";
+            this.textBox_здравпункты_идентификатор.Size = new System.Drawing.Size(282, 26);
+            this.textBox_здравпункты_идентификатор.TabIndex = 140;
+            this.textBox_здравпункты_идентификатор.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox_здравпункты_наименование
+            // 
+            this.textBox_здравпункты_наименование.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.textBox_здравпункты_наименование.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_здравпункты_наименование.Location = new System.Drawing.Point(195, 39);
+            this.textBox_здравпункты_наименование.Name = "textBox_здравпункты_наименование";
+            this.textBox_здравпункты_наименование.Size = new System.Drawing.Size(282, 26);
+            this.textBox_здравпункты_наименование.TabIndex = 141;
+            this.textBox_здравпункты_наименование.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label87
+            // 
+            this.label87.AutoSize = true;
+            this.label87.Location = new System.Drawing.Point(49, 18);
+            this.label87.Name = "label87";
+            this.label87.Size = new System.Drawing.Size(136, 21);
+            this.label87.TabIndex = 146;
+            this.label87.Text = "Идентификатор";
+            // 
+            // button_здравпункты_add
+            // 
+            this.button_здравпункты_add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.button_здравпункты_add.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_здравпункты_add.Location = new System.Drawing.Point(691, 229);
+            this.button_здравпункты_add.Name = "button_здравпункты_add";
+            this.button_здравпункты_add.Size = new System.Drawing.Size(154, 32);
+            this.button_здравпункты_add.TabIndex = 143;
+            this.button_здравпункты_add.Text = "Добавить в список";
+            this.button_здравпункты_add.UseVisualStyleBackColor = false;
+            this.button_здравпункты_add.Click += new System.EventHandler(this.button_здравпункты_add_Click);
+            // 
+            // button_здравпункты_serialize
+            // 
+            this.button_здравпункты_serialize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.button_здравпункты_serialize.Location = new System.Drawing.Point(691, 267);
+            this.button_здравпункты_serialize.Name = "button_здравпункты_serialize";
+            this.button_здравпункты_serialize.Size = new System.Drawing.Size(154, 57);
+            this.button_здравпункты_serialize.TabIndex = 145;
+            this.button_здравпункты_serialize.Text = "Сериализовать список";
+            this.button_здравпункты_serialize.UseVisualStyleBackColor = false;
+            this.button_здравпункты_serialize.Click += new System.EventHandler(this.button_здравпункты_serialize_Click);
+            // 
+            // richTextBox_здравпункты
+            // 
+            this.richTextBox_здравпункты.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.richTextBox_здравпункты.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.richTextBox_здравпункты.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.richTextBox_здравпункты.Location = new System.Drawing.Point(851, 11);
+            this.richTextBox_здравпункты.Name = "richTextBox_здравпункты";
+            this.richTextBox_здравпункты.Size = new System.Drawing.Size(618, 797);
+            this.richTextBox_здравпункты.TabIndex = 144;
+            this.richTextBox_здравпункты.Text = "";
+            // 
+            // tabPage_Сотрудники
+            // 
+            this.tabPage_Сотрудники.BackColor = System.Drawing.Color.CadetBlue;
+            this.tabPage_Сотрудники.Controls.Add(this.button_randGUID_сотрудники);
+            this.tabPage_Сотрудники.Controls.Add(this.listView_сотрудники);
+            this.tabPage_Сотрудники.Controls.Add(this.label20);
+            this.tabPage_Сотрудники.Controls.Add(this.textBox_сотрудники_идентификатор);
+            this.tabPage_Сотрудники.Controls.Add(this.textBox_сотрудники_Уид);
+            this.tabPage_Сотрудники.Controls.Add(this.textBox_сотрудники_снилс);
+            this.tabPage_Сотрудники.Controls.Add(this.label23);
+            this.tabPage_Сотрудники.Controls.Add(this.textBox_сотрудники_пол);
+            this.tabPage_Сотрудники.Controls.Add(this.label24);
+            this.tabPage_Сотрудники.Controls.Add(this.textBox_сотрудники_отчество);
+            this.tabPage_Сотрудники.Controls.Add(this.textBox_сотрудники_имя);
+            this.tabPage_Сотрудники.Controls.Add(this.textBox_сотрудники_фамилия);
+            this.tabPage_Сотрудники.Controls.Add(this.label30);
+            this.tabPage_Сотрудники.Controls.Add(this.label39);
+            this.tabPage_Сотрудники.Controls.Add(this.textBox_сотрудники_ИдентификаторДолжности);
+            this.tabPage_Сотрудники.Controls.Add(this.label40);
+            this.tabPage_Сотрудники.Controls.Add(this.textBox_сотрудники_КодПодразделения);
+            this.tabPage_Сотрудники.Controls.Add(this.label41);
+            this.tabPage_Сотрудники.Controls.Add(this.label42);
+            this.tabPage_Сотрудники.Controls.Add(this.label43);
+            this.tabPage_Сотрудники.Controls.Add(this.textBox_сотрудники_ДатаНачалаРаботы);
+            this.tabPage_Сотрудники.Controls.Add(this.label44);
+            this.tabPage_Сотрудники.Controls.Add(this.textBox_сотрудники_ДатаРождения);
+            this.tabPage_Сотрудники.Controls.Add(this.label45);
+            this.tabPage_Сотрудники.Controls.Add(this.button_сотрудники_add);
+            this.tabPage_Сотрудники.Controls.Add(this.button_сотрудники_serialize);
+            this.tabPage_Сотрудники.Controls.Add(this.richTextBox_сотрудники);
+            this.tabPage_Сотрудники.Location = new System.Drawing.Point(4, 30);
+            this.tabPage_Сотрудники.Name = "tabPage_Сотрудники";
+            this.tabPage_Сотрудники.Size = new System.Drawing.Size(1472, 763);
+            this.tabPage_Сотрудники.TabIndex = 2;
+            this.tabPage_Сотрудники.Text = "Сотрудники";
+            // 
+            // button_randGUID_сотрудники
+            // 
+            this.button_randGUID_сотрудники.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_randGUID_сотрудники.Location = new System.Drawing.Point(530, 27);
+            this.button_randGUID_сотрудники.Name = "button_randGUID_сотрудники";
+            this.button_randGUID_сотрудники.Size = new System.Drawing.Size(75, 23);
+            this.button_randGUID_сотрудники.TabIndex = 112;
+            this.button_randGUID_сотрудники.Text = "Генерация";
+            this.button_randGUID_сотрудники.UseVisualStyleBackColor = true;
+            this.button_randGUID_сотрудники.Click += new System.EventHandler(this.button_randGUID_сотрудники_Click);
+            // 
+            // listView_сотрудники
+            // 
+            this.listView_сотрудники.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.listView_сотрудники.HideSelection = false;
+            this.listView_сотрудники.Location = new System.Drawing.Point(738, 22);
+            this.listView_сотрудники.Name = "listView_сотрудники";
+            this.listView_сотрудники.Size = new System.Drawing.Size(154, 209);
+            this.listView_сотрудники.TabIndex = 111;
+            this.listView_сотрудники.UseCompatibleStateImageBehavior = false;
+            this.listView_сотрудники.View = System.Windows.Forms.View.List;
+            this.listView_сотрудники.SelectedIndexChanged += new System.EventHandler(this.listView_сотрудники_SelectedIndexChanged);
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(91, 53);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(141, 21);
+            this.label20.TabIndex = 83;
+            this.label20.Text = "УидКонтрагента";
+            // 
+            // textBox_сотрудники_идентификатор
+            // 
+            this.textBox_сотрудники_идентификатор.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.textBox_сотрудники_идентификатор.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_сотрудники_идентификатор.Location = new System.Drawing.Point(242, 22);
+            this.textBox_сотрудники_идентификатор.Name = "textBox_сотрудники_идентификатор";
+            this.textBox_сотрудники_идентификатор.Size = new System.Drawing.Size(282, 26);
+            this.textBox_сотрудники_идентификатор.TabIndex = 1;
+            this.textBox_сотрудники_идентификатор.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox_сотрудники_Уид
+            // 
+            this.textBox_сотрудники_Уид.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.textBox_сотрудники_Уид.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_сотрудники_Уид.Location = new System.Drawing.Point(242, 48);
+            this.textBox_сотрудники_Уид.Name = "textBox_сотрудники_Уид";
+            this.textBox_сотрудники_Уид.Size = new System.Drawing.Size(282, 26);
+            this.textBox_сотрудники_Уид.TabIndex = 2;
+            this.textBox_сотрудники_Уид.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox_сотрудники_снилс
+            // 
+            this.textBox_сотрудники_снилс.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.textBox_сотрудники_снилс.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_сотрудники_снилс.Location = new System.Drawing.Point(242, 74);
+            this.textBox_сотрудники_снилс.Name = "textBox_сотрудники_снилс";
+            this.textBox_сотрудники_снилс.Size = new System.Drawing.Size(282, 26);
+            this.textBox_сотрудники_снилс.TabIndex = 3;
+            this.textBox_сотрудники_снилс.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(9, 287);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(228, 21);
+            this.label23.TabIndex = 109;
+            this.label23.Text = "ИдентификаторДолжности";
+            // 
+            // textBox_сотрудники_пол
+            // 
+            this.textBox_сотрудники_пол.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.textBox_сотрудники_пол.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_сотрудники_пол.Location = new System.Drawing.Point(242, 178);
+            this.textBox_сотрудники_пол.Name = "textBox_сотрудники_пол";
+            this.textBox_сотрудники_пол.Size = new System.Drawing.Size(282, 26);
+            this.textBox_сотрудники_пол.TabIndex = 7;
+            this.textBox_сотрудники_пол.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(74, 261);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(163, 21);
+            this.label24.TabIndex = 108;
+            this.label24.Text = "КодПодразделения";
+            // 
+            // textBox_сотрудники_отчество
+            // 
+            this.textBox_сотрудники_отчество.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.textBox_сотрудники_отчество.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_сотрудники_отчество.Location = new System.Drawing.Point(242, 152);
+            this.textBox_сотрудники_отчество.Name = "textBox_сотрудники_отчество";
+            this.textBox_сотрудники_отчество.Size = new System.Drawing.Size(282, 26);
+            this.textBox_сотрудники_отчество.TabIndex = 6;
+            this.textBox_сотрудники_отчество.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox_сотрудники_имя
+            // 
+            this.textBox_сотрудники_имя.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.textBox_сотрудники_имя.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_сотрудники_имя.Location = new System.Drawing.Point(242, 126);
+            this.textBox_сотрудники_имя.Name = "textBox_сотрудники_имя";
+            this.textBox_сотрудники_имя.Size = new System.Drawing.Size(282, 26);
+            this.textBox_сотрудники_имя.TabIndex = 5;
+            this.textBox_сотрудники_имя.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox_сотрудники_фамилия
+            // 
+            this.textBox_сотрудники_фамилия.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.textBox_сотрудники_фамилия.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_сотрудники_фамилия.Location = new System.Drawing.Point(242, 100);
+            this.textBox_сотрудники_фамилия.Name = "textBox_сотрудники_фамилия";
+            this.textBox_сотрудники_фамилия.Size = new System.Drawing.Size(282, 26);
+            this.textBox_сотрудники_фамилия.TabIndex = 4;
+            this.textBox_сотрудники_фамилия.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(70, 235);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(162, 21);
+            this.label30.TabIndex = 106;
+            this.label30.Text = "ДатаНачалаРаботы";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(104, 210);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(128, 21);
+            this.label39.TabIndex = 105;
+            this.label39.Text = "ДатаРождения";
+            // 
+            // textBox_сотрудники_ИдентификаторДолжности
+            // 
+            this.textBox_сотрудники_ИдентификаторДолжности.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.textBox_сотрудники_ИдентификаторДолжности.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_сотрудники_ИдентификаторДолжности.Location = new System.Drawing.Point(242, 282);
+            this.textBox_сотрудники_ИдентификаторДолжности.Name = "textBox_сотрудники_ИдентификаторДолжности";
+            this.textBox_сотрудники_ИдентификаторДолжности.Size = new System.Drawing.Size(282, 26);
+            this.textBox_сотрудники_ИдентификаторДолжности.TabIndex = 11;
+            this.textBox_сотрудники_ИдентификаторДолжности.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(190, 183);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(42, 21);
+            this.label40.TabIndex = 104;
+            this.label40.Text = "Пол";
+            // 
+            // textBox_сотрудники_КодПодразделения
+            // 
+            this.textBox_сотрудники_КодПодразделения.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.textBox_сотрудники_КодПодразделения.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_сотрудники_КодПодразделения.Location = new System.Drawing.Point(242, 256);
+            this.textBox_сотрудники_КодПодразделения.Name = "textBox_сотрудники_КодПодразделения";
+            this.textBox_сотрудники_КодПодразделения.Size = new System.Drawing.Size(282, 26);
+            this.textBox_сотрудники_КодПодразделения.TabIndex = 10;
+            this.textBox_сотрудники_КодПодразделения.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(146, 157);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(86, 21);
+            this.label41.TabIndex = 103;
+            this.label41.Text = "Отчество";
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(188, 131);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(44, 21);
+            this.label42.TabIndex = 102;
+            this.label42.Text = "Имя";
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(150, 105);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(82, 21);
+            this.label43.TabIndex = 101;
+            this.label43.Text = "Фамилия";
+            // 
+            // textBox_сотрудники_ДатаНачалаРаботы
+            // 
+            this.textBox_сотрудники_ДатаНачалаРаботы.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.textBox_сотрудники_ДатаНачалаРаботы.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_сотрудники_ДатаНачалаРаботы.Location = new System.Drawing.Point(242, 230);
+            this.textBox_сотрудники_ДатаНачалаРаботы.Name = "textBox_сотрудники_ДатаНачалаРаботы";
+            this.textBox_сотрудники_ДатаНачалаРаботы.Size = new System.Drawing.Size(282, 26);
+            this.textBox_сотрудники_ДатаНачалаРаботы.TabIndex = 9;
+            this.textBox_сотрудники_ДатаНачалаРаботы.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(157, 79);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(75, 21);
+            this.label44.TabIndex = 100;
+            this.label44.Text = "СНИЛС";
+            // 
+            // textBox_сотрудники_ДатаРождения
+            // 
+            this.textBox_сотрудники_ДатаРождения.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.textBox_сотрудники_ДатаРождения.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_сотрудники_ДатаРождения.Location = new System.Drawing.Point(242, 204);
+            this.textBox_сотрудники_ДатаРождения.Name = "textBox_сотрудники_ДатаРождения";
+            this.textBox_сотрудники_ДатаРождения.Size = new System.Drawing.Size(282, 26);
+            this.textBox_сотрудники_ДатаРождения.TabIndex = 8;
+            this.textBox_сотрудники_ДатаРождения.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(96, 27);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(136, 21);
+            this.label45.TabIndex = 99;
+            this.label45.Text = "Идентификатор";
+            // 
+            // button_сотрудники_add
+            // 
+            this.button_сотрудники_add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.button_сотрудники_add.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_сотрудники_add.Location = new System.Drawing.Point(738, 238);
+            this.button_сотрудники_add.Name = "button_сотрудники_add";
+            this.button_сотрудники_add.Size = new System.Drawing.Size(154, 32);
+            this.button_сотрудники_add.TabIndex = 96;
+            this.button_сотрудники_add.Text = "Добавить в список";
+            this.button_сотрудники_add.UseVisualStyleBackColor = false;
+            this.button_сотрудники_add.Click += new System.EventHandler(this.button_сотрудники_add_Click);
+            // 
+            // button_сотрудники_serialize
+            // 
+            this.button_сотрудники_serialize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.button_сотрудники_serialize.Location = new System.Drawing.Point(738, 276);
+            this.button_сотрудники_serialize.Name = "button_сотрудники_serialize";
+            this.button_сотрудники_serialize.Size = new System.Drawing.Size(154, 57);
+            this.button_сотрудники_serialize.TabIndex = 98;
+            this.button_сотрудники_serialize.Text = "Сериализовать список";
+            this.button_сотрудники_serialize.UseVisualStyleBackColor = false;
+            this.button_сотрудники_serialize.Click += new System.EventHandler(this.button_сотрудники_serialize_Click);
+            // 
+            // richTextBox_сотрудники
+            // 
+            this.richTextBox_сотрудники.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.richTextBox_сотрудники.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.richTextBox_сотрудники.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.richTextBox_сотрудники.Location = new System.Drawing.Point(898, 20);
+            this.richTextBox_сотрудники.Name = "richTextBox_сотрудники";
+            this.richTextBox_сотрудники.Size = new System.Drawing.Size(571, 788);
+            this.richTextBox_сотрудники.TabIndex = 97;
+            this.richTextBox_сотрудники.Text = "";
             // 
             // tabPage_Трудоустройства
             // 
@@ -2034,7 +2288,7 @@
             this.tabPage_Трудоустройства.Controls.Add(this.richTextBox_трудоустройства);
             this.tabPage_Трудоустройства.Location = new System.Drawing.Point(4, 30);
             this.tabPage_Трудоустройства.Name = "tabPage_Трудоустройства";
-            this.tabPage_Трудоустройства.Size = new System.Drawing.Size(1551, 811);
+            this.tabPage_Трудоустройства.Size = new System.Drawing.Size(1472, 763);
             this.tabPage_Трудоустройства.TabIndex = 4;
             this.tabPage_Трудоустройства.Text = "Трудоустройства";
             // 
@@ -2541,285 +2795,132 @@
             this.richTextBox_трудоустройства.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.richTextBox_трудоустройства.Location = new System.Drawing.Point(898, 20);
             this.richTextBox_трудоустройства.Name = "richTextBox_трудоустройства";
-            this.richTextBox_трудоустройства.Size = new System.Drawing.Size(650, 788);
+            this.richTextBox_трудоустройства.Size = new System.Drawing.Size(571, 788);
             this.richTextBox_трудоустройства.TabIndex = 126;
             this.richTextBox_трудоустройства.Text = "";
             // 
-            // tabPage_Должности
+            // menuStrip1
             // 
-            this.tabPage_Должности.BackColor = System.Drawing.Color.CadetBlue;
-            this.tabPage_Должности.Controls.Add(this.button_randGUID_должности);
-            this.tabPage_Должности.Controls.Add(this.listView_должности);
-            this.tabPage_Должности.Controls.Add(this.label85);
-            this.tabPage_Должности.Controls.Add(this.textBox_должности_идентификатор);
-            this.tabPage_Должности.Controls.Add(this.textBox_должности_наименование);
-            this.tabPage_Должности.Controls.Add(this.label95);
-            this.tabPage_Должности.Controls.Add(this.button_должности_add);
-            this.tabPage_Должности.Controls.Add(this.button_должности_serialize);
-            this.tabPage_Должности.Controls.Add(this.richTextBox_должности);
-            this.tabPage_Должности.Location = new System.Drawing.Point(4, 30);
-            this.tabPage_Должности.Name = "tabPage_Должности";
-            this.tabPage_Должности.Size = new System.Drawing.Size(1551, 811);
-            this.tabPage_Должности.TabIndex = 5;
-            this.tabPage_Должности.Text = "Должности";
+            this.menuStrip1.BackColor = System.Drawing.Color.Silver;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.файлToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1504, 24);
+            this.menuStrip1.TabIndex = 42;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // tabPage_Здравпункты
+            // файлToolStripMenuItem
             // 
-            this.tabPage_Здравпункты.BackColor = System.Drawing.Color.CadetBlue;
-            this.tabPage_Здравпункты.Controls.Add(this.button_randGUID_здравпункты);
-            this.tabPage_Здравпункты.Controls.Add(this.listView_здравпункты);
-            this.tabPage_Здравпункты.Controls.Add(this.label86);
-            this.tabPage_Здравпункты.Controls.Add(this.textBox_здравпункты_идентификатор);
-            this.tabPage_Здравпункты.Controls.Add(this.textBox_здравпункты_наименование);
-            this.tabPage_Здравпункты.Controls.Add(this.label87);
-            this.tabPage_Здравпункты.Controls.Add(this.button_здравпункты_add);
-            this.tabPage_Здравпункты.Controls.Add(this.button_здравпункты_serialize);
-            this.tabPage_Здравпункты.Controls.Add(this.richTextBox_здравпункты);
-            this.tabPage_Здравпункты.Location = new System.Drawing.Point(4, 30);
-            this.tabPage_Здравпункты.Name = "tabPage_Здравпункты";
-            this.tabPage_Здравпункты.Size = new System.Drawing.Size(1551, 811);
-            this.tabPage_Здравпункты.TabIndex = 6;
-            this.tabPage_Здравпункты.Text = "Здравпункты";
+            this.файлToolStripMenuItem.BackColor = System.Drawing.Color.Silver;
+            this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.загрузитьЛистExcelToolStripMenuItem});
+            this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
+            this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.файлToolStripMenuItem.Text = "Файл";
             // 
-            // button_randGUID_должности
+            // загрузитьЛистExcelToolStripMenuItem
             // 
-            this.button_randGUID_должности.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_randGUID_должности.Location = new System.Drawing.Point(527, 18);
-            this.button_randGUID_должности.Name = "button_randGUID_должности";
-            this.button_randGUID_должности.Size = new System.Drawing.Size(75, 23);
-            this.button_randGUID_должности.TabIndex = 139;
-            this.button_randGUID_должности.Text = "Генерация";
-            this.button_randGUID_должности.UseVisualStyleBackColor = true;
-            this.button_randGUID_должности.Click += new System.EventHandler(this.button_randGUID_должности_Click);
+            this.загрузитьЛистExcelToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.контрагентыToolStripMenuItem,
+            this.договораToolStripMenuItem,
+            this.должностиToolStripMenuItem,
+            this.предварительныеМОToolStripMenuItem,
+            this.здравпунктыToolStripMenuItem,
+            this.сотрудникиToolStripMenuItem,
+            this.трудоустройстваToolStripMenuItem});
+            this.загрузитьЛистExcelToolStripMenuItem.Name = "загрузитьЛистExcelToolStripMenuItem";
+            this.загрузитьЛистExcelToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.загрузитьЛистExcelToolStripMenuItem.Text = "загрузить лист excel";
             // 
-            // listView_должности
+            // контрагентыToolStripMenuItem
             // 
-            this.listView_должности.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.listView_должности.HideSelection = false;
-            this.listView_должности.Location = new System.Drawing.Point(735, 13);
-            this.listView_должности.Name = "listView_должности";
-            this.listView_должности.Size = new System.Drawing.Size(154, 209);
-            this.listView_должности.TabIndex = 138;
-            this.listView_должности.UseCompatibleStateImageBehavior = false;
-            this.listView_должности.View = System.Windows.Forms.View.List;
-            this.listView_должности.SelectedIndexChanged += new System.EventHandler(this.listView_должности_SelectedIndexChanged);
+            this.контрагентыToolStripMenuItem.Name = "контрагентыToolStripMenuItem";
+            this.контрагентыToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.контрагентыToolStripMenuItem.Text = "Контрагенты";
+            this.контрагентыToolStripMenuItem.Click += new System.EventHandler(this.контрагентыToolStripMenuItem_Click);
             // 
-            // label85
+            // договораToolStripMenuItem
             // 
-            this.label85.AutoSize = true;
-            this.label85.Location = new System.Drawing.Point(103, 44);
-            this.label85.Name = "label85";
-            this.label85.Size = new System.Drawing.Size(126, 21);
-            this.label85.TabIndex = 124;
-            this.label85.Text = "Наименование";
+            this.договораToolStripMenuItem.Name = "договораToolStripMenuItem";
+            this.договораToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.договораToolStripMenuItem.Text = "Договора";
+            this.договораToolStripMenuItem.Click += new System.EventHandler(this.договораToolStripMenuItem_Click);
             // 
-            // textBox_должности_идентификатор
+            // должностиToolStripMenuItem
             // 
-            this.textBox_должности_идентификатор.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBox_должности_идентификатор.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_должности_идентификатор.Location = new System.Drawing.Point(239, 13);
-            this.textBox_должности_идентификатор.Name = "textBox_должности_идентификатор";
-            this.textBox_должности_идентификатор.Size = new System.Drawing.Size(282, 26);
-            this.textBox_должности_идентификатор.TabIndex = 113;
-            this.textBox_должности_идентификатор.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.должностиToolStripMenuItem.Name = "должностиToolStripMenuItem";
+            this.должностиToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.должностиToolStripMenuItem.Text = "Должности";
+            this.должностиToolStripMenuItem.Click += new System.EventHandler(this.должностиToolStripMenuItem_Click);
             // 
-            // textBox_должности_наименование
+            // предварительныеМОToolStripMenuItem
             // 
-            this.textBox_должности_наименование.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBox_должности_наименование.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_должности_наименование.Location = new System.Drawing.Point(239, 39);
-            this.textBox_должности_наименование.Name = "textBox_должности_наименование";
-            this.textBox_должности_наименование.Size = new System.Drawing.Size(282, 26);
-            this.textBox_должности_наименование.TabIndex = 114;
-            this.textBox_должности_наименование.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.предварительныеМОToolStripMenuItem.Name = "предварительныеМОToolStripMenuItem";
+            this.предварительныеМОToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.предварительныеМОToolStripMenuItem.Text = "ПредварительныеМО";
+            this.предварительныеМОToolStripMenuItem.Click += new System.EventHandler(this.предварительныеМОToolStripMenuItem_Click);
             // 
-            // label95
+            // здравпунктыToolStripMenuItem
             // 
-            this.label95.AutoSize = true;
-            this.label95.Location = new System.Drawing.Point(93, 18);
-            this.label95.Name = "label95";
-            this.label95.Size = new System.Drawing.Size(136, 21);
-            this.label95.TabIndex = 128;
-            this.label95.Text = "Идентификатор";
+            this.здравпунктыToolStripMenuItem.Name = "здравпунктыToolStripMenuItem";
+            this.здравпунктыToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.здравпунктыToolStripMenuItem.Text = "Здравпункты";
+            this.здравпунктыToolStripMenuItem.Click += new System.EventHandler(this.здравпунктыToolStripMenuItem_Click);
             // 
-            // button_должности_add
+            // сотрудникиToolStripMenuItem
             // 
-            this.button_должности_add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.button_должности_add.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_должности_add.Location = new System.Drawing.Point(735, 229);
-            this.button_должности_add.Name = "button_должности_add";
-            this.button_должности_add.Size = new System.Drawing.Size(154, 32);
-            this.button_должности_add.TabIndex = 125;
-            this.button_должности_add.Text = "Добавить в список";
-            this.button_должности_add.UseVisualStyleBackColor = false;
-            this.button_должности_add.Click += new System.EventHandler(this.button_должности_add_Click);
+            this.сотрудникиToolStripMenuItem.Name = "сотрудникиToolStripMenuItem";
+            this.сотрудникиToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.сотрудникиToolStripMenuItem.Text = "Сотрудники";
+            this.сотрудникиToolStripMenuItem.Click += new System.EventHandler(this.сотрудникиToolStripMenuItem_Click);
             // 
-            // button_должности_serialize
+            // трудоустройстваToolStripMenuItem
             // 
-            this.button_должности_serialize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.button_должности_serialize.Location = new System.Drawing.Point(735, 267);
-            this.button_должности_serialize.Name = "button_должности_serialize";
-            this.button_должности_serialize.Size = new System.Drawing.Size(154, 57);
-            this.button_должности_serialize.TabIndex = 127;
-            this.button_должности_serialize.Text = "Сериализовать список";
-            this.button_должности_serialize.UseVisualStyleBackColor = false;
-            this.button_должности_serialize.Click += new System.EventHandler(this.button_должности_serialize_Click);
-            // 
-            // richTextBox_должности
-            // 
-            this.richTextBox_должности.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBox_должности.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.richTextBox_должности.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.richTextBox_должности.Location = new System.Drawing.Point(895, 11);
-            this.richTextBox_должности.Name = "richTextBox_должности";
-            this.richTextBox_должности.Size = new System.Drawing.Size(650, 788);
-            this.richTextBox_должности.TabIndex = 126;
-            this.richTextBox_должности.Text = "";
-            // 
-            // button_randGUID_здравпункты
-            // 
-            this.button_randGUID_здравпункты.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_randGUID_здравпункты.Location = new System.Drawing.Point(483, 18);
-            this.button_randGUID_здравпункты.Name = "button_randGUID_здравпункты";
-            this.button_randGUID_здравпункты.Size = new System.Drawing.Size(75, 23);
-            this.button_randGUID_здравпункты.TabIndex = 148;
-            this.button_randGUID_здравпункты.Text = "Генерация";
-            this.button_randGUID_здравпункты.UseVisualStyleBackColor = true;
-            this.button_randGUID_здравпункты.Click += new System.EventHandler(this.button_randGUID_здравпункты_Click);
-            // 
-            // listView_здравпункты
-            // 
-            this.listView_здравпункты.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.listView_здравпункты.HideSelection = false;
-            this.listView_здравпункты.Location = new System.Drawing.Point(691, 13);
-            this.listView_здравпункты.Name = "listView_здравпункты";
-            this.listView_здравпункты.Size = new System.Drawing.Size(154, 209);
-            this.listView_здравпункты.TabIndex = 147;
-            this.listView_здравпункты.UseCompatibleStateImageBehavior = false;
-            this.listView_здравпункты.View = System.Windows.Forms.View.List;
-            this.listView_здравпункты.SelectedIndexChanged += new System.EventHandler(this.listView_здравпункты_SelectedIndexChanged);
-            // 
-            // label86
-            // 
-            this.label86.AutoSize = true;
-            this.label86.Location = new System.Drawing.Point(59, 44);
-            this.label86.Name = "label86";
-            this.label86.Size = new System.Drawing.Size(126, 21);
-            this.label86.TabIndex = 142;
-            this.label86.Text = "Наименование";
-            // 
-            // textBox_здравпункты_идентификатор
-            // 
-            this.textBox_здравпункты_идентификатор.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBox_здравпункты_идентификатор.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_здравпункты_идентификатор.Location = new System.Drawing.Point(195, 13);
-            this.textBox_здравпункты_идентификатор.Name = "textBox_здравпункты_идентификатор";
-            this.textBox_здравпункты_идентификатор.Size = new System.Drawing.Size(282, 26);
-            this.textBox_здравпункты_идентификатор.TabIndex = 140;
-            this.textBox_здравпункты_идентификатор.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox_здравпункты_наименование
-            // 
-            this.textBox_здравпункты_наименование.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBox_здравпункты_наименование.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_здравпункты_наименование.Location = new System.Drawing.Point(195, 39);
-            this.textBox_здравпункты_наименование.Name = "textBox_здравпункты_наименование";
-            this.textBox_здравпункты_наименование.Size = new System.Drawing.Size(282, 26);
-            this.textBox_здравпункты_наименование.TabIndex = 141;
-            this.textBox_здравпункты_наименование.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label87
-            // 
-            this.label87.AutoSize = true;
-            this.label87.Location = new System.Drawing.Point(49, 18);
-            this.label87.Name = "label87";
-            this.label87.Size = new System.Drawing.Size(136, 21);
-            this.label87.TabIndex = 146;
-            this.label87.Text = "Идентификатор";
-            // 
-            // button_здравпункты_add
-            // 
-            this.button_здравпункты_add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.button_здравпункты_add.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_здравпункты_add.Location = new System.Drawing.Point(691, 229);
-            this.button_здравпункты_add.Name = "button_здравпункты_add";
-            this.button_здравпункты_add.Size = new System.Drawing.Size(154, 32);
-            this.button_здравпункты_add.TabIndex = 143;
-            this.button_здравпункты_add.Text = "Добавить в список";
-            this.button_здравпункты_add.UseVisualStyleBackColor = false;
-            this.button_здравпункты_add.Click += new System.EventHandler(this.button_здравпункты_add_Click);
-            // 
-            // button_здравпункты_serialize
-            // 
-            this.button_здравпункты_serialize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.button_здравпункты_serialize.Location = new System.Drawing.Point(691, 267);
-            this.button_здравпункты_serialize.Name = "button_здравпункты_serialize";
-            this.button_здравпункты_serialize.Size = new System.Drawing.Size(154, 57);
-            this.button_здравпункты_serialize.TabIndex = 145;
-            this.button_здравпункты_serialize.Text = "Сериализовать список";
-            this.button_здравпункты_serialize.UseVisualStyleBackColor = false;
-            this.button_здравпункты_serialize.Click += new System.EventHandler(this.button_здравпункты_serialize_Click);
-            // 
-            // richTextBox_здравпункты
-            // 
-            this.richTextBox_здравпункты.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBox_здравпункты.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.richTextBox_здравпункты.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.richTextBox_здравпункты.Location = new System.Drawing.Point(851, 11);
-            this.richTextBox_здравпункты.Name = "richTextBox_здравпункты";
-            this.richTextBox_здравпункты.Size = new System.Drawing.Size(684, 788);
-            this.richTextBox_здравпункты.TabIndex = 144;
-            this.richTextBox_здравпункты.Text = "";
-            // 
-            // button_контрагенты_загрузить
-            // 
-            this.button_контрагенты_загрузить.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.button_контрагенты_загрузить.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_контрагенты_загрузить.Location = new System.Drawing.Point(735, 326);
-            this.button_контрагенты_загрузить.Name = "button_контрагенты_загрузить";
-            this.button_контрагенты_загрузить.Size = new System.Drawing.Size(154, 57);
-            this.button_контрагенты_загрузить.TabIndex = 114;
-            this.button_контрагенты_загрузить.Text = "Загрузить список в базу";
-            this.button_контрагенты_загрузить.UseVisualStyleBackColor = false;
-            this.button_контрагенты_загрузить.Click += new System.EventHandler(this.button_контрагенты_загрузить_Click);
+            this.трудоустройстваToolStripMenuItem.Name = "трудоустройстваToolStripMenuItem";
+            this.трудоустройстваToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.трудоустройстваToolStripMenuItem.Text = "Трудоустройства";
+            this.трудоустройстваToolStripMenuItem.Click += new System.EventHandler(this.трудоустройстваToolStripMenuItem_Click);
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.ClientSize = new System.Drawing.Size(1583, 868);
+            this.ClientSize = new System.Drawing.Size(1504, 868);
             this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ММЦ : Формирование XML файлов";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage_Контрагенты.ResumeLayout(false);
             this.tabPage_Контрагенты.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_контрагенты)).EndInit();
-            this.tabPage_Сотрудники.ResumeLayout(false);
-            this.tabPage_Сотрудники.PerformLayout();
             this.tabPage_Договора.ResumeLayout(false);
             this.tabPage_Договора.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_договора)).EndInit();
+            this.tabPage_Должности.ResumeLayout(false);
+            this.tabPage_Должности.PerformLayout();
             this.tabPage_ПМО.ResumeLayout(false);
             this.tabPage_ПМО.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_ПМО_факторы)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_ПМО_условия)).EndInit();
+            this.tabPage_Здравпункты.ResumeLayout(false);
+            this.tabPage_Здравпункты.PerformLayout();
+            this.tabPage_Сотрудники.ResumeLayout(false);
+            this.tabPage_Сотрудники.PerformLayout();
             this.tabPage_Трудоустройства.ResumeLayout(false);
             this.tabPage_Трудоустройства.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_трудоустройства_факторы)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_трудоустройства_условия)).EndInit();
-            this.tabPage_Должности.ResumeLayout(false);
-            this.tabPage_Должности.PerformLayout();
-            this.tabPage_Здравпункты.ResumeLayout(false);
-            this.tabPage_Здравпункты.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -3048,6 +3149,16 @@
         private System.Windows.Forms.Button button_здравпункты_serialize;
         private System.Windows.Forms.RichTextBox richTextBox_здравпункты;
         private System.Windows.Forms.Button button_контрагенты_загрузить;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem загрузитьЛистExcelToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem контрагентыToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem договораToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem должностиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem предварительныеМОToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem здравпунктыToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem сотрудникиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem трудоустройстваToolStripMenuItem;
     }
 }
 

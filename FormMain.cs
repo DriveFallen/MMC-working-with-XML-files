@@ -4,6 +4,8 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using SerializerXML.XMLClasses;
+using Excel = Microsoft.Office.Interop.Excel;
+
 namespace SerializerXML
 {
     public partial class FormMain : Form
@@ -451,7 +453,7 @@ namespace SerializerXML
                 {
                     Margin = new Padding(3, 6, 3, 3),
                     Text = "Услуга_" + (i + 1),
-                    Width = 87
+                    Width = 93
                 };
 
                 flowLayoutPanel_договора.Controls.Add(list_договора_услуги[i]);
@@ -1194,6 +1196,128 @@ namespace SerializerXML
             textBox_здравпункты_наименование.Text = string.Empty;
             listView_здравпункты.SelectedItems.Clear();
             richTextBox_здравпункты.Text = string.Empty;
+        }
+
+        // Строка с инструментами
+        //
+        private void контрагентыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                tabControl1.SelectedIndex = 0;
+
+                OpenFileDialog fileDialog = new OpenFileDialog();
+                if (fileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    Excel.Application excel = new Excel.Application();
+                    Excel.Workbook workbook = excel.Workbooks.Open(fileDialog.FileName);
+                    Excel.Worksheet worksheet = workbook.Sheets["Контрагент"];
+                    Excel.Range range = worksheet.UsedRange;
+                    int rowCount = range.Rows.Count;
+                    int colCount = range.Columns.Count;
+
+                    for (int i = 2; i <= rowCount; i++)
+                    {
+                        textBox_контрагенты_уид.Text = range.Cells[i, 1].value != null ? range.Cells[i, 1].value.ToString() : string.Empty;
+                        textBox_контрагенты_ИНН.Text = range.Cells[i, 2].value != null ? range.Cells[i, 2].value.ToString() : string.Empty;
+                        textBox_контрагенты_КПП.Text = range.Cells[i, 3].value != null ? range.Cells[i, 3].value.ToString() : string.Empty;
+                        textBox_контрагенты_названиеОрганизации.Text = range.Cells[i, 4].value != null ? range.Cells[i, 4].value.ToString() : string.Empty;
+                        textBox_контрагенты_ОГРН.Text = range.Cells[i, 5].value != null ? range.Cells[i, 5].value.ToString() : string.Empty;
+                        textBox_контрагенты_ОКПО.Text = range.Cells[i, 6].value != null ? range.Cells[i, 6].value.ToString() : string.Empty;
+                        textBox_контрагенты_ЮрАдрес.Text = range.Cells[i, 7].value != null ? range.Cells[i, 7].value.ToString() : string.Empty;
+
+                        numericUpDown_контрагенты.Value = 1;
+                        list_контрагенты_подразделения_уид[0].Text = range.Cells[i, 8].value != null ? range.Cells[i, 8].value.ToString() : string.Empty;
+                        list_контрагенты_подразделения_код[0].Text = range.Cells[i, 9].value != null ? range.Cells[i, 9].value.ToString() : string.Empty;
+                        list_контрагенты_подразделения_наименование[0].Text = range.Cells[i, 10].value != null ? range.Cells[i, 10].value.ToString() : string.Empty;
+                        button_контрагенты_add.PerformClick();
+                    }
+                    workbook.Close();
+                    excel.Quit();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка загрузки листа 'Контрагенты'");
+            }
+        }
+        private void договораToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void должностиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                tabControl1.SelectedIndex = 2;
+
+                OpenFileDialog fileDialog = new OpenFileDialog();
+                if (fileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    Excel.Application excel = new Excel.Application();
+                    Excel.Workbook workbook = excel.Workbooks.Open(fileDialog.FileName);
+                    Excel.Worksheet worksheet = workbook.Sheets["Должности"];
+                    Excel.Range range = worksheet.UsedRange;
+                    int rowCount = range.Rows.Count;
+                    int colCount = range.Columns.Count;
+
+                    for (int i = 2; i <= rowCount; i++)
+                    {
+                        textBox_должности_идентификатор.Text = range.Cells[i, 1].value.ToString();
+                        textBox_должности_наименование.Text = range.Cells[i, 2].value.ToString();
+                        button_должности_add.PerformClick();
+                    }
+                    workbook.Close();
+                    excel.Quit();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message,"Ошибка загрузки листа 'Должности'");
+            }          
+        }
+        private void предварительныеМОToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void здравпунктыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                tabControl1.SelectedIndex = 4;
+
+                OpenFileDialog fileDialog = new OpenFileDialog();
+                if (fileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    Excel.Application excel = new Excel.Application();
+                    Excel.Workbook workbook = excel.Workbooks.Open(fileDialog.FileName);
+                    Excel.Worksheet worksheet = workbook.Sheets["Здравпункты"];
+                    Excel.Range range = worksheet.UsedRange;
+                    int rowCount = range.Rows.Count;
+                    int colCount = range.Columns.Count;
+
+                    for (int i = 2; i <= rowCount; i++)
+                    {
+                        textBox_здравпункты_идентификатор.Text = range.Cells[i, 1].value.ToString();
+                        textBox_здравпункты_наименование.Text = range.Cells[i, 2].value.ToString();
+                        button_здравпункты_add.PerformClick();
+                    }
+                    workbook.Close();
+                    excel.Quit();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка загрузки листа 'Здравпункты'");
+            }
+        }
+        private void сотрудникиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void трудоустройстваToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
