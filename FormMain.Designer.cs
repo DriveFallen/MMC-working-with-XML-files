@@ -69,6 +69,7 @@
             this.listView_договора = new System.Windows.Forms.ListView();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage_Контрагенты = new System.Windows.Forms.TabPage();
+            this.checkBox_показать = new System.Windows.Forms.CheckBox();
             this.button_контрагенты_create = new System.Windows.Forms.Button();
             this.numericUpDown_контрагенты = new System.Windows.Forms.NumericUpDown();
             this.flowLayoutPanel_контрагенты = new System.Windows.Forms.FlowLayoutPanel();
@@ -97,7 +98,6 @@
             this.richTextBox_контрагенты = new System.Windows.Forms.RichTextBox();
             this.tabPage_Договора = new System.Windows.Forms.TabPage();
             this.comboBox_договора_контрагент = new System.Windows.Forms.ComboBox();
-            this.button_randGUID_договора = new System.Windows.Forms.Button();
             this.flowLayoutPanel_договора = new System.Windows.Forms.FlowLayoutPanel();
             this.numericUpDown_договора = new System.Windows.Forms.NumericUpDown();
             this.tabPage_Должности = new System.Windows.Forms.TabPage();
@@ -260,7 +260,6 @@
             this.здравпунктыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сотрудникиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.трудоустройстваToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.checkBox_показать = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage_Контрагенты.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_контрагенты)).BeginInit();
@@ -730,6 +729,20 @@
             this.tabPage_Контрагенты.TabIndex = 1;
             this.tabPage_Контрагенты.Text = "Контрагенты";
             // 
+            // checkBox_показать
+            // 
+            this.checkBox_показать.AutoSize = true;
+            this.checkBox_показать.Checked = true;
+            this.checkBox_показать.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_показать.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkBox_показать.Location = new System.Drawing.Point(209, 262);
+            this.checkBox_показать.Name = "checkBox_показать";
+            this.checkBox_показать.Size = new System.Drawing.Size(150, 23);
+            this.checkBox_показать.TabIndex = 116;
+            this.checkBox_показать.Text = "Показать все поля";
+            this.checkBox_показать.UseVisualStyleBackColor = true;
+            this.checkBox_показать.CheckedChanged += new System.EventHandler(this.checkBox_показать_CheckedChanged);
+            // 
             // button_контрагенты_create
             // 
             this.button_контрагенты_create.Location = new System.Drawing.Point(497, 20);
@@ -1017,7 +1030,6 @@
             // 
             this.tabPage_Договора.BackColor = System.Drawing.Color.CadetBlue;
             this.tabPage_Договора.Controls.Add(this.comboBox_договора_контрагент);
-            this.tabPage_Договора.Controls.Add(this.button_randGUID_договора);
             this.tabPage_Договора.Controls.Add(this.flowLayoutPanel_договора);
             this.tabPage_Договора.Controls.Add(this.numericUpDown_договора);
             this.tabPage_Договора.Controls.Add(this.label1);
@@ -1074,17 +1086,6 @@
             this.comboBox_договора_контрагент.Name = "comboBox_договора_контрагент";
             this.comboBox_договора_контрагент.Size = new System.Drawing.Size(282, 27);
             this.comboBox_договора_контрагент.TabIndex = 114;
-            // 
-            // button_randGUID_договора
-            // 
-            this.button_randGUID_договора.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_randGUID_договора.Location = new System.Drawing.Point(605, 28);
-            this.button_randGUID_договора.Name = "button_randGUID_договора";
-            this.button_randGUID_договора.Size = new System.Drawing.Size(75, 23);
-            this.button_randGUID_договора.TabIndex = 113;
-            this.button_randGUID_договора.Text = "Генерация";
-            this.button_randGUID_договора.UseVisualStyleBackColor = true;
-            this.button_randGUID_договора.Click += new System.EventHandler(this.button_randGUID_договора_Click);
             // 
             // flowLayoutPanel_договора
             // 
@@ -2876,20 +2877,6 @@
             this.трудоустройстваToolStripMenuItem.Text = "Трудоустройства";
             this.трудоустройстваToolStripMenuItem.Click += new System.EventHandler(this.трудоустройстваToolStripMenuItem_Click);
             // 
-            // checkBox_показать
-            // 
-            this.checkBox_показать.AutoSize = true;
-            this.checkBox_показать.Checked = true;
-            this.checkBox_показать.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox_показать.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox_показать.Location = new System.Drawing.Point(209, 262);
-            this.checkBox_показать.Name = "checkBox_показать";
-            this.checkBox_показать.Size = new System.Drawing.Size(150, 23);
-            this.checkBox_показать.TabIndex = 116;
-            this.checkBox_показать.Text = "Показать все поля";
-            this.checkBox_показать.UseVisualStyleBackColor = true;
-            this.checkBox_показать.CheckedChanged += new System.EventHandler(this.checkBox_показать_CheckedChanged);
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3129,7 +3116,6 @@
         private System.Windows.Forms.Button button_трудоустройства_serialize;
         private System.Windows.Forms.RichTextBox richTextBox_трудоустройства;
         private System.Windows.Forms.Button button_randGUID_сотрудники;
-        private System.Windows.Forms.Button button_randGUID_договора;
         private System.Windows.Forms.Button button_randGUID_ПМО;
         private System.Windows.Forms.Button button_randGUID_трудоустройства;
         private System.Windows.Forms.TabPage tabPage_Должности;

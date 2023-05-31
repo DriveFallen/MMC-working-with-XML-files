@@ -397,6 +397,8 @@ namespace SerializerXML
                 LVI.Tag = сотрудник;
                 listView_сотрудники.Items.Add(LVI);
             }
+
+            Clean_сотрудники();
         }
         private void button_сотрудники_serialize_Click(object sender, EventArgs e)
         {
@@ -471,7 +473,13 @@ namespace SerializerXML
             {
                 Договор договор = (Договор)listView_договора.SelectedItems[0].Tag;
                 textBox_договора_идентификатор.Text = договор.Идентификатор;
-                //textBox_договора_уид.Text = договор.УидКонтрагента;
+                foreach (ListViewItem item in listView_контрагенты.Items)
+                {
+                    if (((Контрагент)item.Tag).УидКонтрагента == договор.УидКонтрагента)
+                    {
+                        comboBox_договора_контрагент.Text = ((Контрагент)item.Tag).НазваниеОрганизации;
+                    }
+                }
                 textBox_договора_Код.Text = договор.КодПодразделения;
                 textBox_договора_номер.Text = договор.Номер;
                 textBox_договора_заключение.Text = договор.ДатаЗаключения;
@@ -502,10 +510,6 @@ namespace SerializerXML
                 Clean_договора();
             }
         }
-        private void button_randGUID_договора_Click(object sender, EventArgs e) // Рандомайзер GUID
-        {
-            textBox_договора_идентификатор.Text = Guid.NewGuid().ToString();
-        }
         private void button_договора_add_Click(object sender, EventArgs e)
         {
             Услуги услуги = new Услуги();
@@ -518,7 +522,14 @@ namespace SerializerXML
             Куратор куратор = new Куратор(textBox_договора_фамилия.Text, textBox_договора_имя.Text, textBox_договора_отчество.Text,
                textBox_договора_идентификаторДолжности.Text, textBox_договора_почта.Text, textBox_договора_телефон.Text);
 
-            Договор newдоговор = new Договор(textBox_договора_идентификатор.Text, "test"/*textBox_договора_уид.Text*/, textBox_договора_Код.Text,
+            foreach (ListViewItem item in listView_контрагенты.Items)
+            {
+                if (((Контрагент)item.Tag).НазваниеОрганизации == comboBox_договора_контрагент.Text)
+                {
+                    comboBox_договора_контрагент.Text = ((Контрагент)item.Tag).УидКонтрагента;
+                }
+            }
+            Договор newдоговор = new Договор(textBox_договора_идентификатор.Text, comboBox_договора_контрагент.Text, textBox_договора_Код.Text,
                 textBox_договора_номер.Text, textBox_договора_заключение.Text, textBox_договора_окончание.Text, textBox_договора_допустимое.Text,
                 textBox_договора_пройденое.Text, textBox_договора_общая.Text, textBox_договора_израсходованная.Text, услуги, textBox_договора_доп.Text, куратор);
 
@@ -1267,7 +1278,41 @@ namespace SerializerXML
         }
         private void договораToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            try
+            {
+                tabControl1.SelectedIndex = 1;
 
+                OpenFileDialog fileDialog = new OpenFileDialog();
+                if (fileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    Excel.Application excel = new Excel.Application();
+                    Excel.Workbooks workbooks = excel.Workbooks;
+                    Excel.Workbook workbook = workbooks.Open(fileDialog.FileName);
+                    Excel.Worksheet worksheet = workbook.Sheets["Договор"];
+                    Excel.Range range = worksheet.UsedRange;
+                    int rowCount = range.Rows.Count;
+                    int colCount = range.Columns.Count;
+
+                    for (int i = 2; i <= rowCount; i++)
+                    {
+                        textBox_договора_идентификатор.Text = range.Cells[i, 1].value != null ? range.Cells[i, 1].value.ToString() : string.Empty;
+                        comboBox_договора_контрагент.Text = range.Cells[i, 2].value != null ? range.Cells[i, 2].value.ToString() : string.Empty;
+                        textBox_договора_номер.Text = range.Cells[i, 3].value != null ? range.Cells[i, 3].value.ToString() : string.Empty;
+                        textBox_договора_заключение.Text = range.Cells[i, 4].value != null ? range.Cells[i, 4].value.ToString() : string.Empty;
+                        
+                        numericUpDown_договора.Value = 1;
+                        list_договора_услуги[0].Text = range.Cells[i, 5].value != null ? range.Cells[i, 5].value.ToString() : string.Empty;
+                        button_договора_add.PerformClick();
+                    }
+                    workbook.Close();
+                    workbooks.Close();
+                    excel.Quit();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка загрузки листа 'Договор'");
+            }
         }
         private void должностиToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -1432,8 +1477,8 @@ namespace SerializerXML
 
                     for (int i = 2; i <= rowCount; i++)
                     {
-                        textBox_здравпункты_идентификатор.Text = range.Cells[i, 1].value.ToString();
-                        textBox_здравпункты_наименование.Text = range.Cells[i, 2].value.ToString();
+                        textBox_здравпункты_идентификатор.Text = range.Cells[i, 1].value != null ? range.Cells[i, 1].value.ToString() : string.Empty;
+                        textBox_здравпункты_наименование.Text = range.Cells[i, 2].value != null ? range.Cells[i, 2].value.ToString() : string.Empty;
                         button_здравпункты_add.PerformClick();
                     }
                     workbook.Close();
@@ -1452,7 +1497,45 @@ namespace SerializerXML
         }
         private void сотрудникиToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            try
+            {
+                tabControl1.SelectedIndex = 5;
 
+                OpenFileDialog fileDialog = new OpenFileDialog();
+                if (fileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    Excel.Application excel = new Excel.Application();
+                    Excel.Workbooks workbooks = excel.Workbooks;
+                    Excel.Workbook workbook = workbooks.Open(fileDialog.FileName);
+                    Excel.Worksheet worksheet = workbook.Sheets["Сотрудники"];
+                    Excel.Range range = worksheet.UsedRange;
+                    int rowCount = range.Rows.Count;
+                    int colCount = range.Columns.Count;
+
+                    for (int i = 2; i <= rowCount; i++)
+                    {
+                        textBox_сотрудники_идентификатор.Text = range.Cells[i, 1].value != null ? range.Cells[i, 1].value.ToString() : string.Empty;
+                        textBox_сотрудники_Уид.Text = range.Cells[i, 2].value != null ? range.Cells[i, 2].value.ToString() : string.Empty;
+                        textBox_сотрудники_фамилия.Text = range.Cells[i, 3].value != null ? range.Cells[i, 3].value.ToString() : string.Empty;
+                        textBox_сотрудники_имя.Text = range.Cells[i, 4].value != null ? range.Cells[i, 4].value.ToString() : string.Empty;
+                        textBox_сотрудники_отчество.Text = range.Cells[i, 5].value != null ? range.Cells[i, 5].value.ToString() : string.Empty;
+                        textBox_сотрудники_пол.Text = range.Cells[i, 6].value != null ? range.Cells[i, 6].value.ToString() : string.Empty;
+                        textBox_сотрудники_ДатаРождения.Text = range.Cells[i, 7].value != null ? range.Cells[i, 7].value.ToString() : string.Empty;
+                        button_сотрудники_add.PerformClick();
+                    }
+                    workbook.Close();
+                    workbooks.Close();
+                    excel.Quit();
+
+                    Marshal.ReleaseComObject(workbook);
+                    Marshal.ReleaseComObject(workbooks);
+                    Marshal.ReleaseComObject(excel);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка загрузки листа 'Сотрудники'");
+            }
         }
         private void трудоустройстваToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -1482,6 +1565,8 @@ namespace SerializerXML
             this.Enabled = true;
         }
 
+        // CheckBox всех форм
+        //
         private void checkBox_показать_CheckedChanged(object sender, EventArgs e)
         {
             if (((CheckBox)sender).Checked == true)
