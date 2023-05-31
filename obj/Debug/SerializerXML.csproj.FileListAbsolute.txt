@@ -21,3 +21,4 @@ C:\Users\Vlad\Desktop\MMC project\obj\Debug\SerializerXML.csproj.CoreCompileInpu
 C:\Users\Vlad\Desktop\MMC project\obj\Debug\SerializerXML.exe
 C:\Users\Vlad\Desktop\MMC project\obj\Debug\SerializerXML.pdb
 C:\Users\Vlad\Desktop\MMC project\obj\Debug\SerializerXML.csproj.ResolveComReference.cache
+C:\Users\Vlad\Desktop\MMC project\obj\Debug\SerializerXML.CreatingNewInstance.FormNewКонтрагент.resources

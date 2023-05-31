@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using SerializerXML.CreatingNewInstance;
 using SerializerXML.XMLClasses;
 using Excel = Microsoft.Office.Interop.Excel;
 
@@ -16,6 +18,7 @@ namespace SerializerXML
         }
 
         // Листы для контрагентов
+        public ListView lv_контрагенты = new ListView();
         public List<TextBox> list_контрагенты_подразделения_уид = new List<TextBox>();
         public List<TextBox> list_контрагенты_подразделения_код = new List<TextBox>();
         public List<TextBox> list_контрагенты_подразделения_наименование = new List<TextBox>();
@@ -39,7 +42,7 @@ namespace SerializerXML
             {
                 ListViewItem LVI = new ListViewItem(контрагенты.контрагенты[i].УидКонтрагента);
                 LVI.Tag = контрагенты.контрагенты[i];
-                listView_контрагенты.Items.Add(LVI);
+                listView_контрагенты.Items.Add(LVI).Text = ((Контрагент)LVI.Tag).НазваниеОрганизации;
             }
         }
 
@@ -59,7 +62,7 @@ namespace SerializerXML
                         {
                             ListViewItem LVI = new ListViewItem(контрагенты.контрагенты[i].УидКонтрагента);
                             LVI.Tag = контрагенты.контрагенты[i];
-                            listView_контрагенты.Items.Add(LVI);
+                            listView_контрагенты.Items.Add(LVI).Text = ((Контрагент)LVI.Tag).НазваниеОрганизации;
                         }
                     }
                     break;
@@ -67,13 +70,19 @@ namespace SerializerXML
                     {
                         Clean_договора();
                         listView_договора.Items.Clear();
+                        comboBox_договора_контрагент.Items.Clear();
 
                         Договора договора = MySerializer.DeserializerXML_договора();
                         for (int i = 0; i < договора.договора.Count; i++)
                         {
                             ListViewItem LVI = new ListViewItem(договора.договора[i].Идентификатор);
                             LVI.Tag = договора.договора[i];
-                            listView_договора.Items.Add(LVI);
+                            listView_договора.Items.Add(LVI).Text = ((Договор)LVI.Tag).Номер;
+                        }
+
+                        foreach (ListViewItem item in listView_контрагенты.Items)
+                        {
+                            comboBox_договора_контрагент.Items.Add(((Контрагент)item.Tag).НазваниеОрганизации);
                         }
                     }
                     break;
@@ -262,10 +271,6 @@ namespace SerializerXML
                 Clean_контрагенты();
             }
         }
-        private void button_randGUID_контрагенты_Click(object sender, EventArgs e) // Рандомайзер GUID
-        {
-            textBox_контрагенты_уид.Text = Guid.NewGuid().ToString();
-        }
         private void button_контрагенты_add_Click(object sender, EventArgs e) // Добавление или изменение экземпляра "Контрагент" в лист, для формирования полноценного файла
         {
             Подразделения подразделения = new Подразделения();
@@ -280,7 +285,7 @@ namespace SerializerXML
             } // Создаем подразделения через список
 
             Контрагент контрагент = new Контрагент(
-                textBox_контрагенты_уид.Text, textBox_контрагенты_ИНН.Text,
+                textBox_контрагенты_уид.Text, textBox_контрагенты_ИНН.Text ?? string.Empty,
                 textBox_контрагенты_КПП.Text, textBox_контрагенты_ОГРН.Text,
                 textBox_контрагенты_ОКПО.Text, textBox_контрагенты_ЮрАдрес.Text,
                 textBox_контрагенты_названиеОрганизации.Text,
@@ -297,7 +302,7 @@ namespace SerializerXML
                 ListViewItem LVI = new ListViewItem(контрагент.УидКонтрагента);
                 LVI.Tag = контрагент;
                 LVI.BackColor = Color.Khaki;
-                listView_контрагенты.Items.Add(LVI);
+                listView_контрагенты.Items.Add(LVI).Text = ((Контрагент)LVI.Tag).НазваниеОрганизации;
             }
 
             Clean_контрагенты();
@@ -323,13 +328,9 @@ namespace SerializerXML
 
             richTextBox_контрагенты.Text = MySerializer.SerializerXML(контрагенты);
         }
-        private void button_контрагенты_загрузить_Click(object sender, EventArgs e)
-        {
-
-        }
         private void button_контрагенты_подразделения_randGUID_Click(object sender, EventArgs e) // Рандомайзер GUID для динамических элементов
         {
-            list_контрагенты_подразделения_уид[(int)((Button)sender).Tag].Text = Guid.NewGuid().ToString();
+            list_контрагенты_подразделения_уид[(int)((Button)sender).Tag].Text = Guid.NewGuid().ToString().ToUpper();
         }
         private void Clean_контрагенты() // Очищение полей ввода, обнуление счетчика, текстового поля
         {
@@ -378,7 +379,7 @@ namespace SerializerXML
         private void button_сотрудники_add_Click(object sender, EventArgs e)
         {
             Сотрудник сотрудник = new Сотрудник(
-                textBox_сотрудники_идентификатор.Text, textBox_контрагенты_уид.Text,
+                textBox_сотрудники_идентификатор.Text, textBox_сотрудники_Уид.Text,
                 textBox_сотрудники_снилс.Text, textBox_сотрудники_фамилия.Text,
                 textBox_сотрудники_имя.Text, textBox_сотрудники_отчество.Text,
                 textBox_сотрудники_пол.Text, textBox_сотрудники_ДатаРождения.Text,
@@ -470,7 +471,7 @@ namespace SerializerXML
             {
                 Договор договор = (Договор)listView_договора.SelectedItems[0].Tag;
                 textBox_договора_идентификатор.Text = договор.Идентификатор;
-                textBox_договора_уид.Text = договор.УидКонтрагента;
+                //textBox_договора_уид.Text = договор.УидКонтрагента;
                 textBox_договора_Код.Text = договор.КодПодразделения;
                 textBox_договора_номер.Text = договор.Номер;
                 textBox_договора_заключение.Text = договор.ДатаЗаключения;
@@ -515,9 +516,9 @@ namespace SerializerXML
             }
 
             Куратор куратор = new Куратор(textBox_договора_фамилия.Text, textBox_договора_имя.Text, textBox_договора_отчество.Text,
-               textBox_договора_идентификаторДолжности.Text, textBox_договора_почта.Text, textBox_договора_телефон.Text);      
+               textBox_договора_идентификаторДолжности.Text, textBox_договора_почта.Text, textBox_договора_телефон.Text);
 
-            Договор newдоговор = new Договор(textBox_договора_идентификатор.Text, textBox_договора_уид.Text, textBox_договора_Код.Text,
+            Договор newдоговор = new Договор(textBox_договора_идентификатор.Text, "test"/*textBox_договора_уид.Text*/, textBox_договора_Код.Text,
                 textBox_договора_номер.Text, textBox_договора_заключение.Text, textBox_договора_окончание.Text, textBox_договора_допустимое.Text,
                 textBox_договора_пройденое.Text, textBox_договора_общая.Text, textBox_договора_израсходованная.Text, услуги, textBox_договора_доп.Text, куратор);
 
@@ -558,7 +559,7 @@ namespace SerializerXML
         private void Clean_договора()
         {
             textBox_договора_идентификатор.Text = string.Empty;
-            textBox_договора_уид.Text = string.Empty;
+            comboBox_договора_контрагент.Text = string.Empty;
             textBox_договора_Код.Text = string.Empty;
             textBox_договора_номер.Text = string.Empty;
             textBox_договора_заключение.Text = string.Empty;
@@ -709,6 +710,9 @@ namespace SerializerXML
                 textBox_ПМО_НомерСправки.Text = пмо.справка.НомерСправки;
                 textBox_ПМО_ДатаВыдачиСправки.Text = пмо.справка.ДатаВыдачиСправки;
                 textBox_ПМО_Файл.Text = пмо.справка.Файл;
+
+                numericUpDown_ПМО_условия.Value = пмо.вредныеУсловия.условия.Count;
+                numericUpDown_ПМО_факторы.Value = пмо.вредныеФакторы.факторы.Count;
 
                 createNew_ПМО_условие(numericUpDown_ПМО_условия.Value);
                 createNew_ПМО_фактор(numericUpDown_ПМО_факторы.Value);
@@ -960,12 +964,30 @@ namespace SerializerXML
                 textBox_трудоустройства_НомерСправки.Text = предМо.справка.НомерСправки;
                 textBox_трудоустройства_ДатаВыдачиСправки.Text = предМо.справка.ДатаВыдачиСправки;
                 textBox_трудоустройства_Файл.Text = предМо.справка.Файл;
+
+                numericUpDown_трудоустройства_условия.Value = предМо.вредныеУсловия.условия.Count;
+                numericUpDown_трудоустройства_факторы.Value = предМо.вредныеФакторы.факторы.Count;
+
+                createNew_ПредМО_условие(numericUpDown_трудоустройства_условия.Value);
+                createNew_ПредМО_фактор(numericUpDown_трудоустройства_факторы.Value);
+
+                for (int i = 0; i < numericUpDown_трудоустройства_условия.Value; i++)
+                {
+                    list_трудоустройства_условия_код[i].Text = предМо.вредныеУсловия.условия[i].Код;
+                    list_трудоустройства_условия_наименование[i].Text = предМо.вредныеУсловия.условия[i].Наименование;
+                }
+
+                for (int i = 0; i < numericUpDown_ПМО_факторы.Value; i++)
+                {
+                    list_трудоустройства_факторы_код[i].Text = предМо.вредныеФакторы.факторы[i].Код;
+                    list_трудоустройства_факторы_наименование[i].Text = предМо.вредныеФакторы.факторы[i].Наименование;
+                }
             }
             else if (listView_трудоустройства.SelectedItems.Count == 0)
             {
                 Clean_Трудоустройства();
             }
-        }
+        } ///////////////////////////////////////////////////////////////////////////////////////////////////////////// Дописать добавление условий и факторов
         private void button_randGUID_трудоустройства_Click(object sender, EventArgs e) // Рандомайзер GUID
         {
             textBox_трудоустройства_Идентификатор.Text = Guid.NewGuid().ToString();
@@ -1210,7 +1232,8 @@ namespace SerializerXML
                 if (fileDialog.ShowDialog() == DialogResult.OK)
                 {
                     Excel.Application excel = new Excel.Application();
-                    Excel.Workbook workbook = excel.Workbooks.Open(fileDialog.FileName);
+                    Excel.Workbooks workbooks = excel.Workbooks;
+                    Excel.Workbook workbook = workbooks.Open(fileDialog.FileName);
                     Excel.Worksheet worksheet = workbook.Sheets["Контрагент"];
                     Excel.Range range = worksheet.UsedRange;
                     int rowCount = range.Rows.Count;
@@ -1233,6 +1256,7 @@ namespace SerializerXML
                         button_контрагенты_add.PerformClick();
                     }
                     workbook.Close();
+                    workbooks.Close();
                     excel.Quit();
                 }
             }
@@ -1255,7 +1279,8 @@ namespace SerializerXML
                 if (fileDialog.ShowDialog() == DialogResult.OK)
                 {
                     Excel.Application excel = new Excel.Application();
-                    Excel.Workbook workbook = excel.Workbooks.Open(fileDialog.FileName);
+                    Excel.Workbooks workbooks = excel.Workbooks;
+                    Excel.Workbook workbook = workbooks.Open(fileDialog.FileName);
                     Excel.Worksheet worksheet = workbook.Sheets["Должности"];
                     Excel.Range range = worksheet.UsedRange;
                     int rowCount = range.Rows.Count;
@@ -1263,23 +1288,131 @@ namespace SerializerXML
 
                     for (int i = 2; i <= rowCount; i++)
                     {
-                        textBox_должности_идентификатор.Text = range.Cells[i, 1].value.ToString();
-                        textBox_должности_наименование.Text = range.Cells[i, 2].value.ToString();
+                        textBox_должности_идентификатор.Text = range.Cells[i, 1].value != null ? range.Cells[i, 1].value.ToString() : string.Empty;
+                        textBox_должности_наименование.Text = range.Cells[i, 2].value != null ? range.Cells[i, 2].value.ToString() : string.Empty;
                         button_должности_add.PerformClick();
                     }
                     workbook.Close();
+                    workbooks.Close();
                     excel.Quit();
+
+                    Marshal.ReleaseComObject(workbook);
+                    Marshal.ReleaseComObject(workbooks);
+                    Marshal.ReleaseComObject(excel);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message,"Ошибка загрузки листа 'Должности'");
-            }          
+                MessageBox.Show(ex.Message, "Ошибка загрузки листа 'Должности'");
+            }
         }
         private void предварительныеМОToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            try
+            {
+                tabControl1.SelectedIndex = 3;
 
-        }
+                OpenFileDialog fileDialog = new OpenFileDialog();
+                if (fileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    Excel.Application excel = new Excel.Application();
+                    Excel.Workbooks workbooks = excel.Workbooks;
+                    Excel.Workbook workbook = workbooks.Open(fileDialog.FileName);
+                    Excel.Worksheet worksheet = workbook.Sheets["ПМО"];
+                    Excel.Range range = worksheet.UsedRange;
+                    int rowCount = range.Rows.Count;
+                    int colCount = range.Columns.Count;
+
+                    for (int i = 2; i <= rowCount; i++)
+                    {
+                        textBox_ПМО_Идентификатор.Text = range.Cells[i, 1].value != null ? range.Cells[i, 1].value.ToString() : string.Empty;
+                        textBox_ПМО_Уид.Text = range.Cells[i, 2].value != null ? range.Cells[i, 2].value.ToString() : string.Empty;
+                        textBox_ПМО_ИдентификаторДолжности.Text = range.Cells[i, 3].value != null ? range.Cells[i, 3].value.ToString() : string.Empty;
+                        textBox_ПМО_ИдентификаторПодразделения.Text = range.Cells[i, 4].value != null ? range.Cells[i, 4].value.ToString() : string.Empty;
+                        textBox_ПМО_ИдентификаторДоговора.Text = range.Cells[i, 5].value != null ? range.Cells[i, 5].value.ToString() : string.Empty;
+                        textBox_ПМО_НомерОбращения.Text = range.Cells[i, 6].value != null ? range.Cells[i, 6].value.ToString() : string.Empty;
+                        textBox_ПМО_ДатаОсмотра.Text = range.Cells[i, 7].value != null ? range.Cells[i, 7].value.ToString() : string.Empty;
+                        textBox_ПМО_Результат.Text = range.Cells[i, 8].value != null ? range.Cells[i, 8].value.ToString() : string.Empty;
+                        textBox_ПМО_ИдентификаторЗдравпункта.Text = range.Cells[i, 9].value != null ? range.Cells[i, 9].value.ToString() : string.Empty;
+                        textBox_ПМО_Председатель.Text = range.Cells[i, 10].value != null ? range.Cells[i, 10].value.ToString() : string.Empty;
+                        textBox_ПМО_ГруппаРиска.Text = range.Cells[i, 11].value != null ? range.Cells[i, 11].value.ToString() : string.Empty;
+                        textBox_ПМО_Рекомендации.Text = range.Cells[i, 12].value != null ? range.Cells[i, 12].value.ToString() : string.Empty;
+                        textBox_ПМО_ДатаПрисвоения.Text = range.Cells[i, 13].value != null ? range.Cells[i, 13].value.ToString() : string.Empty;
+                        textBox_ПМО_ГруппаЗдоровья.Text = range.Cells[i, 14].value != null ? range.Cells[i, 14].value.ToString() : string.Empty;
+
+                        string[] list_условия_код = range.Cells[i, 15].value != null ? range.Cells[i, 15].value.ToString().Split(',') : new string[] { string.Empty };
+                        if (list_условия_код[0] != string.Empty)
+                        {
+                            numericUpDown_ПМО_условия.Value = list_условия_код.Length;
+                            if (numericUpDown_ПМО_условия.Value >= 1)
+                            {
+                                for (int j = 0; j < list_условия_код.Length; j++)
+                                {
+                                    list_ПМО_условия_код[j].Text = list_условия_код[j];
+                                }
+                            }
+                        }
+
+                        string[] list_условия_наименование = range.Cells[i, 16].value != null ? range.Cells[i, 16].value.ToString().Split(',') : new string[] { string.Empty };
+                        if (list_условия_наименование[0] != string.Empty)
+                        {
+                            numericUpDown_ПМО_условия.Value = list_условия_наименование.Length;
+                            if (numericUpDown_ПМО_условия.Value >= 1)
+                            {
+                                for (int j = 0; j < list_условия_наименование.Length; j++)
+                                {
+                                    list_ПМО_условия_наименование[j].Text = list_условия_код[j];
+                                }
+                            }
+                        }
+
+                        string[] list_факторы_код = range.Cells[i, 17].value != null ? range.Cells[i, 17].value.ToString().Split(',') : new string[] { string.Empty };
+                        if (list_факторы_код[0] != string.Empty)
+                        {
+                            numericUpDown_ПМО_факторы.Value = list_факторы_код.Length;
+                            if (numericUpDown_ПМО_факторы.Value >= 1)
+                            {
+                                for (int j = 0; j < list_факторы_код.Length; j++)
+                                {
+                                    list_ПМО_факторы_код[j].Text = list_факторы_код[j];
+                                }
+                            }
+                        }
+
+                        string[] list_факторы_наименование = range.Cells[i, 18].value != null ? range.Cells[i, 18].value.ToString().Split(',') : new string[] { string.Empty };
+                        if (list_факторы_наименование[0] != string.Empty)
+                        {
+                            numericUpDown_ПМО_факторы.Value = list_факторы_наименование.Length;
+                            if (numericUpDown_ПМО_факторы.Value >= 1)
+                            {
+                                for (int j = 0; j < list_факторы_наименование.Length; j++)
+                                {
+                                    list_ПМО_факторы_наименование[j].Text = list_факторы_наименование[j];
+                                }
+                            }
+                        }
+
+                        textBox_ПМО_НомерСправки.Text = range.Cells[i, 19].value != null ? range.Cells[i, 19].value.ToString() : string.Empty;
+                        textBox_ПМО_ДатаВыдачиСправки.Text = range.Cells[i, 20].value != null ? range.Cells[i, 20].value.ToString() : string.Empty;
+
+                        button_ПМО_add.PerformClick();
+                    }
+                    workbook.Close();
+                    workbooks.Close();
+                    excel.Quit();
+
+                    Marshal.ReleaseComObject(range);
+                    Marshal.ReleaseComObject(worksheet);
+                    Marshal.ReleaseComObject(workbook);
+                    Marshal.ReleaseComObject(workbooks);
+                    Marshal.ReleaseComObject(excel);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка загрузки листа 'ПМО'");
+            }
+        } ////////////////////////////////// Проверить
         private void здравпунктыToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
@@ -1290,7 +1423,8 @@ namespace SerializerXML
                 if (fileDialog.ShowDialog() == DialogResult.OK)
                 {
                     Excel.Application excel = new Excel.Application();
-                    Excel.Workbook workbook = excel.Workbooks.Open(fileDialog.FileName);
+                    Excel.Workbooks workbooks = excel.Workbooks;
+                    Excel.Workbook workbook = workbooks.Open(fileDialog.FileName);
                     Excel.Worksheet worksheet = workbook.Sheets["Здравпункты"];
                     Excel.Range range = worksheet.UsedRange;
                     int rowCount = range.Rows.Count;
@@ -1303,7 +1437,12 @@ namespace SerializerXML
                         button_здравпункты_add.PerformClick();
                     }
                     workbook.Close();
+                    workbooks.Close();
                     excel.Quit();
+
+                    Marshal.ReleaseComObject(workbook);
+                    Marshal.ReleaseComObject(workbooks);
+                    Marshal.ReleaseComObject(excel);
                 }
             }
             catch (Exception ex)
@@ -1318,6 +1457,73 @@ namespace SerializerXML
         private void трудоустройстваToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        // Добавление новых экземпляров через отдельную форму
+        //
+        private void button_контрагенты_create_Click(object sender, EventArgs e)
+        {
+            this.Enabled = false;
+            FormNewКонтрагент form = new FormNewКонтрагент();
+
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                textBox_контрагенты_уид.Text = form.textBox_уид.Text;
+                textBox_контрагенты_ИНН.Text = form.textBox_ИНН.Text;
+                textBox_контрагенты_КПП.Text = form.textBox_КПП.Text;
+                textBox_контрагенты_ОГРН.Text = form.textBox_ОГРН.Text;
+                textBox_контрагенты_ОКПО.Text = form.textBox_ОКПО.Text;
+                textBox_контрагенты_ЮрАдрес.Text = form.textBox_ЮрАдрес.Text;
+                textBox_контрагенты_названиеОрганизации.Text = form.textBox_название.Text;
+                textBox_контрагенты_телефон.Text = form.textBox_телефон.Text;
+                textBox_контрагенты_почта.Text = form.textBox_почта.Text;
+            }
+
+            this.Enabled = true;
+        }
+
+        private void checkBox_показать_CheckedChanged(object sender, EventArgs e)
+        {
+            if (((CheckBox)sender).Checked == true)
+            {
+                label_контрагенты_уид.Visible = true;
+                label_контрагенты_ИНН.Visible = true;
+                label_контрагенты_КПП.Visible = true;
+                label_контрагенты_ОГРН.Visible = true;
+                label_контрагенты_ОКПО.Visible = true;
+                label_контрагенты_ЮрАдрес.Visible = true;
+                label_контрагенты_телефон.Visible = true;
+                label_контрагенты_почта.Visible = true;
+
+                textBox_контрагенты_уид.Visible = true;
+                textBox_контрагенты_ИНН.Visible = true;
+                textBox_контрагенты_КПП.Visible = true;
+                textBox_контрагенты_ОГРН.Visible = true;
+                textBox_контрагенты_ОКПО.Visible = true;
+                textBox_контрагенты_ЮрАдрес.Visible = true;
+                textBox_контрагенты_телефон.Visible = true;
+                textBox_контрагенты_почта.Visible = true;
+            }
+            else
+            {
+                label_контрагенты_уид.Visible = false;
+                label_контрагенты_ИНН.Visible = false;
+                label_контрагенты_КПП.Visible = false;
+                label_контрагенты_ОГРН.Visible = false;
+                label_контрагенты_ОКПО.Visible = false;
+                label_контрагенты_ЮрАдрес.Visible = false;
+                label_контрагенты_телефон.Visible = false;
+                label_контрагенты_почта.Visible = false;
+
+                textBox_контрагенты_уид.Visible = false;
+                textBox_контрагенты_ИНН.Visible = false;
+                textBox_контрагенты_КПП.Visible = false;
+                textBox_контрагенты_ОГРН.Visible = false;
+                textBox_контрагенты_ОКПО.Visible = false;
+                textBox_контрагенты_ЮрАдрес.Visible = false;
+                textBox_контрагенты_телефон.Visible = false;
+                textBox_контрагенты_почта.Visible = false;
+            }
         }
     }
 }
