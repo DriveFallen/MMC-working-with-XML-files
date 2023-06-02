@@ -65,7 +65,7 @@
             this.textBox_уид.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox_уид.Location = new System.Drawing.Point(203, 19);
             this.textBox_уид.Name = "textBox_уид";
-            this.textBox_уид.Size = new System.Drawing.Size(384, 26);
+            this.textBox_уид.Size = new System.Drawing.Size(400, 26);
             this.textBox_уид.TabIndex = 114;
             this.textBox_уид.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -75,7 +75,7 @@
             this.textBox_ИНН.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox_ИНН.Location = new System.Drawing.Point(203, 45);
             this.textBox_ИНН.Name = "textBox_ИНН";
-            this.textBox_ИНН.Size = new System.Drawing.Size(384, 26);
+            this.textBox_ИНН.Size = new System.Drawing.Size(400, 26);
             this.textBox_ИНН.TabIndex = 115;
             this.textBox_ИНН.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -85,7 +85,7 @@
             this.textBox_КПП.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox_КПП.Location = new System.Drawing.Point(203, 71);
             this.textBox_КПП.Name = "textBox_КПП";
-            this.textBox_КПП.Size = new System.Drawing.Size(384, 26);
+            this.textBox_КПП.Size = new System.Drawing.Size(400, 26);
             this.textBox_КПП.TabIndex = 116;
             this.textBox_КПП.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -95,7 +95,7 @@
             this.textBox_название.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox_название.Location = new System.Drawing.Point(203, 175);
             this.textBox_название.Name = "textBox_название";
-            this.textBox_название.Size = new System.Drawing.Size(384, 26);
+            this.textBox_название.Size = new System.Drawing.Size(400, 26);
             this.textBox_название.TabIndex = 120;
             this.textBox_название.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -105,7 +105,7 @@
             this.textBox_ЮрАдрес.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox_ЮрАдрес.Location = new System.Drawing.Point(203, 149);
             this.textBox_ЮрАдрес.Name = "textBox_ЮрАдрес";
-            this.textBox_ЮрАдрес.Size = new System.Drawing.Size(384, 26);
+            this.textBox_ЮрАдрес.Size = new System.Drawing.Size(400, 26);
             this.textBox_ЮрАдрес.TabIndex = 119;
             this.textBox_ЮрАдрес.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -115,7 +115,7 @@
             this.textBox_ОКПО.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox_ОКПО.Location = new System.Drawing.Point(203, 123);
             this.textBox_ОКПО.Name = "textBox_ОКПО";
-            this.textBox_ОКПО.Size = new System.Drawing.Size(384, 26);
+            this.textBox_ОКПО.Size = new System.Drawing.Size(400, 26);
             this.textBox_ОКПО.TabIndex = 118;
             this.textBox_ОКПО.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -125,7 +125,7 @@
             this.textBox_ОГРН.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox_ОГРН.Location = new System.Drawing.Point(203, 97);
             this.textBox_ОГРН.Name = "textBox_ОГРН";
-            this.textBox_ОГРН.Size = new System.Drawing.Size(384, 26);
+            this.textBox_ОГРН.Size = new System.Drawing.Size(400, 26);
             this.textBox_ОГРН.TabIndex = 117;
             this.textBox_ОГРН.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -195,7 +195,7 @@
             this.textBox_почта.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox_почта.Location = new System.Drawing.Point(203, 227);
             this.textBox_почта.Name = "textBox_почта";
-            this.textBox_почта.Size = new System.Drawing.Size(384, 26);
+            this.textBox_почта.Size = new System.Drawing.Size(400, 26);
             this.textBox_почта.TabIndex = 122;
             this.textBox_почта.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -215,7 +215,7 @@
             this.textBox_телефон.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox_телефон.Location = new System.Drawing.Point(203, 201);
             this.textBox_телефон.Name = "textBox_телефон";
-            this.textBox_телефон.Size = new System.Drawing.Size(384, 26);
+            this.textBox_телефон.Size = new System.Drawing.Size(400, 26);
             this.textBox_телефон.TabIndex = 121;
             this.textBox_телефон.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -234,7 +234,7 @@
             this.button_add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.button_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_add.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_add.Location = new System.Drawing.Point(250, 264);
+            this.button_add.Location = new System.Drawing.Point(260, 264);
             this.button_add.Name = "button_add";
             this.button_add.Size = new System.Drawing.Size(121, 46);
             this.button_add.TabIndex = 132;
@@ -247,7 +247,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
-            this.ClientSize = new System.Drawing.Size(632, 322);
+            this.ClientSize = new System.Drawing.Size(639, 322);
             this.Controls.Add(this.button_add);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.textBox_уид);
@@ -267,6 +267,7 @@
             this.Controls.Add(this.label37);
             this.Controls.Add(this.textBox_телефон);
             this.Controls.Add(this.label38);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FormNewКонтрагент";
             this.Text = "Добавление нового контрагента";
             this.Load += new System.EventHandler(this.FormNewКонтрагент_Load);

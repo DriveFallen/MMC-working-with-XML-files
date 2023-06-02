@@ -50,6 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreatingNewInstance\FormNewДоговор.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreatingNewInstance\FormNewДоговор.Designer.cs">
+      <DependentUpon>FormNewДоговор.cs</DependentUpon>
+    </Compile>
     <Compile Include="CreatingNewInstance\FormNewКонтрагент.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +79,9 @@
     <Compile Include="XMLClasses\ПМО.cs" />
     <Compile Include="XMLClasses\Сотрудники.cs" />
     <Compile Include="XMLClasses\Трудоустройства.cs" />
+    <EmbeddedResource Include="CreatingNewInstance\FormNewДоговор.resx">
+      <DependentUpon>FormNewДоговор.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreatingNewInstance\FormNewКонтрагент.resx">
       <DependentUpon>FormNewКонтрагент.cs</DependentUpon>
     </EmbeddedResource>

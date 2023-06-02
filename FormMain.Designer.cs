@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.label_договора_идентификатор = new System.Windows.Forms.Label();
+            this.label_договора_контрагент = new System.Windows.Forms.Label();
             this.textBox_договора_идентификатор = new System.Windows.Forms.TextBox();
             this.textBox_договора_Код = new System.Windows.Forms.TextBox();
             this.textBox_договора_номер = new System.Windows.Forms.TextBox();
@@ -49,27 +49,27 @@
             this.textBox_договора_почта = new System.Windows.Forms.TextBox();
             this.textBox_договора_телефон = new System.Windows.Forms.TextBox();
             this.button_договора_serialize = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.label_договора_Код = new System.Windows.Forms.Label();
+            this.label_договора_номер = new System.Windows.Forms.Label();
+            this.label_договора_пройденое = new System.Windows.Forms.Label();
+            this.label_договора_допустимое = new System.Windows.Forms.Label();
+            this.label_договора_окончание = new System.Windows.Forms.Label();
+            this.label_договора_заключение = new System.Windows.Forms.Label();
+            this.label_договора_имя = new System.Windows.Forms.Label();
+            this.label_договора_фамилия = new System.Windows.Forms.Label();
+            this.label_договора_куратор = new System.Windows.Forms.Label();
+            this.label_договора_доп = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
+            this.label_договора_израсходованная = new System.Windows.Forms.Label();
+            this.label_договора_общая = new System.Windows.Forms.Label();
+            this.label_договора_отчество = new System.Windows.Forms.Label();
+            this.label_договора_телефон = new System.Windows.Forms.Label();
+            this.label_договора_почта = new System.Windows.Forms.Label();
+            this.label_договора_идентификаторДолжности = new System.Windows.Forms.Label();
             this.listView_договора = new System.Windows.Forms.ListView();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabControl_должности_показать = new System.Windows.Forms.TabControl();
             this.tabPage_Контрагенты = new System.Windows.Forms.TabPage();
-            this.checkBox_показать = new System.Windows.Forms.CheckBox();
+            this.checkBox_контрагенты_показать = new System.Windows.Forms.CheckBox();
             this.button_контрагенты_create = new System.Windows.Forms.Button();
             this.numericUpDown_контрагенты = new System.Windows.Forms.NumericUpDown();
             this.flowLayoutPanel_контрагенты = new System.Windows.Forms.FlowLayoutPanel();
@@ -97,10 +97,13 @@
             this.button_контрагенты_serialize = new System.Windows.Forms.Button();
             this.richTextBox_контрагенты = new System.Windows.Forms.RichTextBox();
             this.tabPage_Договора = new System.Windows.Forms.TabPage();
+            this.button_договора_create = new System.Windows.Forms.Button();
+            this.checkBox_договора_показать = new System.Windows.Forms.CheckBox();
             this.comboBox_договора_контрагент = new System.Windows.Forms.ComboBox();
             this.flowLayoutPanel_договора = new System.Windows.Forms.FlowLayoutPanel();
             this.numericUpDown_договора = new System.Windows.Forms.NumericUpDown();
             this.tabPage_Должности = new System.Windows.Forms.TabPage();
+            this.checkBox_должности_показать = new System.Windows.Forms.CheckBox();
             this.button_randGUID_должности = new System.Windows.Forms.Button();
             this.listView_должности = new System.Windows.Forms.ListView();
             this.label85 = new System.Windows.Forms.Label();
@@ -111,6 +114,7 @@
             this.button_должности_serialize = new System.Windows.Forms.Button();
             this.richTextBox_должности = new System.Windows.Forms.RichTextBox();
             this.tabPage_ПМО = new System.Windows.Forms.TabPage();
+            this.checkBox_пмо_показать = new System.Windows.Forms.CheckBox();
             this.button_randGUID_ПМО = new System.Windows.Forms.Button();
             this.numericUpDown_ПМО_факторы = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown_ПМО_условия = new System.Windows.Forms.NumericUpDown();
@@ -162,6 +166,7 @@
             this.button_ПМО_serialise = new System.Windows.Forms.Button();
             this.richTextBox_ПМО = new System.Windows.Forms.RichTextBox();
             this.tabPage_Здравпункты = new System.Windows.Forms.TabPage();
+            this.checkBox_здравпункты_показать = new System.Windows.Forms.CheckBox();
             this.button_randGUID_здравпункты = new System.Windows.Forms.Button();
             this.listView_здравпункты = new System.Windows.Forms.ListView();
             this.label86 = new System.Windows.Forms.Label();
@@ -172,6 +177,7 @@
             this.button_здравпункты_serialize = new System.Windows.Forms.Button();
             this.richTextBox_здравпункты = new System.Windows.Forms.RichTextBox();
             this.tabPage_Сотрудники = new System.Windows.Forms.TabPage();
+            this.checkBox_сотрудники_показать = new System.Windows.Forms.CheckBox();
             this.button_randGUID_сотрудники = new System.Windows.Forms.Button();
             this.listView_сотрудники = new System.Windows.Forms.ListView();
             this.label20 = new System.Windows.Forms.Label();
@@ -200,6 +206,7 @@
             this.button_сотрудники_serialize = new System.Windows.Forms.Button();
             this.richTextBox_сотрудники = new System.Windows.Forms.RichTextBox();
             this.tabPage_Трудоустройства = new System.Windows.Forms.TabPage();
+            this.checkBox_трудоустройства_показать = new System.Windows.Forms.CheckBox();
             this.button_randGUID_трудоустройства = new System.Windows.Forms.Button();
             this.numericUpDown_трудоустройства_факторы = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown_трудоустройства_условия = new System.Windows.Forms.NumericUpDown();
@@ -260,7 +267,7 @@
             this.здравпунктыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сотрудникиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.трудоустройстваToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabControl1.SuspendLayout();
+            this.tabControl_должности_показать.SuspendLayout();
             this.tabPage_Контрагенты.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_контрагенты)).BeginInit();
             this.tabPage_Договора.SuspendLayout();
@@ -277,29 +284,29 @@
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // label_договора_идентификатор
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(175, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(136, 21);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Идентификатор";
+            this.label_договора_идентификатор.AutoSize = true;
+            this.label_договора_идентификатор.Location = new System.Drawing.Point(175, 110);
+            this.label_договора_идентификатор.Name = "label_договора_идентификатор";
+            this.label_договора_идентификатор.Size = new System.Drawing.Size(136, 21);
+            this.label_договора_идентификатор.TabIndex = 0;
+            this.label_договора_идентификатор.Text = "Идентификатор";
             // 
-            // label2
+            // label_договора_контрагент
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(209, 54);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(102, 21);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Контрагент";
+            this.label_договора_контрагент.AutoSize = true;
+            this.label_договора_контрагент.Location = new System.Drawing.Point(209, 83);
+            this.label_договора_контрагент.Name = "label_договора_контрагент";
+            this.label_договора_контрагент.Size = new System.Drawing.Size(102, 21);
+            this.label_договора_контрагент.TabIndex = 1;
+            this.label_договора_контрагент.Text = "Контрагент";
             // 
             // textBox_договора_идентификатор
             // 
             this.textBox_договора_идентификатор.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.textBox_договора_идентификатор.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_договора_идентификатор.Location = new System.Drawing.Point(317, 23);
+            this.textBox_договора_идентификатор.Location = new System.Drawing.Point(317, 105);
             this.textBox_договора_идентификатор.Name = "textBox_договора_идентификатор";
             this.textBox_договора_идентификатор.Size = new System.Drawing.Size(282, 26);
             this.textBox_договора_идентификатор.TabIndex = 1;
@@ -310,7 +317,7 @@
             // 
             this.textBox_договора_Код.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.textBox_договора_Код.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_договора_Код.Location = new System.Drawing.Point(317, 75);
+            this.textBox_договора_Код.Location = new System.Drawing.Point(317, 131);
             this.textBox_договора_Код.Name = "textBox_договора_Код";
             this.textBox_договора_Код.Size = new System.Drawing.Size(282, 26);
             this.textBox_договора_Код.TabIndex = 3;
@@ -321,7 +328,7 @@
             // 
             this.textBox_договора_номер.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.textBox_договора_номер.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_договора_номер.Location = new System.Drawing.Point(317, 101);
+            this.textBox_договора_номер.Location = new System.Drawing.Point(317, 157);
             this.textBox_договора_номер.Name = "textBox_договора_номер";
             this.textBox_договора_номер.Size = new System.Drawing.Size(282, 26);
             this.textBox_договора_номер.TabIndex = 4;
@@ -332,7 +339,7 @@
             // 
             this.textBox_договора_заключение.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.textBox_договора_заключение.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_договора_заключение.Location = new System.Drawing.Point(317, 127);
+            this.textBox_договора_заключение.Location = new System.Drawing.Point(317, 183);
             this.textBox_договора_заключение.Name = "textBox_договора_заключение";
             this.textBox_договора_заключение.Size = new System.Drawing.Size(282, 26);
             this.textBox_договора_заключение.TabIndex = 5;
@@ -343,7 +350,7 @@
             // 
             this.textBox_договора_окончание.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.textBox_договора_окончание.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_договора_окончание.Location = new System.Drawing.Point(317, 153);
+            this.textBox_договора_окончание.Location = new System.Drawing.Point(317, 209);
             this.textBox_договора_окончание.Name = "textBox_договора_окончание";
             this.textBox_договора_окончание.Size = new System.Drawing.Size(282, 26);
             this.textBox_договора_окончание.TabIndex = 6;
@@ -354,7 +361,7 @@
             // 
             this.textBox_договора_допустимое.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.textBox_договора_допустимое.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_договора_допустимое.Location = new System.Drawing.Point(317, 179);
+            this.textBox_договора_допустимое.Location = new System.Drawing.Point(317, 235);
             this.textBox_договора_допустимое.Name = "textBox_договора_допустимое";
             this.textBox_договора_допустимое.Size = new System.Drawing.Size(282, 26);
             this.textBox_договора_допустимое.TabIndex = 7;
@@ -365,7 +372,7 @@
             // 
             this.textBox_договора_пройденое.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.textBox_договора_пройденое.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_договора_пройденое.Location = new System.Drawing.Point(317, 205);
+            this.textBox_договора_пройденое.Location = new System.Drawing.Point(317, 261);
             this.textBox_договора_пройденое.Name = "textBox_договора_пройденое";
             this.textBox_договора_пройденое.Size = new System.Drawing.Size(282, 26);
             this.textBox_договора_пройденое.TabIndex = 8;
@@ -376,7 +383,7 @@
             // 
             this.textBox_договора_общая.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.textBox_договора_общая.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_договора_общая.Location = new System.Drawing.Point(317, 231);
+            this.textBox_договора_общая.Location = new System.Drawing.Point(317, 287);
             this.textBox_договора_общая.Name = "textBox_договора_общая";
             this.textBox_договора_общая.Size = new System.Drawing.Size(282, 26);
             this.textBox_договора_общая.TabIndex = 9;
@@ -387,7 +394,7 @@
             // 
             this.textBox_договора_израсходованная.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.textBox_договора_израсходованная.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_договора_израсходованная.Location = new System.Drawing.Point(317, 257);
+            this.textBox_договора_израсходованная.Location = new System.Drawing.Point(317, 313);
             this.textBox_договора_израсходованная.Name = "textBox_договора_израсходованная";
             this.textBox_договора_израсходованная.Size = new System.Drawing.Size(282, 26);
             this.textBox_договора_израсходованная.TabIndex = 10;
@@ -398,7 +405,7 @@
             // 
             this.textBox_договора_доп.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.textBox_договора_доп.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_договора_доп.Location = new System.Drawing.Point(317, 283);
+            this.textBox_договора_доп.Location = new System.Drawing.Point(317, 339);
             this.textBox_договора_доп.Name = "textBox_договора_доп";
             this.textBox_договора_доп.Size = new System.Drawing.Size(282, 26);
             this.textBox_договора_доп.TabIndex = 11;
@@ -409,7 +416,7 @@
             // 
             this.textBox_договора_фамилия.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.textBox_договора_фамилия.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_договора_фамилия.Location = new System.Drawing.Point(317, 342);
+            this.textBox_договора_фамилия.Location = new System.Drawing.Point(317, 398);
             this.textBox_договора_фамилия.Name = "textBox_договора_фамилия";
             this.textBox_договора_фамилия.Size = new System.Drawing.Size(282, 26);
             this.textBox_договора_фамилия.TabIndex = 12;
@@ -420,7 +427,7 @@
             // 
             this.textBox_договора_имя.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.textBox_договора_имя.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_договора_имя.Location = new System.Drawing.Point(317, 368);
+            this.textBox_договора_имя.Location = new System.Drawing.Point(317, 424);
             this.textBox_договора_имя.Name = "textBox_договора_имя";
             this.textBox_договора_имя.Size = new System.Drawing.Size(282, 26);
             this.textBox_договора_имя.TabIndex = 13;
@@ -431,7 +438,7 @@
             // 
             this.textBox_договора_отчество.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.textBox_договора_отчество.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_договора_отчество.Location = new System.Drawing.Point(317, 394);
+            this.textBox_договора_отчество.Location = new System.Drawing.Point(317, 450);
             this.textBox_договора_отчество.Name = "textBox_договора_отчество";
             this.textBox_договора_отчество.Size = new System.Drawing.Size(282, 26);
             this.textBox_договора_отчество.TabIndex = 14;
@@ -442,7 +449,7 @@
             // 
             this.textBox_договора_идентификаторДолжности.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.textBox_договора_идентификаторДолжности.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_договора_идентификаторДолжности.Location = new System.Drawing.Point(317, 420);
+            this.textBox_договора_идентификаторДолжности.Location = new System.Drawing.Point(317, 476);
             this.textBox_договора_идентификаторДолжности.Name = "textBox_договора_идентификаторДолжности";
             this.textBox_договора_идентификаторДолжности.Size = new System.Drawing.Size(282, 26);
             this.textBox_договора_идентификаторДолжности.TabIndex = 15;
@@ -470,7 +477,7 @@
             this.richTextBox_договора.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.richTextBox_договора.Location = new System.Drawing.Point(893, 21);
             this.richTextBox_договора.Name = "richTextBox_договора";
-            this.richTextBox_договора.Size = new System.Drawing.Size(573, 736);
+            this.richTextBox_договора.Size = new System.Drawing.Size(582, 756);
             this.richTextBox_договора.TabIndex = 19;
             this.richTextBox_договора.Text = "";
             // 
@@ -478,7 +485,7 @@
             // 
             this.textBox_договора_почта.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.textBox_договора_почта.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_договора_почта.Location = new System.Drawing.Point(317, 446);
+            this.textBox_договора_почта.Location = new System.Drawing.Point(317, 502);
             this.textBox_договора_почта.Name = "textBox_договора_почта";
             this.textBox_договора_почта.Size = new System.Drawing.Size(282, 26);
             this.textBox_договора_почта.TabIndex = 16;
@@ -489,7 +496,7 @@
             // 
             this.textBox_договора_телефон.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.textBox_договора_телефон.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_договора_телефон.Location = new System.Drawing.Point(317, 472);
+            this.textBox_договора_телефон.Location = new System.Drawing.Point(317, 528);
             this.textBox_договора_телефон.Name = "textBox_договора_телефон";
             this.textBox_договора_телефон.Size = new System.Drawing.Size(282, 26);
             this.textBox_договора_телефон.TabIndex = 17;
@@ -507,158 +514,158 @@
             this.button_договора_serialize.UseVisualStyleBackColor = false;
             this.button_договора_serialize.Click += new System.EventHandler(this.button_договора_serializer_Click);
             // 
-            // label3
+            // label_договора_Код
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(148, 80);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(163, 21);
-            this.label3.TabIndex = 23;
-            this.label3.Text = "КодПодразделения";
+            this.label_договора_Код.AutoSize = true;
+            this.label_договора_Код.Location = new System.Drawing.Point(148, 136);
+            this.label_договора_Код.Name = "label_договора_Код";
+            this.label_договора_Код.Size = new System.Drawing.Size(163, 21);
+            this.label_договора_Код.TabIndex = 23;
+            this.label_договора_Код.Text = "КодПодразделения";
             // 
-            // label4
+            // label_договора_номер
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(248, 106);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 21);
-            this.label4.TabIndex = 24;
-            this.label4.Text = "Номер";
+            this.label_договора_номер.AutoSize = true;
+            this.label_договора_номер.Location = new System.Drawing.Point(248, 162);
+            this.label_договора_номер.Name = "label_договора_номер";
+            this.label_договора_номер.Size = new System.Drawing.Size(63, 21);
+            this.label_договора_номер.TabIndex = 24;
+            this.label_договора_номер.Text = "Номер";
             // 
-            // label5
+            // label_договора_пройденое
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(35, 211);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(276, 21);
-            this.label5.TabIndex = 28;
-            this.label5.Text = "ПройденоеКоличествоОсмотров";
+            this.label_договора_пройденое.AutoSize = true;
+            this.label_договора_пройденое.Location = new System.Drawing.Point(35, 267);
+            this.label_договора_пройденое.Name = "label_договора_пройденое";
+            this.label_договора_пройденое.Size = new System.Drawing.Size(276, 21);
+            this.label_договора_пройденое.TabIndex = 28;
+            this.label_договора_пройденое.Text = "ПройденоеКоличествоОсмотров";
             // 
-            // label6
+            // label_договора_допустимое
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(25, 184);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(286, 21);
-            this.label6.TabIndex = 27;
-            this.label6.Text = "ДопустимоеКоличествоОсмотров";
+            this.label_договора_допустимое.AutoSize = true;
+            this.label_договора_допустимое.Location = new System.Drawing.Point(25, 240);
+            this.label_договора_допустимое.Name = "label_договора_допустимое";
+            this.label_договора_допустимое.Size = new System.Drawing.Size(286, 21);
+            this.label_договора_допустимое.TabIndex = 27;
+            this.label_договора_допустимое.Text = "ДопустимоеКоличествоОсмотров";
             // 
-            // label7
+            // label_договора_окончание
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(175, 158);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(136, 21);
-            this.label7.TabIndex = 26;
-            this.label7.Text = "ДатаОкончания";
+            this.label_договора_окончание.AutoSize = true;
+            this.label_договора_окончание.Location = new System.Drawing.Point(175, 214);
+            this.label_договора_окончание.Name = "label_договора_окончание";
+            this.label_договора_окончание.Size = new System.Drawing.Size(136, 21);
+            this.label_договора_окончание.TabIndex = 26;
+            this.label_договора_окончание.Text = "ДатаОкончания";
             // 
-            // label8
+            // label_договора_заключение
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(168, 132);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(143, 21);
-            this.label8.TabIndex = 25;
-            this.label8.Text = "ДатаЗаключения";
+            this.label_договора_заключение.AutoSize = true;
+            this.label_договора_заключение.Location = new System.Drawing.Point(168, 188);
+            this.label_договора_заключение.Name = "label_договора_заключение";
+            this.label_договора_заключение.Size = new System.Drawing.Size(143, 21);
+            this.label_договора_заключение.TabIndex = 25;
+            this.label_договора_заключение.Text = "ДатаЗаключения";
             // 
-            // label9
+            // label_договора_имя
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(267, 373);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(44, 21);
-            this.label9.TabIndex = 35;
-            this.label9.Text = "Имя";
+            this.label_договора_имя.AutoSize = true;
+            this.label_договора_имя.Location = new System.Drawing.Point(267, 429);
+            this.label_договора_имя.Name = "label_договора_имя";
+            this.label_договора_имя.Size = new System.Drawing.Size(44, 21);
+            this.label_договора_имя.TabIndex = 35;
+            this.label_договора_имя.Text = "Имя";
             // 
-            // label10
+            // label_договора_фамилия
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(229, 347);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(82, 21);
-            this.label10.TabIndex = 34;
-            this.label10.Text = "Фамилия";
+            this.label_договора_фамилия.AutoSize = true;
+            this.label_договора_фамилия.Location = new System.Drawing.Point(229, 403);
+            this.label_договора_фамилия.Name = "label_договора_фамилия";
+            this.label_договора_фамилия.Size = new System.Drawing.Size(82, 21);
+            this.label_договора_фамилия.TabIndex = 34;
+            this.label_договора_фамилия.Text = "Фамилия";
             // 
-            // label11
+            // label_договора_куратор
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(419, 318);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(77, 21);
-            this.label11.TabIndex = 33;
-            this.label11.Text = "Куратор";
+            this.label_договора_куратор.AutoSize = true;
+            this.label_договора_куратор.Location = new System.Drawing.Point(419, 374);
+            this.label_договора_куратор.Name = "label_договора_куратор";
+            this.label_договора_куратор.Size = new System.Drawing.Size(77, 21);
+            this.label_договора_куратор.TabIndex = 33;
+            this.label_договора_куратор.Text = "Куратор";
             // 
-            // label12
+            // label_договора_доп
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(66, 288);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(245, 21);
-            this.label12.TabIndex = 32;
-            this.label12.Text = "ДополнительныеСоглашения";
+            this.label_договора_доп.AutoSize = true;
+            this.label_договора_доп.Location = new System.Drawing.Point(66, 344);
+            this.label_договора_доп.Name = "label_договора_доп";
+            this.label_договора_доп.Size = new System.Drawing.Size(245, 21);
+            this.label_договора_доп.TabIndex = 32;
+            this.label_договора_доп.Text = "ДополнительныеСоглашения";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(419, 516);
+            this.label13.Location = new System.Drawing.Point(419, 597);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(66, 21);
             this.label13.TabIndex = 31;
             this.label13.Text = "Услуги";
             // 
-            // label14
+            // label_договора_израсходованная
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(6, 263);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(305, 21);
-            this.label14.TabIndex = 30;
-            this.label14.Text = "ИзрасходованнаяСуммаПоДоговору";
+            this.label_договора_израсходованная.AutoSize = true;
+            this.label_договора_израсходованная.Location = new System.Drawing.Point(6, 319);
+            this.label_договора_израсходованная.Name = "label_договора_израсходованная";
+            this.label_договора_израсходованная.Size = new System.Drawing.Size(305, 21);
+            this.label_договора_израсходованная.TabIndex = 30;
+            this.label_договора_израсходованная.Text = "ИзрасходованнаяСуммаПоДоговору";
             // 
-            // label15
+            // label_договора_общая
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(90, 237);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(221, 21);
-            this.label15.TabIndex = 29;
-            this.label15.Text = "ОбщаяСуммаПоДоговору";
+            this.label_договора_общая.AutoSize = true;
+            this.label_договора_общая.Location = new System.Drawing.Point(90, 293);
+            this.label_договора_общая.Name = "label_договора_общая";
+            this.label_договора_общая.Size = new System.Drawing.Size(221, 21);
+            this.label_договора_общая.TabIndex = 29;
+            this.label_договора_общая.Text = "ОбщаяСуммаПоДоговору";
             // 
-            // label16
+            // label_договора_отчество
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(225, 399);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(86, 21);
-            this.label16.TabIndex = 36;
-            this.label16.Text = "Отчество";
+            this.label_договора_отчество.AutoSize = true;
+            this.label_договора_отчество.Location = new System.Drawing.Point(225, 455);
+            this.label_договора_отчество.Name = "label_договора_отчество";
+            this.label_договора_отчество.Size = new System.Drawing.Size(86, 21);
+            this.label_договора_отчество.TabIndex = 36;
+            this.label_договора_отчество.Text = "Отчество";
             // 
-            // label17
+            // label_договора_телефон
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(233, 477);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(78, 21);
-            this.label17.TabIndex = 39;
-            this.label17.Text = "Телефон";
+            this.label_договора_телефон.AutoSize = true;
+            this.label_договора_телефон.Location = new System.Drawing.Point(233, 533);
+            this.label_договора_телефон.Name = "label_договора_телефон";
+            this.label_договора_телефон.Size = new System.Drawing.Size(78, 21);
+            this.label_договора_телефон.TabIndex = 39;
+            this.label_договора_телефон.Text = "Телефон";
             // 
-            // label18
+            // label_договора_почта
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(148, 451);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(163, 21);
-            this.label18.TabIndex = 38;
-            this.label18.Text = "ЭлектроннаяПочта";
+            this.label_договора_почта.AutoSize = true;
+            this.label_договора_почта.Location = new System.Drawing.Point(148, 507);
+            this.label_договора_почта.Name = "label_договора_почта";
+            this.label_договора_почта.Size = new System.Drawing.Size(163, 21);
+            this.label_договора_почта.TabIndex = 38;
+            this.label_договора_почта.Text = "ЭлектроннаяПочта";
             // 
-            // label19
+            // label_договора_идентификаторДолжности
             // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(83, 425);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(228, 21);
-            this.label19.TabIndex = 37;
-            this.label19.Text = "ИдентификаторДолжности";
+            this.label_договора_идентификаторДолжности.AutoSize = true;
+            this.label_договора_идентификаторДолжности.Location = new System.Drawing.Point(83, 481);
+            this.label_договора_идентификаторДолжности.Name = "label_договора_идентификаторДолжности";
+            this.label_договора_идентификаторДолжности.Size = new System.Drawing.Size(228, 21);
+            this.label_договора_идентификаторДолжности.TabIndex = 37;
+            this.label_договора_идентификаторДолжности.Text = "ИдентификаторДолжности";
             // 
             // listView_договора
             // 
@@ -672,30 +679,30 @@
             this.listView_договора.View = System.Windows.Forms.View.List;
             this.listView_договора.SelectedIndexChanged += new System.EventHandler(this.listView_договора_SelectedIndexChanged);
             // 
-            // tabControl1
+            // tabControl_должности_показать
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tabControl_должности_показать.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabControl1.Controls.Add(this.tabPage_Контрагенты);
-            this.tabControl1.Controls.Add(this.tabPage_Договора);
-            this.tabControl1.Controls.Add(this.tabPage_Должности);
-            this.tabControl1.Controls.Add(this.tabPage_ПМО);
-            this.tabControl1.Controls.Add(this.tabPage_Здравпункты);
-            this.tabControl1.Controls.Add(this.tabPage_Сотрудники);
-            this.tabControl1.Controls.Add(this.tabPage_Трудоустройства);
-            this.tabControl1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tabControl1.Location = new System.Drawing.Point(12, 60);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1480, 797);
-            this.tabControl1.TabIndex = 41;
-            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
+            this.tabControl_должности_показать.Controls.Add(this.tabPage_Контрагенты);
+            this.tabControl_должности_показать.Controls.Add(this.tabPage_Договора);
+            this.tabControl_должности_показать.Controls.Add(this.tabPage_Должности);
+            this.tabControl_должности_показать.Controls.Add(this.tabPage_ПМО);
+            this.tabControl_должности_показать.Controls.Add(this.tabPage_Здравпункты);
+            this.tabControl_должности_показать.Controls.Add(this.tabPage_Сотрудники);
+            this.tabControl_должности_показать.Controls.Add(this.tabPage_Трудоустройства);
+            this.tabControl_должности_показать.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tabControl_должности_показать.Location = new System.Drawing.Point(10, 48);
+            this.tabControl_должности_показать.Name = "tabControl_должности_показать";
+            this.tabControl_должности_показать.SelectedIndex = 0;
+            this.tabControl_должности_показать.Size = new System.Drawing.Size(1489, 817);
+            this.tabControl_должности_показать.TabIndex = 41;
+            this.tabControl_должности_показать.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabPage_Контрагенты
             // 
             this.tabPage_Контрагенты.BackColor = System.Drawing.Color.CadetBlue;
-            this.tabPage_Контрагенты.Controls.Add(this.checkBox_показать);
+            this.tabPage_Контрагенты.Controls.Add(this.checkBox_контрагенты_показать);
             this.tabPage_Контрагенты.Controls.Add(this.button_контрагенты_create);
             this.tabPage_Контрагенты.Controls.Add(this.numericUpDown_контрагенты);
             this.tabPage_Контрагенты.Controls.Add(this.flowLayoutPanel_контрагенты);
@@ -725,27 +732,27 @@
             this.tabPage_Контрагенты.Location = new System.Drawing.Point(4, 30);
             this.tabPage_Контрагенты.Name = "tabPage_Контрагенты";
             this.tabPage_Контрагенты.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_Контрагенты.Size = new System.Drawing.Size(1472, 763);
+            this.tabPage_Контрагенты.Size = new System.Drawing.Size(1481, 783);
             this.tabPage_Контрагенты.TabIndex = 1;
             this.tabPage_Контрагенты.Text = "Контрагенты";
             // 
-            // checkBox_показать
+            // checkBox_контрагенты_показать
             // 
-            this.checkBox_показать.AutoSize = true;
-            this.checkBox_показать.Checked = true;
-            this.checkBox_показать.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox_показать.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox_показать.Location = new System.Drawing.Point(209, 262);
-            this.checkBox_показать.Name = "checkBox_показать";
-            this.checkBox_показать.Size = new System.Drawing.Size(150, 23);
-            this.checkBox_показать.TabIndex = 116;
-            this.checkBox_показать.Text = "Показать все поля";
-            this.checkBox_показать.UseVisualStyleBackColor = true;
-            this.checkBox_показать.CheckedChanged += new System.EventHandler(this.checkBox_показать_CheckedChanged);
+            this.checkBox_контрагенты_показать.AutoSize = true;
+            this.checkBox_контрагенты_показать.Checked = true;
+            this.checkBox_контрагенты_показать.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_контрагенты_показать.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkBox_контрагенты_показать.Location = new System.Drawing.Point(211, 316);
+            this.checkBox_контрагенты_показать.Name = "checkBox_контрагенты_показать";
+            this.checkBox_контрагенты_показать.Size = new System.Drawing.Size(150, 23);
+            this.checkBox_контрагенты_показать.TabIndex = 116;
+            this.checkBox_контрагенты_показать.Text = "Показать все поля";
+            this.checkBox_контрагенты_показать.UseVisualStyleBackColor = true;
+            this.checkBox_контрагенты_показать.CheckedChanged += new System.EventHandler(this.checkBox_контрагенты_показать_CheckedChanged);
             // 
             // button_контрагенты_create
             // 
-            this.button_контрагенты_create.Location = new System.Drawing.Point(497, 20);
+            this.button_контрагенты_create.Location = new System.Drawing.Point(291, 20);
             this.button_контрагенты_create.Name = "button_контрагенты_create";
             this.button_контрагенты_create.Size = new System.Drawing.Size(158, 30);
             this.button_контрагенты_create.TabIndex = 115;
@@ -757,7 +764,7 @@
             // 
             this.numericUpDown_контрагенты.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.numericUpDown_контрагенты.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.numericUpDown_контрагенты.Location = new System.Drawing.Point(428, 296);
+            this.numericUpDown_контрагенты.Location = new System.Drawing.Point(425, 346);
             this.numericUpDown_контрагенты.Maximum = new decimal(new int[] {
             10,
             0,
@@ -774,9 +781,9 @@
             this.flowLayoutPanel_контрагенты.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.flowLayoutPanel_контрагенты.AutoScroll = true;
-            this.flowLayoutPanel_контрагенты.Location = new System.Drawing.Point(15, 325);
+            this.flowLayoutPanel_контрагенты.Location = new System.Drawing.Point(25, 381);
             this.flowLayoutPanel_контрагенты.Name = "flowLayoutPanel_контрагенты";
-            this.flowLayoutPanel_контрагенты.Size = new System.Drawing.Size(714, 431);
+            this.flowLayoutPanel_контрагенты.Size = new System.Drawing.Size(457, 396);
             this.flowLayoutPanel_контрагенты.TabIndex = 83;
             // 
             // listView_контрагенты
@@ -795,7 +802,7 @@
             // label_контрагенты_уид
             // 
             this.label_контрагенты_уид.AutoSize = true;
-            this.label_контрагенты_уид.Location = new System.Drawing.Point(62, 53);
+            this.label_контрагенты_уид.Location = new System.Drawing.Point(64, 107);
             this.label_контрагенты_уид.Name = "label_контрагенты_уид";
             this.label_контрагенты_уид.Size = new System.Drawing.Size(141, 21);
             this.label_контрагенты_уид.TabIndex = 44;
@@ -805,7 +812,7 @@
             // 
             this.textBox_контрагенты_уид.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.textBox_контрагенты_уид.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_контрагенты_уид.Location = new System.Drawing.Point(209, 48);
+            this.textBox_контрагенты_уид.Location = new System.Drawing.Point(211, 102);
             this.textBox_контрагенты_уид.Name = "textBox_контрагенты_уид";
             this.textBox_контрагенты_уид.ReadOnly = true;
             this.textBox_контрагенты_уид.Size = new System.Drawing.Size(282, 26);
@@ -816,7 +823,7 @@
             // 
             this.textBox_контрагенты_ИНН.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.textBox_контрагенты_ИНН.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_контрагенты_ИНН.Location = new System.Drawing.Point(209, 74);
+            this.textBox_контрагенты_ИНН.Location = new System.Drawing.Point(211, 128);
             this.textBox_контрагенты_ИНН.Name = "textBox_контрагенты_ИНН";
             this.textBox_контрагенты_ИНН.ReadOnly = true;
             this.textBox_контрагенты_ИНН.Size = new System.Drawing.Size(282, 26);
@@ -828,7 +835,7 @@
             // 
             this.textBox_контрагенты_КПП.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.textBox_контрагенты_КПП.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_контрагенты_КПП.Location = new System.Drawing.Point(209, 100);
+            this.textBox_контрагенты_КПП.Location = new System.Drawing.Point(211, 154);
             this.textBox_контрагенты_КПП.Name = "textBox_контрагенты_КПП";
             this.textBox_контрагенты_КПП.ReadOnly = true;
             this.textBox_контрагенты_КПП.Size = new System.Drawing.Size(282, 26);
@@ -840,7 +847,7 @@
             // 
             this.textBox_контрагенты_названиеОрганизации.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.textBox_контрагенты_названиеОрганизации.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_контрагенты_названиеОрганизации.Location = new System.Drawing.Point(209, 22);
+            this.textBox_контрагенты_названиеОрганизации.Location = new System.Drawing.Point(211, 76);
             this.textBox_контрагенты_названиеОрганизации.Name = "textBox_контрагенты_названиеОрганизации";
             this.textBox_контрагенты_названиеОрганизации.ReadOnly = true;
             this.textBox_контрагенты_названиеОрганизации.Size = new System.Drawing.Size(282, 26);
@@ -852,7 +859,7 @@
             // 
             this.textBox_контрагенты_ЮрАдрес.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.textBox_контрагенты_ЮрАдрес.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_контрагенты_ЮрАдрес.Location = new System.Drawing.Point(209, 178);
+            this.textBox_контрагенты_ЮрАдрес.Location = new System.Drawing.Point(211, 232);
             this.textBox_контрагенты_ЮрАдрес.Name = "textBox_контрагенты_ЮрАдрес";
             this.textBox_контрагенты_ЮрАдрес.ReadOnly = true;
             this.textBox_контрагенты_ЮрАдрес.Size = new System.Drawing.Size(282, 26);
@@ -863,7 +870,7 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(290, 301);
+            this.label28.Location = new System.Drawing.Point(287, 351);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(132, 21);
             this.label28.TabIndex = 75;
@@ -873,7 +880,7 @@
             // 
             this.textBox_контрагенты_ОКПО.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.textBox_контрагенты_ОКПО.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_контрагенты_ОКПО.Location = new System.Drawing.Point(209, 152);
+            this.textBox_контрагенты_ОКПО.Location = new System.Drawing.Point(211, 206);
             this.textBox_контрагенты_ОКПО.Name = "textBox_контрагенты_ОКПО";
             this.textBox_контрагенты_ОКПО.ReadOnly = true;
             this.textBox_контрагенты_ОКПО.Size = new System.Drawing.Size(282, 26);
@@ -885,7 +892,7 @@
             // 
             this.textBox_контрагенты_ОГРН.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.textBox_контрагенты_ОГРН.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_контрагенты_ОГРН.Location = new System.Drawing.Point(209, 126);
+            this.textBox_контрагенты_ОГРН.Location = new System.Drawing.Point(211, 180);
             this.textBox_контрагенты_ОГРН.Name = "textBox_контрагенты_ОГРН";
             this.textBox_контрагенты_ОГРН.ReadOnly = true;
             this.textBox_контрагенты_ОГРН.Size = new System.Drawing.Size(282, 26);
@@ -896,7 +903,7 @@
             // label_контрагенты_почта
             // 
             this.label_контрагенты_почта.AutoSize = true;
-            this.label_контрагенты_почта.Location = new System.Drawing.Point(38, 235);
+            this.label_контрагенты_почта.Location = new System.Drawing.Point(40, 289);
             this.label_контрагенты_почта.Name = "label_контрагенты_почта";
             this.label_контрагенты_почта.Size = new System.Drawing.Size(165, 21);
             this.label_контрагенты_почта.TabIndex = 72;
@@ -905,7 +912,7 @@
             // label_контрагенты_телефон
             // 
             this.label_контрагенты_телефон.AutoSize = true;
-            this.label_контрагенты_телефон.Location = new System.Drawing.Point(19, 209);
+            this.label_контрагенты_телефон.Location = new System.Drawing.Point(21, 263);
             this.label_контрагенты_телефон.Name = "label_контрагенты_телефон";
             this.label_контрагенты_телефон.Size = new System.Drawing.Size(184, 21);
             this.label_контрагенты_телефон.TabIndex = 71;
@@ -914,7 +921,7 @@
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(13, 27);
+            this.label33.Location = new System.Drawing.Point(15, 81);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(190, 21);
             this.label33.TabIndex = 70;
@@ -923,7 +930,7 @@
             // label_контрагенты_ЮрАдрес
             // 
             this.label_контрагенты_ЮрАдрес.AutoSize = true;
-            this.label_контрагенты_ЮрАдрес.Location = new System.Drawing.Point(27, 183);
+            this.label_контрагенты_ЮрАдрес.Location = new System.Drawing.Point(29, 237);
             this.label_контрагенты_ЮрАдрес.Name = "label_контрагенты_ЮрАдрес";
             this.label_контрагенты_ЮрАдрес.Size = new System.Drawing.Size(176, 21);
             this.label_контрагенты_ЮрАдрес.TabIndex = 69;
@@ -932,7 +939,7 @@
             // label_контрагенты_ОКПО
             // 
             this.label_контрагенты_ОКПО.AutoSize = true;
-            this.label_контрагенты_ОКПО.Location = new System.Drawing.Point(139, 157);
+            this.label_контрагенты_ОКПО.Location = new System.Drawing.Point(141, 211);
             this.label_контрагенты_ОКПО.Name = "label_контрагенты_ОКПО";
             this.label_контрагенты_ОКПО.Size = new System.Drawing.Size(64, 21);
             this.label_контрагенты_ОКПО.TabIndex = 68;
@@ -941,7 +948,7 @@
             // label_контрагенты_ОГРН
             // 
             this.label_контрагенты_ОГРН.AutoSize = true;
-            this.label_контрагенты_ОГРН.Location = new System.Drawing.Point(144, 131);
+            this.label_контрагенты_ОГРН.Location = new System.Drawing.Point(146, 185);
             this.label_контрагенты_ОГРН.Name = "label_контрагенты_ОГРН";
             this.label_контрагенты_ОГРН.Size = new System.Drawing.Size(59, 21);
             this.label_контрагенты_ОГРН.TabIndex = 67;
@@ -951,7 +958,7 @@
             // 
             this.textBox_контрагенты_почта.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.textBox_контрагенты_почта.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_контрагенты_почта.Location = new System.Drawing.Point(209, 230);
+            this.textBox_контрагенты_почта.Location = new System.Drawing.Point(211, 284);
             this.textBox_контрагенты_почта.Name = "textBox_контрагенты_почта";
             this.textBox_контрагенты_почта.ReadOnly = true;
             this.textBox_контрагенты_почта.Size = new System.Drawing.Size(282, 26);
@@ -962,7 +969,7 @@
             // label_контрагенты_КПП
             // 
             this.label_контрагенты_КПП.AutoSize = true;
-            this.label_контрагенты_КПП.Location = new System.Drawing.Point(154, 105);
+            this.label_контрагенты_КПП.Location = new System.Drawing.Point(156, 159);
             this.label_контрагенты_КПП.Name = "label_контрагенты_КПП";
             this.label_контрагенты_КПП.Size = new System.Drawing.Size(49, 21);
             this.label_контрагенты_КПП.TabIndex = 66;
@@ -972,7 +979,7 @@
             // 
             this.textBox_контрагенты_телефон.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.textBox_контрагенты_телефон.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_контрагенты_телефон.Location = new System.Drawing.Point(209, 204);
+            this.textBox_контрагенты_телефон.Location = new System.Drawing.Point(211, 258);
             this.textBox_контрагенты_телефон.Name = "textBox_контрагенты_телефон";
             this.textBox_контрагенты_телефон.ReadOnly = true;
             this.textBox_контрагенты_телефон.Size = new System.Drawing.Size(282, 26);
@@ -983,7 +990,7 @@
             // label_контрагенты_ИНН
             // 
             this.label_контрагенты_ИНН.AutoSize = true;
-            this.label_контрагенты_ИНН.Location = new System.Drawing.Point(154, 79);
+            this.label_контрагенты_ИНН.Location = new System.Drawing.Point(156, 133);
             this.label_контрагенты_ИНН.Name = "label_контрагенты_ИНН";
             this.label_контрагенты_ИНН.Size = new System.Drawing.Size(49, 21);
             this.label_контрагенты_ИНН.TabIndex = 65;
@@ -1022,50 +1029,52 @@
             this.richTextBox_контрагенты.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.richTextBox_контрагенты.Location = new System.Drawing.Point(916, 20);
             this.richTextBox_контрагенты.Name = "richTextBox_контрагенты";
-            this.richTextBox_контрагенты.Size = new System.Drawing.Size(550, 736);
+            this.richTextBox_контрагенты.Size = new System.Drawing.Size(559, 758);
             this.richTextBox_контрагенты.TabIndex = 61;
             this.richTextBox_контрагенты.Text = "";
             // 
             // tabPage_Договора
             // 
             this.tabPage_Договора.BackColor = System.Drawing.Color.CadetBlue;
+            this.tabPage_Договора.Controls.Add(this.button_договора_create);
+            this.tabPage_Договора.Controls.Add(this.checkBox_договора_показать);
             this.tabPage_Договора.Controls.Add(this.comboBox_договора_контрагент);
             this.tabPage_Договора.Controls.Add(this.flowLayoutPanel_договора);
             this.tabPage_Договора.Controls.Add(this.numericUpDown_договора);
-            this.tabPage_Договора.Controls.Add(this.label1);
+            this.tabPage_Договора.Controls.Add(this.label_договора_идентификатор);
             this.tabPage_Договора.Controls.Add(this.listView_договора);
-            this.tabPage_Договора.Controls.Add(this.label2);
-            this.tabPage_Договора.Controls.Add(this.label17);
+            this.tabPage_Договора.Controls.Add(this.label_договора_контрагент);
+            this.tabPage_Договора.Controls.Add(this.label_договора_телефон);
             this.tabPage_Договора.Controls.Add(this.textBox_договора_идентификатор);
-            this.tabPage_Договора.Controls.Add(this.label18);
-            this.tabPage_Договора.Controls.Add(this.label19);
+            this.tabPage_Договора.Controls.Add(this.label_договора_почта);
+            this.tabPage_Договора.Controls.Add(this.label_договора_идентификаторДолжности);
             this.tabPage_Договора.Controls.Add(this.textBox_договора_Код);
-            this.tabPage_Договора.Controls.Add(this.label16);
+            this.tabPage_Договора.Controls.Add(this.label_договора_отчество);
             this.tabPage_Договора.Controls.Add(this.textBox_договора_номер);
-            this.tabPage_Договора.Controls.Add(this.label9);
+            this.tabPage_Договора.Controls.Add(this.label_договора_имя);
             this.tabPage_Договора.Controls.Add(this.textBox_договора_пройденое);
-            this.tabPage_Договора.Controls.Add(this.label10);
+            this.tabPage_Договора.Controls.Add(this.label_договора_фамилия);
             this.tabPage_Договора.Controls.Add(this.textBox_договора_допустимое);
-            this.tabPage_Договора.Controls.Add(this.label11);
+            this.tabPage_Договора.Controls.Add(this.label_договора_куратор);
             this.tabPage_Договора.Controls.Add(this.textBox_договора_окончание);
-            this.tabPage_Договора.Controls.Add(this.label12);
+            this.tabPage_Договора.Controls.Add(this.label_договора_доп);
             this.tabPage_Договора.Controls.Add(this.textBox_договора_заключение);
             this.tabPage_Договора.Controls.Add(this.label13);
             this.tabPage_Договора.Controls.Add(this.textBox_договора_идентификаторДолжности);
-            this.tabPage_Договора.Controls.Add(this.label14);
+            this.tabPage_Договора.Controls.Add(this.label_договора_израсходованная);
             this.tabPage_Договора.Controls.Add(this.textBox_договора_отчество);
-            this.tabPage_Договора.Controls.Add(this.label15);
+            this.tabPage_Договора.Controls.Add(this.label_договора_общая);
             this.tabPage_Договора.Controls.Add(this.textBox_договора_имя);
-            this.tabPage_Договора.Controls.Add(this.label5);
+            this.tabPage_Договора.Controls.Add(this.label_договора_пройденое);
             this.tabPage_Договора.Controls.Add(this.textBox_договора_фамилия);
-            this.tabPage_Договора.Controls.Add(this.label6);
+            this.tabPage_Договора.Controls.Add(this.label_договора_допустимое);
             this.tabPage_Договора.Controls.Add(this.textBox_договора_доп);
-            this.tabPage_Договора.Controls.Add(this.label7);
-            this.tabPage_Договора.Controls.Add(this.label8);
+            this.tabPage_Договора.Controls.Add(this.label_договора_окончание);
+            this.tabPage_Договора.Controls.Add(this.label_договора_заключение);
             this.tabPage_Договора.Controls.Add(this.textBox_договора_израсходованная);
-            this.tabPage_Договора.Controls.Add(this.label4);
+            this.tabPage_Договора.Controls.Add(this.label_договора_номер);
             this.tabPage_Договора.Controls.Add(this.textBox_договора_общая);
-            this.tabPage_Договора.Controls.Add(this.label3);
+            this.tabPage_Договора.Controls.Add(this.label_договора_Код);
             this.tabPage_Договора.Controls.Add(this.button_договора_add);
             this.tabPage_Договора.Controls.Add(this.button_договора_serialize);
             this.tabPage_Договора.Controls.Add(this.richTextBox_договора);
@@ -1074,15 +1083,41 @@
             this.tabPage_Договора.Location = new System.Drawing.Point(4, 30);
             this.tabPage_Договора.Name = "tabPage_Договора";
             this.tabPage_Договора.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_Договора.Size = new System.Drawing.Size(1472, 763);
+            this.tabPage_Договора.Size = new System.Drawing.Size(1481, 783);
             this.tabPage_Договора.TabIndex = 0;
             this.tabPage_Договора.Text = "Договора";
             // 
+            // button_договора_create
+            // 
+            this.button_договора_create.Location = new System.Drawing.Point(382, 21);
+            this.button_договора_create.Name = "button_договора_create";
+            this.button_договора_create.Size = new System.Drawing.Size(158, 30);
+            this.button_договора_create.TabIndex = 118;
+            this.button_договора_create.Text = "Добавить новый";
+            this.button_договора_create.UseVisualStyleBackColor = true;
+            this.button_договора_create.Click += new System.EventHandler(this.button_договора_create_Click);
+            // 
+            // checkBox_договора_показать
+            // 
+            this.checkBox_договора_показать.AutoSize = true;
+            this.checkBox_договора_показать.Checked = true;
+            this.checkBox_договора_показать.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_договора_показать.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkBox_договора_показать.Location = new System.Drawing.Point(317, 560);
+            this.checkBox_договора_показать.Name = "checkBox_договора_показать";
+            this.checkBox_договора_показать.Size = new System.Drawing.Size(150, 23);
+            this.checkBox_договора_показать.TabIndex = 117;
+            this.checkBox_договора_показать.Text = "Показать все поля";
+            this.checkBox_договора_показать.UseVisualStyleBackColor = true;
+            this.checkBox_договора_показать.CheckedChanged += new System.EventHandler(this.checkBox_договора_показать_CheckedChanged);
+            // 
             // comboBox_договора_контрагент
             // 
+            this.comboBox_договора_контрагент.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.comboBox_договора_контрагент.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_договора_контрагент.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox_договора_контрагент.FormattingEnabled = true;
-            this.comboBox_договора_контрагент.Location = new System.Drawing.Point(317, 48);
+            this.comboBox_договора_контрагент.Location = new System.Drawing.Point(317, 78);
             this.comboBox_договора_контрагент.Name = "comboBox_договора_контрагент";
             this.comboBox_договора_контрагент.Size = new System.Drawing.Size(282, 27);
             this.comboBox_договора_контрагент.TabIndex = 114;
@@ -1092,15 +1127,15 @@
             this.flowLayoutPanel_договора.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.flowLayoutPanel_договора.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel_договора.Location = new System.Drawing.Point(162, 549);
+            this.flowLayoutPanel_договора.Location = new System.Drawing.Point(201, 630);
             this.flowLayoutPanel_договора.Name = "flowLayoutPanel_договора";
-            this.flowLayoutPanel_договора.Size = new System.Drawing.Size(398, 208);
+            this.flowLayoutPanel_договора.Size = new System.Drawing.Size(398, 147);
             this.flowLayoutPanel_договора.TabIndex = 44;
             // 
             // numericUpDown_договора
             // 
             this.numericUpDown_договора.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.numericUpDown_договора.Location = new System.Drawing.Point(491, 514);
+            this.numericUpDown_договора.Location = new System.Drawing.Point(491, 595);
             this.numericUpDown_договора.Maximum = new decimal(new int[] {
             10,
             0,
@@ -1115,6 +1150,7 @@
             // tabPage_Должности
             // 
             this.tabPage_Должности.BackColor = System.Drawing.Color.CadetBlue;
+            this.tabPage_Должности.Controls.Add(this.checkBox_должности_показать);
             this.tabPage_Должности.Controls.Add(this.button_randGUID_должности);
             this.tabPage_Должности.Controls.Add(this.listView_должности);
             this.tabPage_Должности.Controls.Add(this.label85);
@@ -1126,9 +1162,23 @@
             this.tabPage_Должности.Controls.Add(this.richTextBox_должности);
             this.tabPage_Должности.Location = new System.Drawing.Point(4, 30);
             this.tabPage_Должности.Name = "tabPage_Должности";
-            this.tabPage_Должности.Size = new System.Drawing.Size(1472, 763);
+            this.tabPage_Должности.Size = new System.Drawing.Size(1481, 783);
             this.tabPage_Должности.TabIndex = 5;
             this.tabPage_Должности.Text = "Должности";
+            // 
+            // checkBox_должности_показать
+            // 
+            this.checkBox_должности_показать.AutoSize = true;
+            this.checkBox_должности_показать.Checked = true;
+            this.checkBox_должности_показать.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_должности_показать.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkBox_должности_показать.Location = new System.Drawing.Point(661, 370);
+            this.checkBox_должности_показать.Name = "checkBox_должности_показать";
+            this.checkBox_должности_показать.Size = new System.Drawing.Size(150, 23);
+            this.checkBox_должности_показать.TabIndex = 140;
+            this.checkBox_должности_показать.Text = "Показать все поля";
+            this.checkBox_должности_показать.UseVisualStyleBackColor = true;
+            this.checkBox_должности_показать.CheckedChanged += new System.EventHandler(this.checkBox_должности_показать_CheckedChanged);
             // 
             // button_randGUID_должности
             // 
@@ -1221,15 +1271,16 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.richTextBox_должности.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.richTextBox_должности.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.richTextBox_должности.Location = new System.Drawing.Point(895, 11);
+            this.richTextBox_должности.Location = new System.Drawing.Point(895, 13);
             this.richTextBox_должности.Name = "richTextBox_должности";
-            this.richTextBox_должности.Size = new System.Drawing.Size(571, 740);
+            this.richTextBox_должности.Size = new System.Drawing.Size(583, 765);
             this.richTextBox_должности.TabIndex = 126;
             this.richTextBox_должности.Text = "";
             // 
             // tabPage_ПМО
             // 
             this.tabPage_ПМО.BackColor = System.Drawing.Color.CadetBlue;
+            this.tabPage_ПМО.Controls.Add(this.checkBox_пмо_показать);
             this.tabPage_ПМО.Controls.Add(this.button_randGUID_ПМО);
             this.tabPage_ПМО.Controls.Add(this.numericUpDown_ПМО_факторы);
             this.tabPage_ПМО.Controls.Add(this.numericUpDown_ПМО_условия);
@@ -1282,9 +1333,23 @@
             this.tabPage_ПМО.Controls.Add(this.richTextBox_ПМО);
             this.tabPage_ПМО.Location = new System.Drawing.Point(4, 30);
             this.tabPage_ПМО.Name = "tabPage_ПМО";
-            this.tabPage_ПМО.Size = new System.Drawing.Size(1472, 763);
+            this.tabPage_ПМО.Size = new System.Drawing.Size(1481, 783);
             this.tabPage_ПМО.TabIndex = 3;
             this.tabPage_ПМО.Text = "ПМО";
+            // 
+            // checkBox_пмо_показать
+            // 
+            this.checkBox_пмо_показать.AutoSize = true;
+            this.checkBox_пмо_показать.Checked = true;
+            this.checkBox_пмо_показать.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_пмо_показать.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkBox_пмо_показать.Location = new System.Drawing.Point(661, 370);
+            this.checkBox_пмо_показать.Name = "checkBox_пмо_показать";
+            this.checkBox_пмо_показать.Size = new System.Drawing.Size(150, 23);
+            this.checkBox_пмо_показать.TabIndex = 117;
+            this.checkBox_пмо_показать.Text = "Показать все поля";
+            this.checkBox_пмо_показать.UseVisualStyleBackColor = true;
+            this.checkBox_пмо_показать.CheckedChanged += new System.EventHandler(this.checkBox_пмо_показать_CheckedChanged);
             // 
             // button_randGUID_ПМО
             // 
@@ -1339,7 +1404,7 @@
             this.flowLayoutPanel_ПМО_факторы.BackColor = System.Drawing.Color.CadetBlue;
             this.flowLayoutPanel_ПМО_факторы.Location = new System.Drawing.Point(450, 572);
             this.flowLayoutPanel_ПМО_факторы.Name = "flowLayoutPanel_ПМО_факторы";
-            this.flowLayoutPanel_ПМО_факторы.Size = new System.Drawing.Size(427, 236);
+            this.flowLayoutPanel_ПМО_факторы.Size = new System.Drawing.Size(427, 206);
             this.flowLayoutPanel_ПМО_факторы.TabIndex = 107;
             // 
             // flowLayoutPanel_ПМО_условия
@@ -1348,9 +1413,9 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.flowLayoutPanel_ПМО_условия.AutoScroll = true;
             this.flowLayoutPanel_ПМО_условия.BackColor = System.Drawing.Color.CadetBlue;
-            this.flowLayoutPanel_ПМО_условия.Location = new System.Drawing.Point(9, 572);
+            this.flowLayoutPanel_ПМО_условия.Location = new System.Drawing.Point(21, 572);
             this.flowLayoutPanel_ПМО_условия.Name = "flowLayoutPanel_ПМО_условия";
-            this.flowLayoutPanel_ПМО_условия.Size = new System.Drawing.Size(423, 236);
+            this.flowLayoutPanel_ПМО_условия.Size = new System.Drawing.Size(423, 206);
             this.flowLayoutPanel_ПМО_условия.TabIndex = 106;
             // 
             // textBox_ПМО_СтоимостьУслуг
@@ -1805,13 +1870,14 @@
             this.richTextBox_ПМО.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.richTextBox_ПМО.Location = new System.Drawing.Point(898, 20);
             this.richTextBox_ПМО.Name = "richTextBox_ПМО";
-            this.richTextBox_ПМО.Size = new System.Drawing.Size(571, 788);
+            this.richTextBox_ПМО.Size = new System.Drawing.Size(580, 758);
             this.richTextBox_ПМО.TabIndex = 61;
             this.richTextBox_ПМО.Text = "";
             // 
             // tabPage_Здравпункты
             // 
             this.tabPage_Здравпункты.BackColor = System.Drawing.Color.CadetBlue;
+            this.tabPage_Здравпункты.Controls.Add(this.checkBox_здравпункты_показать);
             this.tabPage_Здравпункты.Controls.Add(this.button_randGUID_здравпункты);
             this.tabPage_Здравпункты.Controls.Add(this.listView_здравпункты);
             this.tabPage_Здравпункты.Controls.Add(this.label86);
@@ -1823,9 +1889,22 @@
             this.tabPage_Здравпункты.Controls.Add(this.richTextBox_здравпункты);
             this.tabPage_Здравпункты.Location = new System.Drawing.Point(4, 30);
             this.tabPage_Здравпункты.Name = "tabPage_Здравпункты";
-            this.tabPage_Здравпункты.Size = new System.Drawing.Size(1472, 763);
+            this.tabPage_Здравпункты.Size = new System.Drawing.Size(1481, 783);
             this.tabPage_Здравпункты.TabIndex = 6;
             this.tabPage_Здравпункты.Text = "Здравпункты";
+            // 
+            // checkBox_здравпункты_показать
+            // 
+            this.checkBox_здравпункты_показать.AutoSize = true;
+            this.checkBox_здравпункты_показать.Checked = true;
+            this.checkBox_здравпункты_показать.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_здравпункты_показать.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkBox_здравпункты_показать.Location = new System.Drawing.Point(661, 370);
+            this.checkBox_здравпункты_показать.Name = "checkBox_здравпункты_показать";
+            this.checkBox_здравпункты_показать.Size = new System.Drawing.Size(150, 23);
+            this.checkBox_здравпункты_показать.TabIndex = 149;
+            this.checkBox_здравпункты_показать.Text = "Показать все поля";
+            this.checkBox_здравпункты_показать.UseVisualStyleBackColor = true;
             // 
             // button_randGUID_здравпункты
             // 
@@ -1918,15 +1997,16 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.richTextBox_здравпункты.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.richTextBox_здравпункты.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.richTextBox_здравпункты.Location = new System.Drawing.Point(851, 11);
+            this.richTextBox_здравпункты.Location = new System.Drawing.Point(851, 13);
             this.richTextBox_здравпункты.Name = "richTextBox_здравпункты";
-            this.richTextBox_здравпункты.Size = new System.Drawing.Size(618, 797);
+            this.richTextBox_здравпункты.Size = new System.Drawing.Size(627, 765);
             this.richTextBox_здравпункты.TabIndex = 144;
             this.richTextBox_здравпункты.Text = "";
             // 
             // tabPage_Сотрудники
             // 
             this.tabPage_Сотрудники.BackColor = System.Drawing.Color.CadetBlue;
+            this.tabPage_Сотрудники.Controls.Add(this.checkBox_сотрудники_показать);
             this.tabPage_Сотрудники.Controls.Add(this.button_randGUID_сотрудники);
             this.tabPage_Сотрудники.Controls.Add(this.listView_сотрудники);
             this.tabPage_Сотрудники.Controls.Add(this.label20);
@@ -1956,9 +2036,22 @@
             this.tabPage_Сотрудники.Controls.Add(this.richTextBox_сотрудники);
             this.tabPage_Сотрудники.Location = new System.Drawing.Point(4, 30);
             this.tabPage_Сотрудники.Name = "tabPage_Сотрудники";
-            this.tabPage_Сотрудники.Size = new System.Drawing.Size(1472, 763);
+            this.tabPage_Сотрудники.Size = new System.Drawing.Size(1481, 783);
             this.tabPage_Сотрудники.TabIndex = 2;
             this.tabPage_Сотрудники.Text = "Сотрудники";
+            // 
+            // checkBox_сотрудники_показать
+            // 
+            this.checkBox_сотрудники_показать.AutoSize = true;
+            this.checkBox_сотрудники_показать.Checked = true;
+            this.checkBox_сотрудники_показать.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_сотрудники_показать.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkBox_сотрудники_показать.Location = new System.Drawing.Point(661, 370);
+            this.checkBox_сотрудники_показать.Name = "checkBox_сотрудники_показать";
+            this.checkBox_сотрудники_показать.Size = new System.Drawing.Size(150, 23);
+            this.checkBox_сотрудники_показать.TabIndex = 117;
+            this.checkBox_сотрудники_показать.Text = "Показать все поля";
+            this.checkBox_сотрудники_показать.UseVisualStyleBackColor = true;
             // 
             // button_randGUID_сотрудники
             // 
@@ -2222,15 +2315,16 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.richTextBox_сотрудники.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.richTextBox_сотрудники.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.richTextBox_сотрудники.Location = new System.Drawing.Point(898, 20);
+            this.richTextBox_сотрудники.Location = new System.Drawing.Point(898, 22);
             this.richTextBox_сотрудники.Name = "richTextBox_сотрудники";
-            this.richTextBox_сотрудники.Size = new System.Drawing.Size(571, 788);
+            this.richTextBox_сотрудники.Size = new System.Drawing.Size(580, 756);
             this.richTextBox_сотрудники.TabIndex = 97;
             this.richTextBox_сотрудники.Text = "";
             // 
             // tabPage_Трудоустройства
             // 
             this.tabPage_Трудоустройства.BackColor = System.Drawing.Color.CadetBlue;
+            this.tabPage_Трудоустройства.Controls.Add(this.checkBox_трудоустройства_показать);
             this.tabPage_Трудоустройства.Controls.Add(this.button_randGUID_трудоустройства);
             this.tabPage_Трудоустройства.Controls.Add(this.numericUpDown_трудоустройства_факторы);
             this.tabPage_Трудоустройства.Controls.Add(this.numericUpDown_трудоустройства_условия);
@@ -2283,9 +2377,22 @@
             this.tabPage_Трудоустройства.Controls.Add(this.richTextBox_трудоустройства);
             this.tabPage_Трудоустройства.Location = new System.Drawing.Point(4, 30);
             this.tabPage_Трудоустройства.Name = "tabPage_Трудоустройства";
-            this.tabPage_Трудоустройства.Size = new System.Drawing.Size(1472, 763);
+            this.tabPage_Трудоустройства.Size = new System.Drawing.Size(1481, 783);
             this.tabPage_Трудоустройства.TabIndex = 4;
             this.tabPage_Трудоустройства.Text = "Трудоустройства";
+            // 
+            // checkBox_трудоустройства_показать
+            // 
+            this.checkBox_трудоустройства_показать.AutoSize = true;
+            this.checkBox_трудоустройства_показать.Checked = true;
+            this.checkBox_трудоустройства_показать.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_трудоустройства_показать.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkBox_трудоустройства_показать.Location = new System.Drawing.Point(661, 370);
+            this.checkBox_трудоустройства_показать.Name = "checkBox_трудоустройства_показать";
+            this.checkBox_трудоустройства_показать.Size = new System.Drawing.Size(150, 23);
+            this.checkBox_трудоустройства_показать.TabIndex = 160;
+            this.checkBox_трудоустройства_показать.Text = "Показать все поля";
+            this.checkBox_трудоустройства_показать.UseVisualStyleBackColor = true;
             // 
             // button_randGUID_трудоустройства
             // 
@@ -2338,9 +2445,9 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.flowLayoutPanel_трудоустройства_факторы.AutoScroll = true;
             this.flowLayoutPanel_трудоустройства_факторы.BackColor = System.Drawing.Color.CadetBlue;
-            this.flowLayoutPanel_трудоустройства_факторы.Location = new System.Drawing.Point(454, 572);
+            this.flowLayoutPanel_трудоустройства_факторы.Location = new System.Drawing.Point(469, 572);
             this.flowLayoutPanel_трудоустройства_факторы.Name = "flowLayoutPanel_трудоустройства_факторы";
-            this.flowLayoutPanel_трудоустройства_факторы.Size = new System.Drawing.Size(427, 236);
+            this.flowLayoutPanel_трудоустройства_факторы.Size = new System.Drawing.Size(342, 208);
             this.flowLayoutPanel_трудоустройства_факторы.TabIndex = 156;
             // 
             // flowLayoutPanel_трудоустройства_условия
@@ -2349,9 +2456,9 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.flowLayoutPanel_трудоустройства_условия.AutoScroll = true;
             this.flowLayoutPanel_трудоустройства_условия.BackColor = System.Drawing.Color.CadetBlue;
-            this.flowLayoutPanel_трудоустройства_условия.Location = new System.Drawing.Point(13, 572);
+            this.flowLayoutPanel_трудоустройства_условия.Location = new System.Drawing.Point(39, 572);
             this.flowLayoutPanel_трудоустройства_условия.Name = "flowLayoutPanel_трудоустройства_условия";
-            this.flowLayoutPanel_трудоустройства_условия.Size = new System.Drawing.Size(423, 236);
+            this.flowLayoutPanel_трудоустройства_условия.Size = new System.Drawing.Size(338, 206);
             this.flowLayoutPanel_трудоустройства_условия.TabIndex = 155;
             // 
             // textBox_трудоустройства_СтоимостьУслуг
@@ -2790,18 +2897,19 @@
             this.richTextBox_трудоустройства.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.richTextBox_трудоустройства.Location = new System.Drawing.Point(898, 20);
             this.richTextBox_трудоустройства.Name = "richTextBox_трудоустройства";
-            this.richTextBox_трудоустройства.Size = new System.Drawing.Size(571, 788);
+            this.richTextBox_трудоустройства.Size = new System.Drawing.Size(580, 758);
             this.richTextBox_трудоустройства.TabIndex = 126;
             this.richTextBox_трудоустройства.Text = "";
             // 
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.Silver;
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.файлToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1504, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1511, 24);
             this.menuStrip1.TabIndex = 42;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -2811,7 +2919,7 @@
             this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.загрузитьЛистExcelToolStripMenuItem});
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
-            this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 15);
             this.файлToolStripMenuItem.Text = "Файл";
             // 
             // загрузитьЛистExcelToolStripMenuItem
@@ -2882,8 +2990,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.ClientSize = new System.Drawing.Size(1504, 868);
-            this.Controls.Add(this.tabControl1);
+            this.ClientSize = new System.Drawing.Size(1511, 868);
+            this.Controls.Add(this.tabControl_должности_показать);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormMain";
@@ -2891,7 +2999,7 @@
             this.Text = "ММЦ : Формирование XML файлов";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.tabControl1.ResumeLayout(false);
+            this.tabControl_должности_показать.ResumeLayout(false);
             this.tabPage_Контрагенты.ResumeLayout(false);
             this.tabPage_Контрагенты.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_контрагенты)).EndInit();
@@ -2921,8 +3029,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label_договора_идентификатор;
+        private System.Windows.Forms.Label label_договора_контрагент;
         private System.Windows.Forms.TextBox textBox_договора_идентификатор;
         private System.Windows.Forms.TextBox textBox_договора_Код;
         private System.Windows.Forms.TextBox textBox_договора_номер;
@@ -2942,25 +3050,25 @@
         private System.Windows.Forms.TextBox textBox_договора_почта;
         private System.Windows.Forms.TextBox textBox_договора_телефон;
         private System.Windows.Forms.Button button_договора_serialize;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label_договора_Код;
+        private System.Windows.Forms.Label label_договора_номер;
+        private System.Windows.Forms.Label label_договора_пройденое;
+        private System.Windows.Forms.Label label_договора_допустимое;
+        private System.Windows.Forms.Label label_договора_окончание;
+        private System.Windows.Forms.Label label_договора_заключение;
+        private System.Windows.Forms.Label label_договора_имя;
+        private System.Windows.Forms.Label label_договора_фамилия;
+        private System.Windows.Forms.Label label_договора_куратор;
+        private System.Windows.Forms.Label label_договора_доп;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label_договора_израсходованная;
+        private System.Windows.Forms.Label label_договора_общая;
+        private System.Windows.Forms.Label label_договора_отчество;
+        private System.Windows.Forms.Label label_договора_телефон;
+        private System.Windows.Forms.Label label_договора_почта;
+        private System.Windows.Forms.Label label_договора_идентификаторДолжности;
         private System.Windows.Forms.ListView listView_договора;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tabControl_должности_показать;
         private System.Windows.Forms.TabPage tabPage_Договора;
         private System.Windows.Forms.TabPage tabPage_Контрагенты;
         private System.Windows.Forms.TabPage tabPage_Сотрудники;
@@ -3152,7 +3260,14 @@
         private System.Windows.Forms.Button button_контрагенты_create;
         private System.Windows.Forms.ComboBox comboBox_договора_контрагент;
         public System.Windows.Forms.ListView listView_контрагенты;
-        private System.Windows.Forms.CheckBox checkBox_показать;
+        private System.Windows.Forms.CheckBox checkBox_контрагенты_показать;
+        private System.Windows.Forms.CheckBox checkBox_договора_показать;
+        private System.Windows.Forms.CheckBox checkBox_должности_показать;
+        private System.Windows.Forms.CheckBox checkBox_пмо_показать;
+        private System.Windows.Forms.CheckBox checkBox_здравпункты_показать;
+        private System.Windows.Forms.CheckBox checkBox_сотрудники_показать;
+        private System.Windows.Forms.CheckBox checkBox_трудоустройства_показать;
+        private System.Windows.Forms.Button button_договора_create;
     }
 }
 

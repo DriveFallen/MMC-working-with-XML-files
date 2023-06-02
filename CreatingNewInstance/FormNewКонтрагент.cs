@@ -20,6 +20,5 @@ namespace SerializerXML.CreatingNewInstance
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
-
     }
 }

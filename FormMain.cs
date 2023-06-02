@@ -37,6 +37,8 @@ namespace SerializerXML
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            tabControl_должности_показать.TabPages.Remove(tabPage_Трудоустройства); // Временно пока не понадобится
+
             Контрагенты контрагенты = MySerializer.DeserializerXML_контрагенты();
             for (int i = 0; i < контрагенты.контрагенты.Count; i++)
             {
@@ -50,7 +52,7 @@ namespace SerializerXML
         //
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch (tabControl1.SelectedIndex)
+            switch (tabControl_должности_показать.SelectedIndex)
             {
                 case 0: // Контрагенты
                     {
@@ -244,6 +246,7 @@ namespace SerializerXML
         {
             if (listView_контрагенты.SelectedItems.Count == 1)
             {
+                //SetReadOnlyParams_контрагенты(false);
                 Контрагент контрагент = (Контрагент)listView_контрагенты.SelectedItems[0].Tag;
                 textBox_контрагенты_уид.Text = контрагент.УидКонтрагента;
                 textBox_контрагенты_ИНН.Text = контрагент.Инн;
@@ -268,9 +271,35 @@ namespace SerializerXML
             }
             else if (listView_контрагенты.SelectedItems.Count == 0)
             {
+                //SetReadOnlyParams_контрагенты(true);
                 Clean_контрагенты();
             }
         }
+        /*private void SetReadOnlyParams_контрагенты(bool value)
+        {
+            if (value == true)
+            {
+                textBox_контрагенты_уид.ReadOnly = true;
+                textBox_контрагенты_ИНН.ReadOnly = true;
+                textBox_контрагенты_КПП.ReadOnly = true;
+                textBox_контрагенты_ОГРН.ReadOnly = true;
+                textBox_контрагенты_ОКПО.ReadOnly = true;
+                textBox_контрагенты_ЮрАдрес.ReadOnly = true;
+                textBox_контрагенты_телефон.ReadOnly = true;
+                textBox_контрагенты_почта.ReadOnly = true;
+            }
+            else
+            {
+                textBox_контрагенты_уид.ReadOnly = false;
+                textBox_контрагенты_ИНН.ReadOnly = false;
+                textBox_контрагенты_КПП.ReadOnly = false;
+                textBox_контрагенты_ОГРН.ReadOnly = false;
+                textBox_контрагенты_ОКПО.ReadOnly = false;
+                textBox_контрагенты_ЮрАдрес.ReadOnly = false;
+                textBox_контрагенты_телефон.ReadOnly = false;
+                textBox_контрагенты_почта.ReadOnly = false;
+            }
+        }*/
         private void button_контрагенты_add_Click(object sender, EventArgs e) // Добавление или изменение экземпляра "Контрагент" в лист, для формирования полноценного файла
         {
             Подразделения подразделения = new Подразделения();
@@ -522,9 +551,9 @@ namespace SerializerXML
             Куратор куратор = new Куратор(textBox_договора_фамилия.Text, textBox_договора_имя.Text, textBox_договора_отчество.Text,
                textBox_договора_идентификаторДолжности.Text, textBox_договора_почта.Text, textBox_договора_телефон.Text);
 
-            foreach (ListViewItem item in listView_контрагенты.Items)
+            foreach (ListViewItem item in listView_контрагенты.Items) // Перебор всех контрагентов
             {
-                if (((Контрагент)item.Tag).НазваниеОрганизации == comboBox_договора_контрагент.Text)
+                if (((Контрагент)item.Tag).НазваниеОрганизации == comboBox_договора_контрагент.Text) // Если элемент листа имеет такое же название контрагента, в список добавляется GUID этого контрагента
                 {
                     comboBox_договора_контрагент.Text = ((Контрагент)item.Tag).УидКонтрагента;
                 }
@@ -1237,7 +1266,7 @@ namespace SerializerXML
         {
             try
             {
-                tabControl1.SelectedIndex = 0;
+                tabControl_должности_показать.SelectedIndex = 0;
 
                 OpenFileDialog fileDialog = new OpenFileDialog();
                 if (fileDialog.ShowDialog() == DialogResult.OK)
@@ -1280,7 +1309,7 @@ namespace SerializerXML
         {
             try
             {
-                tabControl1.SelectedIndex = 1;
+                tabControl_должности_показать.SelectedIndex = 1;
 
                 OpenFileDialog fileDialog = new OpenFileDialog();
                 if (fileDialog.ShowDialog() == DialogResult.OK)
@@ -1318,7 +1347,7 @@ namespace SerializerXML
         {
             try
             {
-                tabControl1.SelectedIndex = 2;
+                tabControl_должности_показать.SelectedIndex = 2;
 
                 OpenFileDialog fileDialog = new OpenFileDialog();
                 if (fileDialog.ShowDialog() == DialogResult.OK)
@@ -1355,7 +1384,7 @@ namespace SerializerXML
         {
             try
             {
-                tabControl1.SelectedIndex = 3;
+                tabControl_должности_показать.SelectedIndex = 3;
 
                 OpenFileDialog fileDialog = new OpenFileDialog();
                 if (fileDialog.ShowDialog() == DialogResult.OK)
@@ -1457,12 +1486,12 @@ namespace SerializerXML
             {
                 MessageBox.Show(ex.Message, "Ошибка загрузки листа 'ПМО'");
             }
-        } ////////////////////////////////// Проверить
+        }
         private void здравпунктыToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
-                tabControl1.SelectedIndex = 4;
+                tabControl_должности_показать.SelectedIndex = 4;
 
                 OpenFileDialog fileDialog = new OpenFileDialog();
                 if (fileDialog.ShowDialog() == DialogResult.OK)
@@ -1499,7 +1528,7 @@ namespace SerializerXML
         {
             try
             {
-                tabControl1.SelectedIndex = 5;
+                tabControl_должности_показать.SelectedIndex = 5;
 
                 OpenFileDialog fileDialog = new OpenFileDialog();
                 if (fileDialog.ShowDialog() == DialogResult.OK)
@@ -1564,10 +1593,38 @@ namespace SerializerXML
 
             this.Enabled = true;
         }
+        private void button_договора_create_Click(object sender, EventArgs e)
+        {
+            this.Enabled = false;
+            FormNewДоговор form = new FormNewДоговор(this);
+
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                comboBox_договора_контрагент.Text = form.comboBox_контрагент.Text;
+                textBox_договора_идентификатор.Text = form.textBox_идентификатор.Text;
+                textBox_договора_Код.Text = form.textBox_Код.Text;
+                textBox_договора_номер.Text = form.textBox_номер.Text;
+                textBox_договора_заключение.Text = form.textBox_заключение.Text;
+                textBox_договора_окончание.Text = form.textBox_окончание.Text;
+                textBox_договора_допустимое.Text = form.textBox_допустимое.Text;
+                textBox_договора_пройденое.Text = form.textBox_пройденое.Text;
+                textBox_договора_общая.Text = form.textBox_общая.Text;
+                textBox_договора_израсходованная.Text = form.textBox_израсходованная.Text;
+                textBox_договора_доп.Text = form.textBox_доп.Text;
+                textBox_договора_фамилия.Text = form.textBox_фамилия.Text;
+                textBox_договора_имя.Text = form.textBox_имя.Text;
+                textBox_договора_отчество.Text = form.textBox_отчество.Text;
+                textBox_договора_идентификаторДолжности.Text = form.textBox_идентификаторДолжности.Text;
+                textBox_договора_почта.Text = form.textBox_почта.Text;
+                textBox_договора_телефон.Text = form.textBox_телефон.Text;
+            }
+
+            this.Enabled = true;
+        }
 
         // CheckBox всех форм
         //
-        private void checkBox_показать_CheckedChanged(object sender, EventArgs e)
+        private void checkBox_контрагенты_показать_CheckedChanged(object sender, EventArgs e)
         {
             if (((CheckBox)sender).Checked == true)
             {
@@ -1608,6 +1665,105 @@ namespace SerializerXML
                 textBox_контрагенты_ЮрАдрес.Visible = false;
                 textBox_контрагенты_телефон.Visible = false;
                 textBox_контрагенты_почта.Visible = false;
+            }
+        }
+        private void checkBox_договора_показать_CheckedChanged(object sender, EventArgs e)
+        {
+            if (((CheckBox)sender).Checked == true)
+            {
+                textBox_договора_идентификатор.Visible = true;
+                textBox_договора_Код.Visible = true;
+                textBox_договора_номер.Visible = true;
+                textBox_договора_заключение.Visible = true;
+                textBox_договора_окончание.Visible = true;
+                textBox_договора_допустимое.Visible = true;
+                textBox_договора_пройденое.Visible = true;
+                textBox_договора_общая.Visible = true;
+                textBox_договора_израсходованная.Visible = true;
+                textBox_договора_доп.Visible = true;
+                textBox_договора_фамилия.Visible = true;
+                textBox_договора_имя.Visible = true;
+                textBox_договора_отчество.Visible = true;
+                textBox_договора_идентификаторДолжности.Visible = true;
+                textBox_договора_почта.Visible = true;
+                textBox_договора_телефон.Visible = true;
+
+                label_договора_куратор.Visible = true;
+                label_договора_идентификатор.Visible = true;
+                label_договора_Код.Visible = true;
+                label_договора_номер.Visible = true;
+                label_договора_заключение.Visible = true;
+                label_договора_окончание.Visible = true;
+                label_договора_допустимое.Visible = true;
+                label_договора_пройденое.Visible = true;
+                label_договора_общая.Visible = true;
+                label_договора_израсходованная.Visible = true;
+                label_договора_доп.Visible = true;
+                label_договора_фамилия.Visible = true;
+                label_договора_имя.Visible = true;
+                label_договора_отчество.Visible = true;
+                label_договора_идентификаторДолжности.Visible = true;
+                label_договора_почта.Visible = true;
+                label_договора_телефон.Visible = true;
+            }
+            else
+            {
+                textBox_договора_идентификатор.Visible = false;
+                textBox_договора_Код.Visible = false;
+                textBox_договора_номер.Visible = false;
+                textBox_договора_заключение.Visible = false;
+                textBox_договора_окончание.Visible = false;
+                textBox_договора_допустимое.Visible = false;
+                textBox_договора_пройденое.Visible = false;
+                textBox_договора_общая.Visible = false;
+                textBox_договора_израсходованная.Visible = false;
+                textBox_договора_доп.Visible = false;
+                textBox_договора_фамилия.Visible = false;
+                textBox_договора_имя.Visible = false;
+                textBox_договора_отчество.Visible = false;
+                textBox_договора_идентификаторДолжности.Visible = false;
+                textBox_договора_почта.Visible = false;
+                textBox_договора_телефон.Visible = false;
+
+                label_договора_куратор.Visible = false;
+                label_договора_идентификатор.Visible = false;
+                label_договора_Код.Visible = false;
+                label_договора_номер.Visible = false;
+                label_договора_заключение.Visible = false;
+                label_договора_окончание.Visible = false;
+                label_договора_допустимое.Visible = false;
+                label_договора_пройденое.Visible = false;
+                label_договора_общая.Visible = false;
+                label_договора_израсходованная.Visible = false;
+                label_договора_доп.Visible = false;
+                label_договора_фамилия.Visible = false;
+                label_договора_имя.Visible = false;
+                label_договора_отчество.Visible = false;
+                label_договора_идентификаторДолжности.Visible = false;
+                label_договора_почта.Visible = false;
+                label_договора_телефон.Visible = false;
+            }
+        }
+        private void checkBox_пмо_показать_CheckedChanged(object sender, EventArgs e)
+        {
+            if (((CheckBox)sender).Checked == true)
+            {
+
+            }
+            else
+            {
+
+            }
+        }
+        private void checkBox_должности_показать_CheckedChanged(object sender, EventArgs e)
+        {
+            if (((CheckBox)sender).Checked == true)
+            {
+
+            }
+            else
+            {
+
             }
         }
     }
